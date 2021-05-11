@@ -1,11 +1,13 @@
 import React from "react";
+import "./footer.css";
 
 export const Footer = () => {
     return (
         <>
-            <footer className="container">
-                <img src="">
+            <div>
+            <footer className="container-fluid">
             </footer>
+            </div>
         </>
     )
 }
