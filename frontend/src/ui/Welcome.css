@@ -13,8 +13,6 @@
     background-position: center;
     background-size: cover;
     Font-weight: bold;
-    margin-top: 100px;
-    margin-bottom: 100px;
     padding: 10em 6em;
     text-align: center;
     border-radius: 0 !important;
@@ -28,6 +26,7 @@
     font-weight: bold;
     -webkit-text-stroke: .5px white;
 }
+
 
 
 
