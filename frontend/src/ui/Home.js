@@ -1,10 +1,7 @@
 import React from "react"
-<<<<<<< HEAD
 import {NavBar} from "./components/NavBar"
-=======
 import {Footer} from "./Footer.js"
 
->>>>>>> Footer
 export const Home = () => {
 	return (
 		<>
