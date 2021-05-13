@@ -7,6 +7,9 @@ import React from 'react';
 import {NavBar} from "./components/NavBar";
 import {Footer} from "./Footer";
 import {Map} from "./Map"
+import {Posts} from "./Posts"
+import {Transmissions} from "./Transmissions";
+import {Likes} from "./Likes";
 
 export const App = () => (
 	<>
@@ -14,9 +17,12 @@ export const App = () => (
 		<BrowserRouter>
 			<Switch>
 				<Route exact path='/' component={Home} />
-				<Route exact path='/fouroffour' component={FourOhFour} />
+				<Route exact path='/fourohfour' component={FourOhFour} />
 				<Route exact path='/welcome' component={Welcome} />
 				<Route exact path='/map' component={Map} />
+				<Route exact path='/posts' component={Posts} />
+				<Route exact path='/transmissions' component={Transmissions} />
+				<Route exact path='/likes' component={Likes} />
 			</Switch>
 		</BrowserRouter>
 		<Footer />
