@@ -7,7 +7,7 @@ import React from 'react';
 import {NavBar} from "./components/NavBar";
 import {Footer} from "./Footer";
 import {Map} from "./Map"
-
+import {ProfileComponent} from './ProfileComponent';
 export const App = () => (
 	<>
 		<NavBar />
@@ -17,6 +17,7 @@ export const App = () => (
 				<Route exact path='/fouroffour' component={FourOhFour} />
 				<Route exact path='/welcome' component={Welcome} />
 				<Route exact path='/map' component={Map} />
+				<Route exact path='/profile' component={ProfileComponent}/>
 			</Switch>
 		</BrowserRouter>
 		<Footer />
