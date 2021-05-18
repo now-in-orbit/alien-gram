@@ -7,7 +7,7 @@ export const Likes = () => {
             <Container>
                 <Row>
                     <Col>
-                        <h1 className="text-center mt-5">Likes</h1>
+                        <h1 className="text-center mt-5">My Likes</h1>
                     </Col>
                 </Row>
                 <Row>

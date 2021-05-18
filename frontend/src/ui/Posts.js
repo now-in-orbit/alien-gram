@@ -7,7 +7,7 @@ export const Posts = () => {
          <Container>
              <Row>
                  <Col>
-                     <h1 className="text-center mt-5">Posts</h1>
+                     <h1 className="text-center mt-5">My Posts</h1>
                  </Col>
              </Row>
              <Row>
