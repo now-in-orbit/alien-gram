@@ -9,8 +9,8 @@ export const  NavBar =  () => {
                 <Navbar.Toggle aria-controls="basic-navbar-nav" />
                 <Navbar.Collapse id="basic-navbar-nav">
                     <Nav className="ml-auto">
-                        <Nav.Link className='navlink' href="#home">Home</Nav.Link>
-                        <Nav.Link href="#link">Map</Nav.Link>
+                        <Nav.Link className='navlink' href="/">Home</Nav.Link>
+                        <Nav.Link href="/map">Map</Nav.Link>
                         <NavDropdown title="Profile" id="basic-nav-dropdown">
                             <NavDropdown.Item href="/Profile">My Profile</NavDropdown.Item>
                             <NavDropdown.Item href="Post">Posts</NavDropdown.Item>
