@@ -17,6 +17,7 @@
     text-align: center;
     border-radius: 0;
     justify-content: center;
+    position: relative;
 }
 
 .jumbo-bg h1, h2 {
