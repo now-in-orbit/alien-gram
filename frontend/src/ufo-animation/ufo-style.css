@@ -1,0 +1,22 @@
+.UFO {
+    animation-duration: 5s;
+    animation-name: slidein;
+    position: absolute;
+    z-index: 100;
+    opacity: 0;
+}
+
+@keyframes slidein {
+    from {
+        margin-left: 100%;
+        /*width: 100%;*/
+        opacity: 100;
+    }
+
+    to {
+        margin-left: -25%;
+        /*width: 100%;*/
+        opacity: 0;
+    }
+
+}
