@@ -5,7 +5,6 @@ import { FourOhFour } from './FourOhFour';
 import { Welcome } from './Welcome';
 import React from 'react';
 import {NavBar} from "./components/NavBar";
-import {Footer} from "./Footer";
 import {Map} from "./Map"
 import {ProfileComponent} from './ProfileComponent';
 import {Posts} from "./Posts"
