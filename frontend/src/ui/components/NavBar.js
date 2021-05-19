@@ -13,9 +13,9 @@ export const  NavBar =  () => {
                         <Nav.Link href="/map">Map</Nav.Link>
                         <NavDropdown title="Profile" id="basic-nav-dropdown">
                             <NavDropdown.Item href="/Profile">My Profile</NavDropdown.Item>
-                            <NavDropdown.Item href="Post">Posts</NavDropdown.Item>
-                            <NavDropdown.Item href="Transmissions">Transmissions</NavDropdown.Item>
-                            <NavDropdown.Item href="Likes">Likes</NavDropdown.Item>
+                            <NavDropdown.Item href="/Posts">Posts</NavDropdown.Item>
+                            <NavDropdown.Item href="/Transmissions">Transmissions</NavDropdown.Item>
+                            <NavDropdown.Item href="/Likes">Likes</NavDropdown.Item>
                         </NavDropdown>
                     </Nav>
                 </Navbar.Collapse>
