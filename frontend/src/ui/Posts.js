@@ -1,5 +1,6 @@
 import React from 'react';
 import {Col, Container, Row} from "react-bootstrap";
+import {ThreadComponent} from "./components/ThreadComponent";
 
 export const Posts = () => {
     return (
@@ -11,7 +12,7 @@ export const Posts = () => {
                  </Col>
              </Row>
              <Row>
-
+                 <ThreadComponent />
              </Row>
          </Container>
 
