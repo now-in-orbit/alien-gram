@@ -1,7 +1,7 @@
 import React from "react"
 import {Nav, Navbar, NavDropdown} from "react-bootstrap"
-import '../Welcome.css'
-export const  NavBar =  () => {
+import '../Navigation.css'
+export const  Navigation =  () => {
     return (
         <>
             <Navbar bg="dark" expand="lg" variant='dark'>

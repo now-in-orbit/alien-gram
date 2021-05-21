@@ -4,7 +4,7 @@ import { Home } from './Home';
 import { FourOhFour } from './FourOhFour';
 import { Welcome } from './Welcome';
 import React from 'react';
-import {NavBar} from "./components/NavBar";
+import {Navigation} from "./components/Navigation";
 import {Map} from "./Map"
 import {ProfileComponent} from './ProfileComponent';
 import {Posts} from "./Posts"
@@ -13,7 +13,7 @@ import {Likes} from "./Likes";
 
 export const App = () => (
 	<>
-		<NavBar />
+		<Navigation />
 		<BrowserRouter>
 			<Switch>
 				<Route exact path='/' component={Home} />
