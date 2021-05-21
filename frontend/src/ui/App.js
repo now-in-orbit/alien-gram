@@ -27,7 +27,6 @@ export const App = () => (
 
 			</Switch>
 		</BrowserRouter>
-		<Footer />
 
 	</>
 )
