@@ -13,7 +13,8 @@ services:
     ports:
       - 8080:4200
     volumes:
-      - ./backend:/home/node/app
+      - ./backend/src:/home/node/app/src
+      - ./backend/tsconfig.json:/home/node/app/tsconfig.json
   sql:
     build: ./sql
     # Make sure to update this to match your project.
