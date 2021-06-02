@@ -5,6 +5,7 @@ import {selectPostByPostProfileId} from '../../utils/post/selectPostByPostProfil
 import {insertPost} from '../../utils/post/insertPost'
 import {updatePostByPostId} from '../../utils/post/updatePostbyPostId'
 import {Status} from "../../utils/interfaces/Status";
+import {Profile} from "../../utils/interfaces/Profile";
 
 const {validationResult} = require('express-validator');
 
@@ -37,12 +38,13 @@ export async function addPostController(request: Request, response: Response) {
 		const {postContent} = request.body;
 		const postProfileId = <string>request.session?.profile.profileId;
 
+
 		const post: Post = {
 			postId: null,
 			postProfileId,
 			postContent,
 			postDate: null,
-			postImageUrl
+			postImageUrl: null
 		}
 		const result = await insertPost(post)
 		const status: Status = {

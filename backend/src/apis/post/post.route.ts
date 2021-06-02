@@ -3,7 +3,7 @@ import { getAllPostsController, getPostsByPostProfileIdController, addPostContro
 
 
 
-const postRoute = Router();
+export const postRoute = Router();
 
 
 
@@ -21,4 +21,4 @@ postRoute.route('/')
 
 
 
-export default postRoute;
+
