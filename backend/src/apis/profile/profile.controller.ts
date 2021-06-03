@@ -8,7 +8,7 @@ import {Status} from "../../utils/interfaces/Status"
 export async function putProfileController(request: Request, response: Response) : Promise<Response>{
     try{
         const {profileId} = request.params
-        const{profileAvatarURL, profileEmail, profileFirstName, profileLastName, profileUsername} = request.body
+        const{profileAvatarUrl, profileEmail, profileFirstName, profileLastName, profileUsername} = request.body
         const profileIdFromSession: string = <string>request.session?.profile.profileId
 
         const performUpdate = async (partialProfile: PartialProfile) : Promise<Response> => {
@@ -22,7 +22,7 @@ export async function putProfileController(request: Request, response: Response)
         }
 
         return profileId === profileIdFromSession
-        ? performUpdate({profileId, profileAvatarURL, profileEmail, profileUsername})
+        ? performUpdate({profileId, profileAvatarUrl, profileEmail, profileUsername})
         : updateFailed("You are not allowed to perform this action")
     } catch (error) {
         return response.json({status:400, data: null, message: error.message})
