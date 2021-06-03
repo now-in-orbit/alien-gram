@@ -14,16 +14,3 @@ postRoute.route('/')
 	.post(isLoggedIn, asyncValidatorController(checkSchema(postValidator)), addPostController)
 
 
-
-
-
-
-
-
-
-
-
-<<<<<<< HEAD
-
-=======
->>>>>>> 20bdf4dcd16f59776d28e5e5b45ab5cabe684caf
