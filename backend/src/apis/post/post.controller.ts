@@ -33,7 +33,7 @@ export async function getPostsByPostProfileIdController(request: Request, respon
 	}
 }
 
-export async function addPostController(request: Request, response: Response, post: Post) {
+export async function addPostController(request: Request, response: Response) {
 	try {
 		const {postContent} = request.body;
 		const postProfileId = <string>request.session?.profile.profileId;
