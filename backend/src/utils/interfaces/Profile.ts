@@ -7,8 +7,8 @@ export interface PartialProfile {
 
 export interface Profile {
     profileId : string|null,
-    profileActivationToken : string|null
-    profileAvatarURL : string,
+    profileActivationToken : string|null,
+    profileAvatarURL : string|null,
     profileEmail : string,
     profileFirstName : string,
     profileHash : string,
