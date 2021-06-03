@@ -15,7 +15,7 @@ export async function signupProfileController(request: Request, response: Respon
     try {
 
 
-        const {profileEmail, profilePassword, profileUsername} = request.body;
+        const {profileFirstName, profileLastName, profileEmail, profilePassword, profileUsername} = request.body;
         const profileHash = await setHash(profilePassword);
         const profileActivationToken = setActivationToken();
         const profileAvatarUrl = "👽"
@@ -30,17 +30,15 @@ export async function signupProfileController(request: Request, response: Respon
             from: `Mailgun Sandbox <postmaster@${process.env.MAILGUN_DOMAIN}>`,
             to: profileEmail,
             subject: "One step closer to AlienGram",
-            //ToDo
-            text: 'Test email text',
+            text: 'Click this link to activate',
             html: message
         }
 
         const profile: Profile = {
             profileId : null,
             profileActivationToken,
-            profileAvatarURL : null,
+            profileAvatarUrl,
             profileEmail,
-            //TODO
             profileFirstName,
             profileHash,
             profileLastName,
