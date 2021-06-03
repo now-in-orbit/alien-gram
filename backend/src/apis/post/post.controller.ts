@@ -32,7 +32,7 @@ export async function getPostsByPostProfileIdController(request: Request, respon
 	}
 }
 
-export async function addPostController(request: Request, response: Response) {
+export async function addPostController(request: Request, response: Response, post: Post) {
 	try {
 		const {postContent} = request.body;
 		const postProfileId = <string>request.session?.profile.profileId;
@@ -42,7 +42,7 @@ export async function addPostController(request: Request, response: Response) {
 			postProfileId,
 			postContent,
 			postDate: null,
-			postImageUrl
+			postImageUrl: null
 		}
 		const result = await insertPost(post)
 		const status: Status = {
