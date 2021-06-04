@@ -1,5 +1,6 @@
-import express, { Application } from 'express'
+import express, {Application, Errback, ErrorRequestHandler, NextFunction, Request, Response} from 'express';
 import morgan from 'morgan'
+
 // Routes
 import { indexRoute } from './apis/index.route'
 import { postRoute } from './apis/post/post.route'
