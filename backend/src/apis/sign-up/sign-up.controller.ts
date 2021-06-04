@@ -8,6 +8,8 @@ import {insertProfile} from "../../utils/profile/insertProfile";
 
 const mailgun = require("mailgun-js")
 
+
+
 // Interfaces (represent the DB model and types of the columns associated with a specific DB table)
 
 
