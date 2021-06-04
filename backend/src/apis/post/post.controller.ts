@@ -7,6 +7,7 @@ import {updatePostByPostId} from '../../utils/post/updatePostbyPostId'
 import {Status} from "../../utils/interfaces/Status";
 import {Profile} from "../../utils/interfaces/Profile";
 
+
 const {validationResult} = require('express-validator');
 
 export async function getAllPostsController(request: Request, response: Response): Promise<Response | void> {
@@ -36,6 +37,7 @@ export async function getPostsByPostProfileIdController(request: Request, respon
 export async function addPostController(request: Request, response: Response) {
 	try {
 		const {postContent} = request.body;
+		// @ts-ignore
 		const postProfileId = <string>request.session?.profile.profileId;
 
 
