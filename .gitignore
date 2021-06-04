@@ -6,8 +6,8 @@
 ./backend/node_modules
 .idea
 
-
 /.env
+/project.env
 /.pnp
 /.pnp.js
 
