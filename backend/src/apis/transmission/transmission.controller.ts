@@ -4,7 +4,7 @@ import {Transmission} from "../../utils/interfaces/Transmission";
 import {Status} from "../../utils/interfaces/Status";
 import {Profile} from "../../utils/interfaces/Profile";
 import {Post} from "../../utils/interfaces/Post";
-import {insertTransmissions} from "../../utils/transmission/insertTransmission";
+import {insertTransmission} from '../../utils/transmission/insertTransmission'
 import {selectAllTransmissions} from "../../utils/transmission/selectAllTransmissions";
 import {selectTransmissionsByTransmissionIdTransmissionPostId} from "../../utils/transmission/selectTransmissionsByTransmissionIdTransmissionPostId";
 
@@ -46,7 +46,7 @@ export async function addTransmissionController(request: Request, response: Resp
             transmissionContent,
             transmissionDateTime: null
         }
-        const result = await insertTransmissions(transmission)
+        const result = await insertTransmission(transmission)
         const status: Status = {
             status: 200,
             message: result ?? 'Transmission created successfully!',
