@@ -14,14 +14,15 @@ import {insertLike} from "../../utils/like/insertLike";
 export async function toggleLikeController(request: Request, response: Response) {
 
     try {
-        const {likeTweetId} = request.body;
+        const {likePostId} = request.body;
+        // @ts-ignore
         const profile: Profile = request.session?.profile
         const likeProfileId = <string>profile.profileId
 
         const like: Like = {
             likeProfileId,
-            likeTweetId,
-            likeDate: null,
+            likePostId,
+            likeDateTime: null,
         }
         const select = await selectLikeByLikeId(like)
         // @ts-ignore
