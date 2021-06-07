@@ -9,6 +9,8 @@
 /.env
 /project.env
 
+*/setupProxy.js
+
 /.pnp
 /.pnp.js
 
