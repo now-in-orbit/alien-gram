@@ -6,6 +6,7 @@ import {insertPost} from '../../utils/post/insertPost'
 import {updatePostByPostId} from '../../utils/post/updatePostbyPostId'
 import {Status} from "../../utils/interfaces/Status";
 import {Profile} from "../../utils/interfaces/Profile";
+import {selectPartialProfileByProfileId} from "../../utils/profile/selectPartialProfileByProfileId";
 
 
 const {validationResult} = require('express-validator');
@@ -23,14 +24,24 @@ export async function getAllPostsController(request: Request, response: Response
 }
 
 export async function getPostsByPostProfileIdController(request: Request, response: Response): Promise<Response | void> {
+	// try {
+	// 	//todo ask instructors about argument required for selectPostByProfileId
+	// 	const data = await selectPostByPostProfileId(request.params.postProfileId);
+	// 	//return response
+	// 	const status: Status = {status: 200, message: null, data};
+	// 	return response.json(status);
+	// } catch (error) {
+	// 	console.log(error);
+	// }
 	try {
-		//todo ask instructors about argument required for selectPostByProfileId
-		const data = await selectPostByPostProfileId(request.params.postProfileId);
-		//return response
-		const status: Status = {status: 200, message: null, data};
-		return response.json(status);
+		const {postProfileId} = request.params;
+		const mySqlResult = await selectPostByPostProfileId(postProfileId)
+		const data = mySqlResult ?? null
+		const status: Status = {status: 200, data, message: null}
+		return response.json(status)
+
 	} catch (error) {
-		console.log(error);
+		return (response.json({status: 400, data: null, message: error.message}))
 	}
 }
 
