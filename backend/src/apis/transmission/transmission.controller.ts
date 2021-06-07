@@ -22,10 +22,22 @@ export async function getAllTransmissionsController(request: Request, response: 
     }
 }
 
-export async function getTransmissionsByTransmissionPostIdController(request: Request, response:Response, nextFunction: NextFunction) {
-    const {transmissionPostId} = request.params
-    const data = await selectTransmissionsByTransmissionIdTransmissionPostId(transmissionPostId)
-    return response.json({status:200, message: null, data})
+// export async function getTransmissionsByTransmissionPostIdController(request: Request, response:Response, nextFunction: NextFunction) {
+//     const {transmissionPostId} = request.params
+//     const data = await selectTransmissionsByTransmissionIdTransmissionPostId(transmissionPostId)
+//     return response.json({status:200, message: null, data})
+// }
+
+export async function getTransmissionsByTransmissionPostIdController(request: Request, response: Response): Promise<Response | void> {
+
+    try {
+        const {transmissionPostId} = request.params
+        const data = await selectTransmissionsByTransmissionIdTransmissionPostId(transmissionPostId)
+        const status: Status = {status: 200, message: null, data};
+        return response.json(status);
+    } catch (error) {
+        console.log(error);
+    }
 }
 
 export async function addTransmissionController(request: Request, response: Response) {
