@@ -13,7 +13,7 @@ const {checkSchema} = require('express-validator');
 export const TransmissionRoute = Router()
 
 
-TransmissionRoute.route('/transmissionId/:transmissionId').get(getTransmissionsByTransmissionPostIdController)
+TransmissionRoute.route('/transmissionPostId/:transmissionPostId').get(getTransmissionsByTransmissionPostIdController)
 
 TransmissionRoute.route('/')
 	.get(getAllTransmissionsController)

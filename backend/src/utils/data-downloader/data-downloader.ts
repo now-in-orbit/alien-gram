@@ -29,15 +29,16 @@ export function ufoSightingDataDownloader() : Promise<any> {
 				.on('end',  async () => {
 					try {
 						for (let result of results) {
-
 							const {sightingCity, sightingSummary, sightingDateTime} = result
 							const sighting: Sighting = {
 								sightingId: uuid(),
 								sightingCity: result.city as string,
 								sightingSummary: result.summary as string,
-								sightingDateTime: result.date_time as string
-							}
-							console.log(await insertSighting(sighting))
+								sightingDateTime: new Date(result.date_time)
+ 							}
+							console.log(sighting.sightingDateTime)
+							const reply = await insertSighting(sighting)
+							console.log(reply)
 						}
 					} catch (error) {
 						throw error
