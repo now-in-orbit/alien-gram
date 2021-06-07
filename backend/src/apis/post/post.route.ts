@@ -9,7 +9,7 @@ export const postRoute = Router();
 
 
 
-postRoute.route('/postId/:postId').get(getPostsByPostProfileIdController);
+postRoute.route('/postProfileId/:postProfileId').get(getPostsByPostProfileIdController);
 
 postRoute.route('/')
 	.get(getAllPostsController)

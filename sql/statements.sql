@@ -1,0 +1,1 @@
+insert into sighting(sightingId, sightingCity, sightingSummary, sightingDateTime) values (uuid_to_bin(uuid()), 'Albuquerque', 'I saw a little green man eat my dog', now())

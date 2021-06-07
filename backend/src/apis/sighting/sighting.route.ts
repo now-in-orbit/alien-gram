@@ -1,13 +1,13 @@
 import { Router } from 'express';
-import { getAllSightingsController, getSightingsBySightingIdController, addSightingController } from './sighting.controller'
+import { getAllSightingsController, getSightingsBySightingIdController} from './sighting.controller'
 import {asyncValidatorController} from "../../utils/controllers/asyncValidator.controller";
 const { checkSchema } = require('express-validator');
 
-export const postRoute = Router();
+export const sightingRoute = Router();
 
 
 
-postRoute.route('/postId/:postId').get(getSightingsBySightingIdController);
+sightingRoute.route('/sightingId/:sightingId').get(getSightingsBySightingIdController);
 
-postRoute.route('/')
+sightingRoute.route('/')
 	.get(getAllSightingsController)
