@@ -6,7 +6,7 @@ import {finished} from 'stream';
 const fs = require('fs')
 const csv = require('csv-parser')
 
-function ufoSightingDataDownloader() : Promise<any> {
+export function ufoSightingDataDownloader() : Promise<any> {
 	async function main() {
 		try{
 			await downloadSightings()
@@ -51,7 +51,7 @@ function ufoSightingDataDownloader() : Promise<any> {
 }
 
 ufoSightingDataDownloader()
-	.then(finished =>{
+	.then(finished => {
 		console.log("finished")
 	}).catch(error => {
 	console.error(error)

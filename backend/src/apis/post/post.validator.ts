@@ -1,7 +1,7 @@
 export const postValidator = {
 	postProfileId: {
 		isUUID: {
-			errorMessage: 'please provide a valid TweetProfileId'
+			errorMessage: 'please provide a valid postProfileId'
 		}
 	},
 	postContent: {
