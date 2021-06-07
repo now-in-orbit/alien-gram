@@ -84,7 +84,7 @@ CREATE TABLE `like`
 CREATE TABLE sighting
 (
     sightingId       BINARY(16)  NOT NULL,
-    sightingCity     VARCHAR(50) NOT NULL,
+    sightingCity     VARCHAR(64) NOT NULL,
     sightingSummary  VARCHAR(1000),
     sightingDateTime DATETIME(6) NOT NULL, -- index the foreign keys...what foreign keys?
     PRIMARY KEY (sightingId)

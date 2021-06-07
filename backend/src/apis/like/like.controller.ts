@@ -5,7 +5,7 @@ import {Request, Response} from 'express';
 // Interfaces (represent the DB model and types of the columns associated with a specific DB table)
 import {Status} from '../../utils/interfaces/Status';
 import {Profile} from "../../utils/interfaces/Profile";
-import {Like} from "../../utils/interfaces/Like";
+import {Like} from "../../utils/interfaces/like";
 import {selectLikeByLikeId} from "../../utils/like/selectLikeByLikeId";
 import {deleteLike} from "../../utils/like/deleteLike";
 import {insertLike} from "../../utils/like/insertLike";

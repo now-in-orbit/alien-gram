@@ -1,6 +1,6 @@
 import {Post} from "../interfaces/Post";
 import {connect} from "../database.utils";
-import {Like} from "../interfaces/Like";
+import {Like} from "../interfaces/like";
 
 export async function insertLike(like: Like) {
     try {
