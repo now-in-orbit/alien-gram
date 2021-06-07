@@ -9,6 +9,10 @@
 /.env
 /project.env
 
+sql/statements.sql
+
+
+
 /.pnp
 /.pnp.js
 

@@ -22,16 +22,37 @@ export async function getAllPostsController(request: Request, response: Response
 	}
 }
 
-export async function getPostsByPostProfileIdController(request: Request, response: Response): Promise<Response | void> {
-	try {
-		//todo ask instructors about argument required for selectPostByProfileId
-		const data = await selectPostByPostProfileId(request.params.postProfileId);
-		//return response
-		const status: Status = {status: 200, message: null, data};
-		return response.json(status);
-	} catch (error) {
-		console.log(error);
-	}
+// export async function getPostsByPostProfileIdController(request: Request, response: Response): Promise<Response | void> {
+// 	try {
+// 		const     {postProfileId} = request.params
+// 		const data = await selectPostByPostProfileId(postProfileId);
+// 		//return response
+// 		const status: Status = {status: 200, message: null, data};
+// 		return response.json(status);
+// 	} catch (error) {
+// 		console.log(error);
+// 	}
+// }
+
+// export async function getPostsByPostProfileIdController(request: Request, response: Response) : Promise<Response> {
+// 	try {
+// 		const {postProfileId} = request.params;
+// 		const mySqlResult = await selectPostByPostProfileId(postProfileId);
+// 		const data = mySqlResult ?? null
+// 		const status: Status = {status: 200, data, message: null}
+// 		return response.json(status)
+//
+// 	} catch (error) {
+// 		return(response.json({status: 400, data: null, message: error.message}))
+//
+// 	}
+//
+// }
+
+export async function getPostsByPostProfileIdController(request : Request, response: Response, nextFunction: NextFunction){
+	const     {postProfileId} = request.params
+	const data  = await selectPostByPostProfileId(postProfileId)
+	return response.json({status:200, message: null, data})
 }
 
 export async function addPostController(request: Request, response: Response) {
