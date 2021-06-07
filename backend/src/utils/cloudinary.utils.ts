@@ -15,7 +15,7 @@ export const uploadToCloudinary = (request : Request) : Promise<string | Error> 
     cloudinaryUtils.config({
         api_key: process.env.CLOUDINARY_KEY,
         api_secret: process.env.CLOUDINARY_SECRET,
-        cloud_name: "cnm-ingenuity-deep-dive-bootcamp"
+        cloud_name: "aliengram"
     })
 
     return new Promise((resolve, reject) => {
