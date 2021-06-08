@@ -9,6 +9,8 @@ import {Like} from "../../utils/interfaces/like";
 import {selectLikeByLikeId} from "../../utils/like/selectLikeByLikeId";
 import {deleteLike} from "../../utils/like/deleteLike";
 import {insertLike} from "../../utils/like/insertLike";
+import {selectLikeByLikePostId} from "../../utils/like/selectLikeByLikePostId";
+import {selectLikeByLikeProfileId} from "../../utils/like/selectLikeByLikeProfileId";
 
 
 export async function toggleLikeController(request: Request, response: Response) {
@@ -41,5 +43,33 @@ export async function toggleLikeController(request: Request, response: Response)
 
 	} catch (error) {
 		console.log(error);
+	}
+}
+
+
+export async function getLikeByLikeProfileIdController(request: Request, response: Response) : Promise<Response> {
+	try {
+		const {likeProfileId} = request.params;
+		const mySqlResult = await selectLikeByLikeProfileId(likeProfileId)
+		const data = mySqlResult ?? null
+		const status: Status = {status: 200, data, message: null}
+		return response.json(status)
+
+	} catch (error) {
+		return (response.json({status: 400, data: null, message: error.message}))
+	}
+}
+
+
+export async function getLikeByLikePostIdController(request: Request, response: Response) : Promise<Response> {
+	try {
+		const {likePostId} = request.params;
+		const mySqlResult = await selectLikeByLikePostId(likePostId)
+		const data = mySqlResult ?? null
+		const status: Status = {status: 200, data, message: null}
+		return response.json(status)
+
+	} catch (error) {
+		return (response.json({status: 400, data: null, message: error.message}))
 	}
 }

@@ -11,3 +11,4 @@ export async function selectLikeByLikePostId(likePostId: string){
         console.log(error)
     }
 }
+
