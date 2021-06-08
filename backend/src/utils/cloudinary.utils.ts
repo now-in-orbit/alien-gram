@@ -1,4 +1,3 @@
-//TODO change the param to File instead Request
 import { Request } from 'express'
 const cloudinaryUtils = require('cloudinary').v2
 let streamifier = require('streamifier');
