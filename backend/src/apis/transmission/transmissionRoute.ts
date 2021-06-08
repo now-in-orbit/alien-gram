@@ -10,14 +10,14 @@ import {isLoggedIn} from "../../utils/controllers/isLoggedIn.controller";
 
 const {checkSchema} = require('express-validator');
 
-export const TransmissionRoute = Router()
+export const transmissionRoute = Router()
 
 
-TransmissionRoute.route('/transmissionPostId/:transmissionPostId').get(getTransmissionsByTransmissionPostIdController)
+transmissionRoute.route('/transmissionPostId/:transmissionPostId').get(getTransmissionsByTransmissionPostIdController)
 
-TransmissionRoute.route('/transmissionProfileId/:transmissionProfileId').get(getTransmissionsByTransmissionProfileId)
+transmissionRoute.route('/transmissionProfileId/:transmissionProfileId').get(getTransmissionsByTransmissionProfileId)
 
-TransmissionRoute.route('/')
+transmissionRoute.route('/')
 	.get(getAllTransmissionsController)
 	.post(isLoggedIn, asyncValidatorController(checkSchema(transmissionValidator)), addTransmissionController)
 
