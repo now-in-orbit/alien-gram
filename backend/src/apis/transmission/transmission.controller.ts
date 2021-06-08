@@ -7,6 +7,7 @@ import {Post} from "../../utils/interfaces/Post";
 import {insertTransmission} from '../../utils/transmission/insertTransmission'
 import {selectAllTransmissions} from "../../utils/transmission/selectAllTransmissions";
 import {selectTransmissionsByTransmissionIdTransmissionPostId} from "../../utils/transmission/selectTransmissionsByTransmissionIdTransmissionPostId";
+import {selectTransmissionsByTransmissionProfileId} from "../../utils/transmission/selectTransmissionsByTransmissionProfileId";
 
 
 const {validationResult} = require('express-validator')
@@ -22,17 +23,24 @@ export async function getAllTransmissionsController(request: Request, response: 
     }
 }
 
-// export async function getTransmissionsByTransmissionPostIdController(request: Request, response:Response, nextFunction: NextFunction) {
-//     const {transmissionPostId} = request.params
-//     const data = await selectTransmissionsByTransmissionIdTransmissionPostId(transmissionPostId)
-//     return response.json({status:200, message: null, data})
-// }
 
 export async function getTransmissionsByTransmissionPostIdController(request: Request, response: Response): Promise<Response | void> {
 
     try {
         const {transmissionPostId} = request.params
         const data = await selectTransmissionsByTransmissionIdTransmissionPostId(transmissionPostId)
+        const status: Status = {status: 200, message: null, data};
+        return response.json(status);
+    } catch (error) {
+        console.log(error);
+    }
+}
+
+export async function getTransmissionsByTransmissionProfileId(request: Request, response: Response): Promise<Response | void> {
+
+    try {
+        const {transmissionProfileId} = request.params
+        const data = await selectTransmissionsByTransmissionProfileId(transmissionProfileId)
         const status: Status = {status: 200, message: null, data};
         return response.json(status);
     } catch (error) {

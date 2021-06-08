@@ -2,7 +2,7 @@ import {Router} from "express";
 import {
 	getAllTransmissionsController,
 	getTransmissionsByTransmissionPostIdController,
-	addTransmissionController
+	addTransmissionController, getTransmissionsByTransmissionProfileId
 } from "./transmission.controller";
 import {asyncValidatorController} from "../../utils/controllers/asyncValidator.controller";
 import {transmissionValidator} from './transmission.validator'
@@ -14,6 +14,8 @@ export const TransmissionRoute = Router()
 
 
 TransmissionRoute.route('/transmissionPostId/:transmissionPostId').get(getTransmissionsByTransmissionPostIdController)
+
+TransmissionRoute.route('/transmissionProfileId/:transmissionProfileId').get(getTransmissionsByTransmissionProfileId)
 
 TransmissionRoute.route('/')
 	.get(getAllTransmissionsController)
