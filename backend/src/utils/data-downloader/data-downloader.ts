@@ -1,14 +1,15 @@
 import axios from 'axios';
-import { v1 as uuid } from 'uuid';
+import {v1 as uuid} from 'uuid';
 import {insertSighting} from '../sighting/insertSighting';
 import {Sighting} from '../interfaces/Sighting';
 import {finished} from 'stream';
+
 const fs = require('fs')
 const csv = require('csv-parser')
 
 export const ufoSightingDataDownloader = (): Promise<any> => {
 	async function main() {
-		try{
+		try {
 			await downloadSightings()
 
 		} catch (error) {
@@ -21,12 +22,12 @@ export const ufoSightingDataDownloader = (): Promise<any> => {
 
 	const downloadSightings = async () => {
 		try {
-			const results : any = [];
+			const results: any = [];
 
 			fs.createReadStream('./ufo.csv')
 				.pipe(csv())
 				.on('data', (data: any) => results.push(data))
-				.on('end',  async () => {
+				.on('end', async () => {
 					try {
 						for (let result of results) {
 							const {sightingCity, sightingSummary, sightingDateTime} = result
@@ -35,7 +36,7 @@ export const ufoSightingDataDownloader = (): Promise<any> => {
 								sightingCity: result.city as string,
 								sightingSummary: result.summary as string,
 								sightingDateTime: new Date(result.date_time)
- 							}
+							}
 							console.log(sighting.sightingDateTime)
 							const reply = await insertSighting(sighting)
 							console.log(reply)

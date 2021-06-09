@@ -4,18 +4,17 @@ import Card from "react-bootstrap/Card";
 
 export function PostCard(props) {
 
-    const {misquote} = props
+    const {post, profile} = props
 
     return (
         <>
             <Card className="card text-center">
                 <div className="card-body">
-                    <Card.Title>{misquote.misquoteAttribution}</Card.Title>
+                    <Card.Title>{profile.profileUsername}</Card.Title>
                     <Card.Text>
                         <div>
-                            {misquote.misquoteContent}
+                            {post.postContent}
                         </div>
-                        <small className="text-muted">{misquote.misquoteSubmitter}</small>
                     </Card.Text>
                 </div>
             </Card>

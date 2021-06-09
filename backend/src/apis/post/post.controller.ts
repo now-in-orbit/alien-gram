@@ -46,6 +46,12 @@ export const getPostsByPostProfileIdController = async (request: Request, respon
 	}
 };
 
+
+
+
+
+
+
 export const addPostController = async (request: Request, response: Response) => {
 	try {
 		const {postContent} = request.body;
@@ -59,8 +65,9 @@ export const addPostController = async (request: Request, response: Response) =>
 			postContent,
 			postDate: null,
 			postImageUrl: null
-		}
-		const result = await insertPost(post)
+		};
+
+		const result = await insertPost(post);
 		const status: Status = {
 			status: 200,
 			message: result ?? 'Post created successfully!',
@@ -71,6 +78,12 @@ export const addPostController = async (request: Request, response: Response) =>
 		console.log(error);
 	}
 };
+
+
+
+
+
+
 
 export const getPostsByPostIdController = async (request: Request, response: Response): Promise<Response | void> => {
 	try {
