@@ -1,7 +1,7 @@
 import {NextFunction, Request, Response} from "express";
 import {uploadToCloudinary} from "../../utils/cloudinary.utils";
 
-export async function imageUploadController(request: Request, response: Response, nextFunction: NextFunction) {
+export const imageUploadController = async (request: Request, response: Response, nextFunction: NextFunction) => {
     try {
         // uncomment if in production
         // @ts-ignore
@@ -11,4 +11,4 @@ export async function imageUploadController(request: Request, response: Response
     } catch (error) {
         return response.json({status:400, message: error.message, data: null})
     }
-}
+};

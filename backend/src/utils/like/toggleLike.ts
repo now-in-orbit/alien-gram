@@ -1,8 +1,8 @@
 import {Post} from "../interfaces/Post";
 import {connect} from "../database.utils";
-import {Like} from "../interfaces/like";
+import {Like} from "../interfaces/Like";
 
-export async function toggleLike(like: Like) {
+export const toggleLike = async (like: Like) => {
     try {
         console.log('like', like)
         const mysqlConnection = await connect();
@@ -38,4 +38,4 @@ export async function toggleLike(like: Like) {
     } catch (error) {
         console.log(error)
     }
-}
+};

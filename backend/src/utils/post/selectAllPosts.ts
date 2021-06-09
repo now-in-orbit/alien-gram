@@ -1,7 +1,7 @@
 import { Post } from '../interfaces/Post';
 import { connect } from '../database.utils';
 
-export async function selectAllPosts() {
+export const selectAllPosts = async () => {
 	try {
 		const mySqlConnection = await connect();
 		const mySqlQuery = 'select bin_to_uuid(postId) as postId, bin_to_uuid(postProfileId) as postProfileId, postContent, postDate, postImageUrl from post order by postDate desc'
@@ -10,4 +10,4 @@ export async function selectAllPosts() {
 	} catch (error) {
 		console.log(error)
 	}
-}
+};

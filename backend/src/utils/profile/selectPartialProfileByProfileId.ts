@@ -1,7 +1,7 @@
 import {connect} from "../database.utils";
 import {Profile} from "../interfaces/Profile";
 
-export async function selectPartialProfileByProfileId(profileId: string) {
+export const selectPartialProfileByProfileId = async (profileId: string) => {
     try {
         const mysqlConnection = await connect();
 
@@ -13,4 +13,4 @@ export async function selectPartialProfileByProfileId(profileId: string) {
         console.error(e)
         return undefined
     }
-}
+};

@@ -12,7 +12,7 @@ import {selectTransmissionsByTransmissionProfileId} from "../../utils/transmissi
 
 const {validationResult} = require('express-validator')
 
-export async function getAllTransmissionsController(request: Request, response: Response): Promise<Response | void> {
+export const getAllTransmissionsController = async (request: Request, response: Response): Promise<Response | void> => {
 
     try {
         const data = await selectAllTransmissions()
@@ -21,10 +21,10 @@ export async function getAllTransmissionsController(request: Request, response: 
     } catch (error) {
         console.log(error);
     }
-}
+};
 
 
-export async function getTransmissionsByTransmissionPostIdController(request: Request, response: Response): Promise<Response | void> {
+export const getTransmissionsByTransmissionPostIdController = async (request: Request, response: Response): Promise<Response | void> => {
 
     try {
         const {transmissionPostId} = request.params
@@ -34,9 +34,9 @@ export async function getTransmissionsByTransmissionPostIdController(request: Re
     } catch (error) {
         console.log(error);
     }
-}
+};
 
-export async function getTransmissionsByTransmissionProfileId(request: Request, response: Response): Promise<Response | void> {
+export const getTransmissionsByTransmissionProfileId = async (request: Request, response: Response): Promise<Response | void> => {
 
     try {
         const {transmissionProfileId} = request.params
@@ -46,9 +46,11 @@ export async function getTransmissionsByTransmissionProfileId(request: Request, 
     } catch (error) {
         console.log(error);
     }
-}
+};
 
-export async function addTransmissionController(request: Request, response: Response) {
+
+export const addTransmissionController = async (request: Request, response: Response) => {
+
     try {
 
         const {transmissionContent} = request.body
@@ -76,4 +78,4 @@ export async function addTransmissionController(request: Request, response: Resp
     } catch (error) {
         console.log(error)
     }
-}
+};

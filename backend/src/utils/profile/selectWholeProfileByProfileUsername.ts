@@ -1,7 +1,7 @@
 import {connect} from "../database.utils";
 import {Profile} from "../interfaces/Profile";
 
-export async function selectWholeProfileByProfileUsername(profileUsername: string) {
+export const selectWholeProfileByProfileUsername = async (profileUsername: string) => {
     try {
         const mysqlConnection = await connect();
 
@@ -13,4 +13,4 @@ export async function selectWholeProfileByProfileUsername(profileUsername: strin
         console.error(e)
         return undefined
     }
-}
+};
