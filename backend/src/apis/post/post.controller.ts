@@ -12,7 +12,7 @@ import {selectPartialProfileByProfileId} from "../../utils/profile/selectPartial
 
 const {validationResult} = require('express-validator');
 
-export async function getAllPostsController(request: Request, response: Response): Promise<Response | void> {
+export const getAllPostsController = async (request: Request, response: Response): Promise<Response | void> => {
 
 	try {
 		const data = await selectAllPosts();
@@ -22,9 +22,9 @@ export async function getAllPostsController(request: Request, response: Response
 	} catch (error) {
 		console.log(error);
 	}
-}
+};
 
-export async function getPostsByPostProfileIdController(request: Request, response: Response): Promise<Response | void> {
+export const getPostsByPostProfileIdController = async (request: Request, response: Response): Promise<Response | void> => {
 	// try {
 	// 	//todo ask instructors about argument required for selectPostByProfileId
 	// 	const data = await selectPostByPostProfileId(request.params.postProfileId);
@@ -44,9 +44,9 @@ export async function getPostsByPostProfileIdController(request: Request, respon
 	} catch (error) {
 		return (response.json({status: 400, data: null, message: error.message}))
 	}
-}
+};
 
-export async function addPostController(request: Request, response: Response) {
+export const addPostController = async (request: Request, response: Response) => {
 	try {
 		const {postContent} = request.body;
 		// @ts-ignore
@@ -70,9 +70,9 @@ export async function addPostController(request: Request, response: Response) {
 	} catch (error) {
 		console.log(error);
 	}
-}
+};
 
-export async function getPostsByPostIdController(request: Request, response: Response): Promise<Response | void> {
+export const getPostsByPostIdController = async (request: Request, response: Response): Promise<Response | void> => {
 	try {
 		const {postId} = request.params;
 		const mySqlResult = await selectPostByPostId(postId)
@@ -83,6 +83,6 @@ export async function getPostsByPostIdController(request: Request, response: Res
 	} catch (error) {
 		return (response.json({status: 400, data: null, message: error.message}))
 	}
-}
+};
 
 

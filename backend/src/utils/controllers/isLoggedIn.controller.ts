@@ -3,7 +3,7 @@ import {JsonWebTokenError, TokenExpiredError, verify, } from "jsonwebtoken";
 import {Status} from "../interfaces/Status";
 import {Profile} from "../interfaces/Profile";
 
-export function isLoggedIn(request: Request, response: Response, next: NextFunction): any {
+export const isLoggedIn = (request: Request, response: Response, next: NextFunction): any => {
 
     let status : Status = {status: 400, message: "Please login", data: null};
 
@@ -30,4 +30,4 @@ export function isLoggedIn(request: Request, response: Response, next: NextFunct
 
     return isJwtValid && isSessionActive(sessionProfile(request)) ? next() : response.json(status);
 
-}
+};

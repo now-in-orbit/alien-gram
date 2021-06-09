@@ -1,7 +1,7 @@
 import {Post} from '../interfaces/Post';
 import {connect} from '../database.utils';
 
-export async function selectPostByPostId(postId: string) {
+export const selectPostByPostId = async (postId: string) => {
 	try {
 		const mysqlConnection = await connect();
 
@@ -13,4 +13,4 @@ export async function selectPostByPostId(postId: string) {
 		console.error(e)
 		return undefined
 	}
-}
+};

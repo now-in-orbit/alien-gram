@@ -5,7 +5,7 @@ import {selectWholeProfileByProfileId} from "../../utils/profile/selectWholeProf
 import {updateWholeProfileByProfileId} from "../../utils/profile/updateWholeProfileByProfileId";
 import {Status} from "../../utils/interfaces/Status"
 
-export async function putProfileController(request: Request, response: Response) : Promise<Response>{
+export const putProfileController = async (request: Request, response: Response): Promise<Response> => {
     try{
         const {profileId} = request.params
         const{profileAvatarUrl, profileEmail, profileFirstName, profileLastName, profileUsername} = request.body
@@ -28,9 +28,9 @@ export async function putProfileController(request: Request, response: Response)
     } catch (error) {
         return response.json({status:400, data: null, message: error.message})
     }
-}
+};
 
-export async function getProfileByProfileId(request: Request, response: Response) : Promise<Response> {
+export const getProfileByProfileId = async (request: Request, response: Response): Promise<Response> => {
     try {
         const {profileId} = request.params;
         const mySqlResult = await selectPartialProfileByProfileId(profileId)
@@ -41,4 +41,4 @@ export async function getProfileByProfileId(request: Request, response: Response
     } catch (error) {
         return (response.json({status: 400, data: null, message: error.message}))
     }
-}
+};
