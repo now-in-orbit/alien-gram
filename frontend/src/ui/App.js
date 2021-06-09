@@ -11,8 +11,15 @@ import {Posts} from "./Posts"
 import {Transmissions} from "./Transmissions";
 import {Likes} from "./Likes";
 
-export const App = () => (
+
+
+// Import react-redux so we can use the store.
+import {Provider} from "react-redux";
+
+
+export const App = (store) => (
 	<>
+		<Provider store={store}>
 		<Navigation />
 		<BrowserRouter>
 			<Switch>
@@ -27,6 +34,7 @@ export const App = () => (
 
 			</Switch>
 		</BrowserRouter>
+		</Provider>
 
 	</>
 )

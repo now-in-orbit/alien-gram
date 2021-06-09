@@ -15,5 +15,11 @@ const misquoteSlice = createSlice({
 // Make our actions callable as function getAllMisquotes.
 export const {getAllMisquotes} = misquoteSlice.actions
 
+// Create an export to allow async calls to our action
+export const fetchAllMisquotes = () => async dispatch => {
+    const {data} = await httpConfig(`/apis/misquote/`)
+    dispatch(getAllMisquotes(data))
+}
+
 // We use export default here so that if something imports this file, they will get it by default
 export default misquoteSlice.reducer
