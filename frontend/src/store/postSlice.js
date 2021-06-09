@@ -1,6 +1,7 @@
 import _ from 'lodash';
 import {createSlice} from '@reduxjs/toolkit'
 import {httpConfig} from "../utils/httpConfig"
+import {fetchProfileByProfileId} from './profileSlice';
 
 // Define our reducer and action.
 const postSlice = createSlice({
@@ -30,7 +31,7 @@ export const fetchPostByPostProfileId = (postProfileId) => async dispatch => {
     dispatch(getPostsByProfileId(data))
 }
 
-export const fetchAllPostAndPostProfiles = () => async (dispatch, getState) => {
+export const fetchAllPostAndProfiles = () => async (dispatch, getState) => {
     await dispatch(fetchAllPosts())
     const profileIds = _.uniq(_.map(getState().posts, "postProfileId"));
     profileIds.forEach(profileId => dispatch(fetchProfileByProfileId(profileId)));

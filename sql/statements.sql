@@ -5,3 +5,4 @@ select bin_to_uuid(postId) as postId, bin_to_uuid(postProfileId) as postProfileI
 
 DROP TABLE IF EXISTS sighting;
 
+update profile set profileAvatarUrl = 'https://placebear.com/g/50/50' where profileId = uuid_to_bin('aaa0e6b2-c7a0-11eb-9729-0242ac170002')
