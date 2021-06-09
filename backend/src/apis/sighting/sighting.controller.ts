@@ -9,7 +9,7 @@ import {Post} from "../../utils/interfaces/Post";
 import {insertPost} from "../../utils/post/insertPost";
 import {ufoSightingDataDownloader} from '../../utils/data-downloader/data-downloader'
 
-export async function getAllSightingsController(request: Request, response: Response):Promise<Response | void> {
+export const getAllSightingsController = async (request: Request, response: Response): Promise<Response | void> => {
 	try {
 		const data = await selectAllSightings();
 		//return the response
@@ -19,9 +19,9 @@ export async function getAllSightingsController(request: Request, response: Resp
 		console.log(error)
 	}
 
-}
+};
 
-export async function getSightingsBySightingIdController(request: Request, response: Response): Promise<Response | void> {
+export const getSightingsBySightingIdController = async (request: Request, response: Response): Promise<Response | void> => {
 	try {
 		const data = await selectSightingBySightingId(request.params.sightingId);
 		//return response
@@ -30,9 +30,9 @@ export async function getSightingsBySightingIdController(request: Request, respo
 	} catch (error) {
 		console.log(error);
 	}
-}
-
-// export async function addSightingController(request: Request, response: Response) {
+};
+//
+// export const addSightingController = async (request: Request, response: Response) => {
 // 	try {
 // 		const data = await ufoSightingDataDownloader();
 // 		// @ts-ignore
@@ -55,4 +55,4 @@ export async function getSightingsBySightingIdController(request: Request, respo
 // 	} catch (error) {
 // 		console.log(error);
 // 	}
-// }
+// };

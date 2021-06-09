@@ -1,8 +1,8 @@
 import {Post} from "../interfaces/Post";
 import {connect} from "../database.utils";
-import {Like} from "../interfaces/like";
+import {Like} from "../interfaces/Like";
 
-export async function selectLikeByLikeId(like: Like) {
+export const selectLikeByLikeId = async (like: Like) => {
 	try {
 		const mysqlConnection = await connect();
 		const mySqlSelectQuery = 'SELECT BIN_TO_UUID(likeProfileId) as likeProfileId, BIN_TO_UUID(likePostId) as likePostId, likeDateTime FROM `like` WHERE likeProfileId = UUID_TO_BIN(:likeProfileId) AND likePostId = UUID_TO_BIN(:likePostId)'
@@ -12,4 +12,4 @@ export async function selectLikeByLikeId(like: Like) {
 	} catch (error) {
 		console.log(error)
 	}
-}
+};

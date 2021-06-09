@@ -10,7 +10,7 @@ import {selectProfileByProfileEmail} from "../../utils/profile/selectProfileByPr
 import exp from "constants";
 
 
-export async function signInController(request: Request, response: Response, nextFunction: NextFunction) {
+export const signInController = async (request: Request, response: Response, nextFunction: NextFunction) => {
 
     try {
 
@@ -65,7 +65,7 @@ export async function signInController(request: Request, response: Response, nex
     } catch (error) {
         return response.json({status: 500, data: null, message: error.message})
     }
-}
+};
 
 
 const LocalStrategy = passportLocal.Strategy;

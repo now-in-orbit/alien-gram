@@ -3,7 +3,7 @@ require('dotenv').config();
 
 // Database connection. Can use config from .env file (based on example.env) or the defaults
 let globalPool: Pool | undefined = undefined
-export async function connect () {
+export const connect = async () => {
 if (globalPool){
     return globalPool
 }
@@ -18,4 +18,4 @@ if (globalPool){
     return globalPool
 
 
-}
+};
