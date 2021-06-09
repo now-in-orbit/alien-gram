@@ -1,7 +1,7 @@
 import {connect} from "../database.utils";
 import {Transmission} from "../interfaces/Transmission";
 
-export async function selectTransmissionsByTransmissionProfileId(transmissionProfileId: string) {
+export const selectTransmissionsByTransmissionProfileId = async (transmissionProfileId: string) => {
     try {
         const mySqlConnection = await connect()
 
@@ -11,4 +11,4 @@ export async function selectTransmissionsByTransmissionProfileId(transmissionPro
     } catch (error) {
         console.log(error)
     }
-}
+};
