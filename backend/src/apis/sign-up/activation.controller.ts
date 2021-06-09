@@ -3,7 +3,7 @@ import {selectProfileByProfileActivationToken} from "../../utils/profile/selectP
 import {Profile} from "../../utils/interfaces/Profile";
 import {updateWholeProfileByProfileId} from "../../utils/profile/updateWholeProfileByProfileId";
 
-export async function activationController(request: Request, response: Response, nextFunction: NextFunction) {
+export const activationController = async (request: Request, response: Response, nextFunction: NextFunction) => {
     const {activation} = request.params
     try {
 
@@ -30,4 +30,4 @@ export async function activationController(request: Request, response: Response,
     } catch (error) {
         return response.json({status: 500, data: null, message: error.message})
     }
-}
+};

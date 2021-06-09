@@ -2,6 +2,7 @@ import {Request, Response, NextFunction} from 'express';
 import {Post} from '../../utils/interfaces/Post';
 import {selectAllPosts} from '../../utils/post/selectAllPosts'
 import {selectPostByPostProfileId} from '../../utils/post/selectPostByPostProfileId'
+import {selectPostByPostId} from '../../utils/post/selectPostByPostId'
 import {insertPost} from '../../utils/post/insertPost'
 import {updatePostByPostId} from '../../utils/post/updatePostbyPostId'
 import {Status} from "../../utils/interfaces/Status";
@@ -11,7 +12,7 @@ import {selectPartialProfileByProfileId} from "../../utils/profile/selectPartial
 
 const {validationResult} = require('express-validator');
 
-export async function getAllPostsController(request: Request, response: Response): Promise<Response | void> {
+export const getAllPostsController = async (request: Request, response: Response): Promise<Response | void> => {
 
 	try {
 		const data = await selectAllPosts();
@@ -21,9 +22,9 @@ export async function getAllPostsController(request: Request, response: Response
 	} catch (error) {
 		console.log(error);
 	}
-}
+};
 
-export async function getPostsByPostProfileIdController(request: Request, response: Response): Promise<Response | void> {
+export const getPostsByPostProfileIdController = async (request: Request, response: Response): Promise<Response | void> => {
 	// try {
 	// 	//todo ask instructors about argument required for selectPostByProfileId
 	// 	const data = await selectPostByPostProfileId(request.params.postProfileId);
@@ -43,9 +44,9 @@ export async function getPostsByPostProfileIdController(request: Request, respon
 	} catch (error) {
 		return (response.json({status: 400, data: null, message: error.message}))
 	}
-}
+};
 
-export async function addPostController(request: Request, response: Response) {
+export const addPostController = async (request: Request, response: Response) => {
 	try {
 		const {postContent} = request.body;
 		// @ts-ignore
@@ -69,17 +70,19 @@ export async function addPostController(request: Request, response: Response) {
 	} catch (error) {
 		console.log(error);
 	}
-}
+};
 
-// export async function putPostController(request: Request, response: Response) : Promise<Response>{
-// 	try {
-// 		const {postId} = request.params
-// 		const {profileAvatarUrl, profileEmail, profileUsername} = request.body
-// 		const profileIdFromSession: string = <string>request.session?.profile.profileId
-//
-// 		const performUpdate = async (partialProfile: PartialProfile) : Promise<Response> => {
-// 			const originalPost: Post = await ()
-// 		}
-//
-// 	}
-// }
+export const getPostsByPostIdController = async (request: Request, response: Response): Promise<Response | void> => {
+	try {
+		const {postId} = request.params;
+		const mySqlResult = await selectPostByPostId(postId)
+		const data = mySqlResult ?? null
+		const status: Status = {status: 200, data, message: null}
+		return response.json(status)
+
+	} catch (error) {
+		return (response.json({status: 400, data: null, message: error.message}))
+	}
+};
+
+

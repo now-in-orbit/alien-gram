@@ -7,11 +7,12 @@ import {Post} from "../../utils/interfaces/Post";
 import {insertTransmission} from '../../utils/transmission/insertTransmission'
 import {selectAllTransmissions} from "../../utils/transmission/selectAllTransmissions";
 import {selectTransmissionsByTransmissionIdTransmissionPostId} from "../../utils/transmission/selectTransmissionsByTransmissionIdTransmissionPostId";
+import {selectTransmissionsByTransmissionProfileId} from "../../utils/transmission/selectTransmissionsByTransmissionProfileId";
 
 
 const {validationResult} = require('express-validator')
 
-export async function getAllTransmissionsController(request: Request, response: Response): Promise<Response | void> {
+export const getAllTransmissionsController = async (request: Request, response: Response): Promise<Response | void> => {
 
     try {
         const data = await selectAllTransmissions()
@@ -20,15 +21,10 @@ export async function getAllTransmissionsController(request: Request, response: 
     } catch (error) {
         console.log(error);
     }
-}
+};
 
-// export async function getTransmissionsByTransmissionPostIdController(request: Request, response:Response, nextFunction: NextFunction) {
-//     const {transmissionPostId} = request.params
-//     const data = await selectTransmissionsByTransmissionIdTransmissionPostId(transmissionPostId)
-//     return response.json({status:200, message: null, data})
-// }
 
-export async function getTransmissionsByTransmissionPostIdController(request: Request, response: Response): Promise<Response | void> {
+export const getTransmissionsByTransmissionPostIdController = async (request: Request, response: Response): Promise<Response | void> => {
 
     try {
         const {transmissionPostId} = request.params
@@ -38,9 +34,23 @@ export async function getTransmissionsByTransmissionPostIdController(request: Re
     } catch (error) {
         console.log(error);
     }
-}
+};
 
-export async function addTransmissionController(request: Request, response: Response) {
+export const getTransmissionsByTransmissionProfileId = async (request: Request, response: Response): Promise<Response | void> => {
+
+    try {
+        const {transmissionProfileId} = request.params
+        const data = await selectTransmissionsByTransmissionProfileId(transmissionProfileId)
+        const status: Status = {status: 200, message: null, data};
+        return response.json(status);
+    } catch (error) {
+        console.log(error);
+    }
+};
+
+
+export const addTransmissionController = async (request: Request, response: Response) => {
+
     try {
 
         const {transmissionContent} = request.body
@@ -68,4 +78,4 @@ export async function addTransmissionController(request: Request, response: Resp
     } catch (error) {
         console.log(error)
     }
-}
+};

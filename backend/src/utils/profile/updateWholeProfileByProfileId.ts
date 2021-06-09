@@ -1,7 +1,7 @@
 import {connect} from "../database.utils";
 import {Profile} from "../interfaces/Profile";
 
-export async function updateWholeProfileByProfileId(profile: Profile) {
+export const updateWholeProfileByProfileId = async (profile: Profile) => {
     try {
 
         const mysqlConnection = await connect();
@@ -13,4 +13,4 @@ export async function updateWholeProfileByProfileId(profile: Profile) {
         console.error(e)
         return null
     }
-}
+};

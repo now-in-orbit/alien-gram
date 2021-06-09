@@ -1,7 +1,7 @@
 import {Post} from '../interfaces/Post';
 import {connect} from '../database.utils';
 
-export async function selectPostByPostProfileId(postProfileId: string) {
+export const selectPostByPostProfileId = async (postProfileId: string) => {
 	// const mySqlConnection = await connect();
 	// const mySqlQuery = 'select bin_to_uuid(postId) as postId, bin_to_uuid(postProfileId) as postProfileId, postContent, postDate from post where postProfileId = uuid_to_bin(:postProfileId)'
 	// const [rows] = await mySqlConnection.execute(mySqlQuery, {postProfileId})
@@ -17,4 +17,4 @@ export async function selectPostByPostProfileId(postProfileId: string) {
 		console.error(e)
 		return undefined
 	}
-}
+};

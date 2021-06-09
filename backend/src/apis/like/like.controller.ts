@@ -5,7 +5,7 @@ import {Request, Response} from 'express';
 // Interfaces (represent the DB model and types of the columns associated with a specific DB table)
 import {Status} from '../../utils/interfaces/Status';
 import {Profile} from "../../utils/interfaces/Profile";
-import {Like} from "../../utils/interfaces/like";
+import {Like} from "../../utils/interfaces/Like";
 import {selectLikeByLikeId} from "../../utils/like/selectLikeByLikeId";
 import {deleteLike} from "../../utils/like/deleteLike";
 import {insertLike} from "../../utils/like/insertLike";
@@ -13,7 +13,7 @@ import {selectLikeByLikePostId} from "../../utils/like/selectLikeByLikePostId";
 import {selectLikeByLikeProfileId} from "../../utils/like/selectLikeByLikeProfileId";
 
 
-export async function toggleLikeController(request: Request, response: Response) {
+export const toggleLikeController = async (request: Request, response: Response) => {
 
 	try {
 		const {likePostId} = request.body;
@@ -44,10 +44,10 @@ export async function toggleLikeController(request: Request, response: Response)
 	} catch (error) {
 		console.log(error);
 	}
-}
+};
 
 
-export async function getLikeByLikeProfileIdController(request: Request, response: Response) : Promise<Response> {
+export const getLikeByLikeProfileIdController = async (request: Request, response: Response): Promise<Response> => {
 	try {
 		const {likeProfileId} = request.params;
 		const mySqlResult = await selectLikeByLikeProfileId(likeProfileId)
@@ -58,10 +58,10 @@ export async function getLikeByLikeProfileIdController(request: Request, respons
 	} catch (error) {
 		return (response.json({status: 400, data: null, message: error.message}))
 	}
-}
+};
 
 
-export async function getLikeByLikePostIdController(request: Request, response: Response) : Promise<Response> {
+export const getLikeByLikePostIdController = async (request: Request, response: Response): Promise<Response> => {
 	try {
 		const {likePostId} = request.params;
 		const mySqlResult = await selectLikeByLikePostId(likePostId)
@@ -72,4 +72,4 @@ export async function getLikeByLikePostIdController(request: Request, response: 
 	} catch (error) {
 		return (response.json({status: 400, data: null, message: error.message}))
 	}
-}
+};

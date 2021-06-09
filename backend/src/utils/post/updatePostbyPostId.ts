@@ -1,7 +1,7 @@
 import { Post } from '../interfaces/Post';
 import { connect } from '../database.utils';
 
-export async function updatePostByPostId (post: Post) {
+export const updatePostByPostId = async (post: Post) => {
 	try {
 		const mySqlConnection = await connect();
 		const mySqlQuery = 'update post set postContent = :postContent, postDate = now() where postProfileId = uuid_to_bin(:profileId)';
@@ -12,4 +12,4 @@ export async function updatePostByPostId (post: Post) {
 		console.error(e)
 		return null
 	}
-}
+};

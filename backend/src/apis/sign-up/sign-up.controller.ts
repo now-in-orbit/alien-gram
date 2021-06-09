@@ -13,7 +13,7 @@ const mailgun = require("mailgun-js")
 // Interfaces (represent the DB model and types of the columns associated with a specific DB table)
 
 
-export async function signupProfileController(request: Request, response: Response) : Promise<Response|undefined>  {
+export const signupProfileController = async (request: Request, response: Response): Promise<Response | undefined> => {
     try {
 
 
@@ -82,4 +82,4 @@ export async function signupProfileController(request: Request, response: Respon
 
         return response.json(status);
     }
-}
+};
