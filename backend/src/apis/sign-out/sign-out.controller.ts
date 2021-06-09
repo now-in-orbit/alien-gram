@@ -8,7 +8,6 @@ export function signOutController(request: Request, response : Response) {
     const executeSignOut = () => {
         // @ts-ignore: broken typing is requiring a callback function that is optional.
         session?.destroy()
-
     };
 
     const signOutFailed = () => {
