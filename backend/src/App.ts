@@ -13,6 +13,7 @@ import passport from "passport";
 import {passportStrategy} from "./apis/sign-in/sign-in.controller";
 import {signupRoute} from "./apis/sign-up/signupRoute";
 import {signinRoute} from "./apis/sign-in/signin.route";
+import {signOutRoute} from "./apis/sign-out/sign-out.route";
 import {sightingRoute} from './apis/sighting/sighting.route'
 import {likeRoute} from "./apis/like/like.route";
 
@@ -65,6 +66,7 @@ export class App {
 		this.app.use('/apis/profile', profileRoute)
 		this.app.use('/apis/sign-up', signupRoute)
 		this.app.use('/apis/sign-in', signinRoute)
+		this.app.use('/apis/sign-out', signOutRoute)
 		this.app.use('/apis/transmission', transmissionRoute)
 		this.app.use('/apis/sighting', sightingRoute)
 		this.app.use('/apis/like', likeRoute)
