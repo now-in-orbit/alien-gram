@@ -27,7 +27,7 @@ export const fetchAllPosts = () => async dispatch => {
 }
 
 export const fetchPostByPostProfileId = (postProfileId) => async dispatch => {
-    const {data} = await httpConfig(`/apis/postProfileId/${postProfileId}`);
+    const {data} = await httpConfig(`/apis/post/postProfileId/${postProfileId}`);
     dispatch(getPostsByProfileId(data))
 }
 

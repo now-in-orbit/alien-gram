@@ -6,7 +6,7 @@ import {
 	fetchAllPostAndPostProfiles,
 	fetchAllPostAndProfiles,
 	fetchAllPostAndProfileUsername,
-	fetchAllPosts
+	fetchAllPosts, fetchPostByPostProfileId
 } from '../store/postSlice';
 import {PostCard} from './PostCard';
 import {useDispatch, useSelector} from 'react-redux';
@@ -19,8 +19,8 @@ export const Posts = () => {
 	// This is how we make sure this component looks for our data from Redux's call to the backend.
 	const dispatch = useDispatch();
 	const initialEffects = () => {
-		// dispatch(fetchAllPosts())
-		dispatch(fetchAllPostAndProfiles());
+		dispatch(fetchAllPostAndProfiles())
+		// dispatch(fetchPostByPostProfileId());
 	};
 	React.useEffect(initialEffects, [dispatch]);
 
@@ -34,11 +34,8 @@ export const Posts = () => {
 			<Container>
 				<Row>
 					<Col>
-						<h1 className = 'text-center mt-5'>My Posts</h1>
+						<h1 className = 'text-center mt-5'>Posts</h1>
 					</Col>
-				</Row>
-				<Row>
-					<ThreadComponent />
 				</Row>
 				<Row>
 					<CardColumns className = 'p-4'>

@@ -7,6 +7,7 @@ import React from 'react';
 import {Navigation} from "./components/Navigation";
 import {Map} from "./Map"
 import {ProfileComponent} from './ProfileComponent';
+import {MyPosts} from "./MyPosts"
 import {Posts} from "./Posts"
 import {Transmissions} from "./Transmissions";
 import {Likes} from "./Likes";

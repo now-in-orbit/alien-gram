@@ -1,6 +1,6 @@
 import React from "react"
 import { Welcome } from "./Welcome"
-import {ThreadComponent} from "./components/ThreadComponent";
+import {Posts} from "./Posts";
 
 
 
@@ -8,7 +8,7 @@ export const Home = () => {
 	return (
 		<>
 			<Welcome />
-			<ThreadComponent />
+			<Posts />
 		</>
 	)
 }
