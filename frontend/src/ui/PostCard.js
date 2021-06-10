@@ -37,12 +37,19 @@ export function PostCard(props) {
 
     const FindTransmissionsContent = () => {
         const transmission = transmissions.find(transmission => transmission.transmissionPostId === post.postId)
+
+
+
         return (
             <>
+
+
                 {transmission && <h3>{transmission.transmissionContent}</h3>}
             </>
         )
     }
+
+
 
     const dispatch = useDispatch()
 

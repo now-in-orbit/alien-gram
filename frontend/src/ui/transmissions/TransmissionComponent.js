@@ -12,6 +12,7 @@ export const TransmissionComponent = () => {
 
     // Tell this component that it needs to watch for items that live outside of this component.
     // This is how we make sure this component looks for our data from Redux's call to the backend.
+
     const dispatch = useDispatch();
     const initialEffects = () => {
         dispatch(fetchAllTransmissionsAndPosts())
@@ -30,8 +31,6 @@ export const TransmissionComponent = () => {
                     <CardColumns className = 'p-4'>
                         {transmissions.map(transmission => <TransmissionCard key = {transmission.transmissionId} transmission = {transmission}  />)}
                     </CardColumns>
-                </Row>
-                <Row>
                 </Row>
             </Container>
 
