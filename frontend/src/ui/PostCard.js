@@ -50,10 +50,12 @@ export function PostCard({post}) {
         const profile = profiles.find(profile => transmission.transmissionProfileId === profile.profileId)
         return (
             <>
-                <h3>{profile.profileUsername}</h3>
+                {profile && <h3>{profile.profileUsername}</h3>}
             </>
         )
-        } else return <></>
+        } else {
+        return <></>
+        }
     }
 
 
