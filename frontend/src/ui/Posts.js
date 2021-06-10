@@ -11,6 +11,7 @@ import {
 import {PostCard} from './PostCard';
 import {useDispatch, useSelector} from 'react-redux';
 import {fetchProfileByProfileId} from '../store/profileSlice';
+import {fetchAllTransmissionsAndPosts} from "../store/transmissionSlice";
 
 export const Posts = () => {
 

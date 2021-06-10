@@ -31,6 +31,8 @@ export const TransmissionComponent = () => {
                         {transmissions.map(transmission => <TransmissionCard key = {transmission.transmissionId} transmission = {transmission}  />)}
                     </CardColumns>
                 </Row>
+                <Row>
+                </Row>
             </Container>
 
         </>

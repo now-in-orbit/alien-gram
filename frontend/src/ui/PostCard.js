@@ -4,9 +4,13 @@ import {useSelector} from 'react-redux';
 import {httpConfig} from "../utils/httpConfig";
 import {getAllPosts} from "../store/postSlice";
 import {useDispatch} from "react-redux";
+import {TransmissionComponent} from "./transmissions/TransmissionComponent";
 
 
 export function PostCard(props) {
+
+    const {post} = props
+
 
     const profiles = useSelector((state) => state.profiles ? state.profiles : null)
 
@@ -27,7 +31,6 @@ export function PostCard(props) {
         )
     }
 
-    const {post} = props
 
     //This attaches transmissions to post by postId
     const transmissions = useSelector((state) => state.transmissions ? state.transmissions : null)
