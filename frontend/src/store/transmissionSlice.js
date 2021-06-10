@@ -1,7 +1,6 @@
 import _ from 'lodash';
 import {createSlice} from '@reduxjs/toolkit'
 import {httpConfig} from "../utils/httpConfig"
-import {fetchProfileByProfileId} from './profileSlice';
 import {fetchPostByPostId, getAllPosts, getPostsByProfileId} from "./postSlice";
 
 const transmissionSlice = createSlice({
@@ -33,7 +32,7 @@ export const fetchTransmissionsByTransmissionPostId = (transmissionPostId) => as
 
 export const fetchAllTransmissionsAndPosts = () => async (dispatch, getState) => {
     await dispatch(fetchAllTransmissions())
-    const postIds = _.uniq(_.map(getState().transmissions, "transmissionPostId"));
+    const postIds = _.uniq(_.map(getState().transmission, "transmissionPostId"));
     postIds.forEach(postId => dispatch(fetchPostByPostId(postId)));
 }
 
