@@ -29,7 +29,7 @@ export const App = (store) => (
 				<Route exact path='/welcome' component={Welcome} />
 				<Route exact path='/map' component={Map} />
 				<Route exact path='/profile' component={ProfileComponent}/>
-				<Route exact path='/posts' component={Posts} />
+				<Route exact path='/posts' component={MyPosts} />
 				<Route exact path='/transmissions' component={Transmissions} />
 				<Route exact path='/likes' component={Likes} />
 

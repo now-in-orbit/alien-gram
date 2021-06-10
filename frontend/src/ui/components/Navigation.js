@@ -6,7 +6,7 @@ import {SignInModal} from './main-nav/sign-in/SignInModal';
 import {SignUpModal} from './main-nav/sign-up/SignUpModal';
 import {SignOut} from './main-nav/sign-out/SignOut'
 import {useDispatch, useSelector} from 'react-redux';
-export const  Navigation =  (props) => {
+export const  Navigation =  () => {
 
     const auth = useSelector(state => state.auth);
     const dispatch = useDispatch()
@@ -30,33 +30,38 @@ export const  Navigation =  (props) => {
             return true
         }
     }
-
+console.log(auth)
     return (
         <>
             <Navbar bg="dark" expand="lg" variant='dark'>
-                <Navbar.Brand href="Home">AlienGram</Navbar.Brand>
+                <Navbar.Brand href="/">AlienGram</Navbar.Brand>
                 <Navbar.Toggle aria-controls="basic-navbar-nav" />
                 <Navbar.Collapse id="basic-navbar-nav">
                     <Nav className="ml-auto">
                         <Nav.Link className='navlink' href="/">Home</Nav.Link>
                         <Nav.Link href="/map">Map</Nav.Link>
-                        <NavDropdown title="Profile" id="basic-nav-dropdown">
+                        {auth ? (
+                            <>
+                        <NavDropdown title={auth?.profileUsername ?? ""} id="basic-nav-dropdown">
                             <NavDropdown.Item href="/Profile">My Profile</NavDropdown.Item>
-                            <NavDropdown.Item href="/Posts">Posts</NavDropdown.Item>
+                            <NavDropdown.Item href="/MyPosts">My Posts</NavDropdown.Item>
                             <NavDropdown.Item href="/Transmissions">Transmissions</NavDropdown.Item>
                             <NavDropdown.Item href="/Likes">Likes</NavDropdown.Item>
                         </NavDropdown>
-                        {isModalOpen()  &&  (
+                            <SignOut/>
+                            </>
+                        ):(
+                        isModalOpen()  &&  (
                             <>
                                 <SignUpModal/>
                                 <SignInModal show={show} handleClose={handleClose} handleShow={handleShow}/>
                             </>
-                        )}
-                        <SignOut/>
+                        ))}
                     </Nav>
                 </Navbar.Collapse>
             </Navbar>
         </>
-
     )
 }
+
+
