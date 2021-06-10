@@ -29,6 +29,18 @@ export function PostCard(props) {
 
     const {post} = props
 
+    //This attaches transmissions to post by postId
+    const transmissions = useSelector((state) => state.transmissions ? state.transmissions : null)
+
+    const FindTransmissionsContent = () => {
+        const transmission = transmissions.find(transmission => transmission.transmissionPostId === post.postId)
+        return (
+            <>
+                {transmission && <h3>{transmission.transmissionContent}</h3>}
+            </>
+        )
+    }
+
     const dispatch = useDispatch()
 
     const clickLike = () => {
@@ -57,6 +69,7 @@ export function PostCard(props) {
                         </div>
                     </Card.Text>
                     <button onClick={clickLike}>{post.likeCount}<span role="img" aria-label="thumbs up emoji">👍️</span></button>
+                    <FindTransmissionsContent />
                 </div>
             </Card>
         </>
