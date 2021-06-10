@@ -2,7 +2,7 @@ import _ from 'lodash';
 import {createSlice} from '@reduxjs/toolkit'
 import {httpConfig} from "../utils/httpConfig"
 import {fetchProfileByProfileId} from './profileSlice';
-import {getAllPosts, getPostsByProfileId} from "./postSlice";
+import {fetchPostByPostId, getAllPosts, getPostsByProfileId} from "./postSlice";
 
 const transmissionSlice = createSlice({
     name: "transmissions",
@@ -38,4 +38,4 @@ export const fetchAllTransmissionsAndPosts = () => async (dispatch, getState) =>
 }
 
 // We use export default here so that if something imports this file, they will get it by default
-export default postSlice.reducer
+export default transmissionSlice.reducer

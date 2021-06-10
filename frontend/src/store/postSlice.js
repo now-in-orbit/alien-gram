@@ -1,7 +1,7 @@
 import _ from 'lodash';
 import {createSlice} from '@reduxjs/toolkit'
 import {httpConfig} from "../utils/httpConfig"
-import {fetchProfileByProfileId} from './profileSlice';
+import {fetchProfileByProfileId, getProfileByProfileId} from './profileSlice';
 
 // Define our reducer and action.
 const postSlice = createSlice({
@@ -18,7 +18,7 @@ const postSlice = createSlice({
 })
 
 // Make our actions callable as function getAllMisquotes.
-export const {getAllPosts, getPostsByProfileId} = postSlice.actions
+export const {getAllPosts, getPostsByProfileId, getPostByPostId} = postSlice.actions
 
 // Create an export to allow async calls to our action
 export const fetchAllPosts = () => async dispatch => {
@@ -35,6 +35,11 @@ export const fetchAllPostAndProfiles = () => async (dispatch, getState) => {
     await dispatch(fetchAllPosts())
     const profileIds = _.uniq(_.map(getState().posts, "postProfileId"));
     profileIds.forEach(profileId => dispatch(fetchProfileByProfileId(profileId)));
+}
+
+export const fetchPostByPostId = (postId) => async dispatch => {
+    const {data} = await httpConfig(`/apis/post/${postId}`);
+    dispatch(getPostByPostId(data))
 }
 
 // We use export default here so that if something imports this file, they will get it by default
