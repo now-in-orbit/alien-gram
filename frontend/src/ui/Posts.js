@@ -11,7 +11,8 @@ import {
 import {PostCard} from './PostCard';
 import {useDispatch, useSelector} from 'react-redux';
 import {fetchProfileByProfileId} from '../store/profileSlice';
-import {fetchAllTransmissionsAndPosts} from "../store/transmissionSlice";
+import {fetchAllTransmissionsAndPosts, fetchAllTransmissionsAndProfiles} from "../store/transmissionSlice";
+import {TransmissionCard} from "./transmissions/TransmissionCard";
 
 export const Posts = () => {
 
@@ -21,6 +22,7 @@ export const Posts = () => {
 	const dispatch = useDispatch();
 	const initialEffects = () => {
 		dispatch(fetchAllPostAndProfiles())
+		dispatch(fetchAllTransmissionsAndProfiles())
 		// dispatch(fetchPostByPostProfileId());
 	};
 	React.useEffect(initialEffects, [dispatch]);
@@ -28,7 +30,9 @@ export const Posts = () => {
 	// Render our misquotes constant - before we have our data, render the skeleton.
 	// After we have our data, render the full object with our data.
 	const posts = useSelector((state) => state.posts ? state.posts : []);
-
+	const transmissions = useSelector((state) => state.transmissions ? state.transmissions : []);
+console.log("Post:", posts)
+	console.log("transmissions:", transmissions)
 
 	return (
 		<>
@@ -43,6 +47,7 @@ export const Posts = () => {
 						{posts.map(post => <PostCard key = {post.postId} post = {post}  />)}
 					</CardColumns>
 				</Row>
+
 			</Container>
 
 		</>

@@ -7,9 +7,9 @@ import {useDispatch} from "react-redux";
 import {TransmissionComponent} from "./transmissions/TransmissionComponent";
 
 
-export function PostCard(props) {
+export function PostCard({post}) {
 
-    const {post} = props
+
 
 
     const profiles = useSelector((state) => state.profiles ? state.profiles : null)
@@ -35,18 +35,25 @@ export function PostCard(props) {
     //This attaches transmissions to post by postId
     const transmissions = useSelector((state) => state.transmissions ? state.transmissions : null)
 
-    const FindTransmissionsContent = () => {
+    const FindTransmissionsContent = (profiles) => {
         const transmission = transmissions.find(transmission => transmission.transmissionPostId === post.postId)
-
-
-
         return (
             <>
-
-
                 {transmission && <h3>{transmission.transmissionContent}</h3>}
             </>
         )
+    }
+
+    const FindTransmissionUsername = () => {
+        const transmission = transmissions.find(transmission => transmission.transmissionPostId === post.postId)
+        if (transmission) {
+        const profile = profiles.find(profile => transmission.transmissionProfileId === profile.profileId)
+        return (
+            <>
+                <h3>{profile.profileUsername}</h3>
+            </>
+        )
+        } else return <></>
     }
 
 
@@ -80,6 +87,7 @@ export function PostCard(props) {
                     </Card.Text>
                     <button onClick={clickLike}>{post.likeCount}<span role="img" aria-label="thumbs up emoji">👍️</span></button>
                     <Card.Text>
+                        <FindTransmissionUsername />
                     <FindTransmissionsContent />
                     </Card.Text>
                 </div>
