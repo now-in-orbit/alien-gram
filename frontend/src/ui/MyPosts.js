@@ -12,9 +12,8 @@ export const MyPosts = ({match}) => {
 
 	const sideEffects = () => {
 		// The dispatch function takes actions as arguments to make changes to the store/redux.
-		dispatch(fetchPostByPostProfileId(match.params.profileId));
 		dispatch(fetchProfileByProfileId(match.params.profileId));
-
+		dispatch(fetchPostByPostProfileId(match.params.postProfileId));
 	};
 
 	/**
@@ -29,7 +28,7 @@ export const MyPosts = ({match}) => {
 			? state.posts.filter(post => post.postProfileId === match.params.profileId)
 			: []
 	));
-	const profiles = useSelector(state => (
+	const profile = useSelector(state => (
 		state.profiles
 			? state.profiles[0]
 			: null
@@ -38,6 +37,7 @@ export const MyPosts = ({match}) => {
 	return (
 		<>
 			<main className="container">
+				{profile && (<h2>{profile.profileUsername}</h2>)}
 				<div className="card-group card-columns">
 					{
 						posts.map(post => <PostCard key={post.postId} post={post}/>)

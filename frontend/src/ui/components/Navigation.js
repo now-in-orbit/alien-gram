@@ -30,7 +30,6 @@ export const  Navigation =  () => {
             return true
         }
     }
-console.log(auth)
     return (
         <>
             <Navbar bg="dark" expand="lg" variant='dark'>
