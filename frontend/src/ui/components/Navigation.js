@@ -4,6 +4,7 @@ import './Navigation.css'
 import {fetchAuth} from "../../store/auth"
 import {SignInModal} from './main-nav/sign-in/SignInModal';
 import {SignUpModal} from './main-nav/sign-up/SignUpModal';
+import {SignOut} from './main-nav/sign-out/SignOut'
 import {useDispatch, useSelector} from 'react-redux';
 export const  Navigation =  (props) => {
 
@@ -51,6 +52,7 @@ export const  Navigation =  (props) => {
                                 <SignInModal show={show} handleClose={handleClose} handleShow={handleShow}/>
                             </>
                         )}
+                        <SignOut/>
                     </Nav>
                 </Navbar.Collapse>
             </Navbar>
