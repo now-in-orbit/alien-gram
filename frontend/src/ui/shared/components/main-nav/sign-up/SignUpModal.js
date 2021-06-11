@@ -12,7 +12,7 @@ export const SignUpModal = () => {
 
 	return (
 		<>
-			<Button variant="primary" onClick={handleShow}>
+			<Button variant="outline-primary" onClick={handleShow} size='sm' className='mx-2' >
 				Sign Up
 			</Button>
 

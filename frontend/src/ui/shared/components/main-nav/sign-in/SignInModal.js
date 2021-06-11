@@ -10,7 +10,7 @@ export const SignInModal = (props) => {
 
 	return (
 		<>
-			<Button variant="primary" onClick={handleShow}>
+			<Button variant="outline-primary" onClick={handleShow} size='sm'className='mx-2'>
 				Sign In
 			</Button>
 
