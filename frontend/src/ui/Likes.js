@@ -12,7 +12,6 @@ export const Likes = () => {
                     </Col>
                 </Row>
                 <Row>
-                    <ThreadComponent />
                 </Row>
             </Container>
 

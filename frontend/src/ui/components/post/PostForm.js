@@ -1,14 +1,14 @@
 import React from 'react';
-import {httpConfig} from "../../utils/http-config";
+import {httpConfig} from "../../../utils/httpConfig";
 import * as Yup from "yup";
 import {Formik} from "formik";
-import {TweetFormContent} from "./TweetFormContent";
 import { useSelector, useDispatch } from 'react-redux'
-import {fetchAllTweets} from "../../../../store/tweets";
+import {fetchAllPosts} from "../../../store/postSlice";
+import {PostFormContent} from "./PostFormContent";
 
-export const TweetForm = () => {
-    const tweet = {
-        tweetContent: "",
+export const PostForm = () => {
+    const post = {
+        postContent: "",
     };
 
     const dispatch = useDispatch()
@@ -16,20 +16,20 @@ export const TweetForm = () => {
     const auth = useSelector(state => state.auth ? state.auth : null);
 
     const validator = Yup.object().shape({
-        tweetContent: Yup.string()
-            .required("tweet content is required"),
+        postContent: Yup.string()
+            .required("post content is required"),
     });
 
-    const submitTweet = (values, {resetForm, setStatus}) => {
-        const tweetProfileId = auth?.profileId ?? null
-        const tweet = {tweetProfileId, ...values}
-        httpConfig.post("/apis/tweet/", tweet)
+    const submitPost = (values, {resetForm, setStatus}) => {
+        const postProfileId = auth?.profileId ?? null
+        const post = {postProfileId, ...values}
+        httpConfig.post("/apis/post/", post)
             .then(reply => {
                     let {message, type} = reply;
 
                     if(reply.status === 200) {
                         resetForm();
-                        dispatch(fetchAllTweets())
+                        dispatch(fetchAllPosts())
                     }
                     setStatus({message, type});
                 }
@@ -39,11 +39,11 @@ export const TweetForm = () => {
 
     return (
         <Formik
-            initialValues={tweet}
-            onSubmit={submitTweet}
+            initialValues={post}
+            onSubmit={submitPost}
             validationSchema={validator}
         >
-            {TweetFormContent}
+            {PostFormContent}
         </Formik>
 
     )
