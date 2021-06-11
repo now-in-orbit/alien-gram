@@ -1,16 +1,16 @@
 import { BrowserRouter } from 'react-router-dom';
 import { Route, Switch } from 'react-router';
-import { Home } from './Home';
+import { Home } from './home/Home';
 import { FourOhFour } from './FourOhFour';
-import { Welcome } from './Welcome';
+import { Welcome } from './home/Welcome';
 import React from 'react';
-import {Navigation} from "./components/Navigation";
+import {Navigation} from "./shared/components/main-nav/Navigation";
 import {Map} from "./Map"
-import {ProfileComponent} from './ProfileComponent';
-import {MyPosts} from "./MyPosts"
-import {Posts} from "./Posts"
-import {Transmissions} from "./Transmissions";
-import {Likes} from "./Likes";
+import {MyProfile} from './myprofile/MyProfile';
+import {MyPosts} from "./myprofile/MyPosts"
+import {Posts} from "./home/Posts"
+import {MyTransmissions} from "./myprofile/MyTransmissions";
+import {MyLikes} from "./myprofile/MyLikes";
 
 
 
@@ -28,10 +28,10 @@ export const App = (store) => (
 				<Route exact path='/fourohfour' component={FourOhFour} />
 				<Route exact path='/welcome' component={Welcome} />
 				<Route exact path='/map' component={Map} />
-				<Route exact path='/profile' component={ProfileComponent}/>
-				<Route exact path='/posts' component={Posts} />
-				<Route exact path='/transmissions' component={Transmissions} />
-				<Route exact path='/likes' component={Likes} />
+				<Route exact path='/profile' component={MyProfile}/>
+				<Route exact path='/myposts' component={MyPosts} />
+				<Route exact path='/transmissions' component={MyTransmissions} />
+				<Route exact path='/likes' component={MyLikes} />
 
 			</Switch>
 		</BrowserRouter>

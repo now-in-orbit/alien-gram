@@ -1,5 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit";
-import { httpConfig } from "../utils/httpConfig"
+import { httpConfig } from "../ui/shared/utils/httpConfig"
 
 const profileSlice = createSlice({
     name: "profiles",

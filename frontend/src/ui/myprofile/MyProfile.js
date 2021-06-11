@@ -2,7 +2,7 @@ import React from "react"
 import {Container, Row, Col, Image, Form, Button} from 'react-bootstrap'
 
 
-export const ProfileComponent = () => {
+export const MyProfile = () => {
 	return (
 		<>
 			<Container className='my-5'>

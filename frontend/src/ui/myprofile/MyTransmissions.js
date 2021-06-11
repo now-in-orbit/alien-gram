@@ -1,8 +1,9 @@
 import React from 'react';
 import {Col, Container, Row} from "react-bootstrap";
-import {ThreadComponent} from "./components/ThreadComponent";
+import {TransmissionComponent} from "../shared/components/transmissions/TransmissionComponent";
 
-export const Transmissions = () => {
+
+export const MyTransmissions = () => {
     return (
         <>
             <Container>
@@ -12,7 +13,7 @@ export const Transmissions = () => {
                     </Col>
                 </Row>
                 <Row>
-                    <ThreadComponent />
+                    <TransmissionComponent />
                 </Row>
             </Container>
 

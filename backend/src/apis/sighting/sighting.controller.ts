@@ -31,28 +31,3 @@ export const getSightingsBySightingIdController = async (request: Request, respo
 		console.log(error);
 	}
 };
-//
-// export const addSightingController = async (request: Request, response: Response) => {
-// 	try {
-// 		const data = await ufoSightingDataDownloader();
-// 		// @ts-ignore
-// 		const {sightingCity, sightingSummary, sightingDateTime} = data;
-//
-//
-// 		const sighting: Sighting = {
-// 			sightingId: null,
-// 			sightingCity,
-// 			sightingSummary,
-// 			sightingDateTime,
-// 		}
-// 		const result = await insertSighting(sighting)
-// 		const status: Status = {
-// 			status: 200,
-// 			message: result ?? 'Sighting created successfully!',
-// 			data: null
-// 		};
-// 		return response.json(status);
-// 	} catch (error) {
-// 		console.log(error);
-// 	}
-// };

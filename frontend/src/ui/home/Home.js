@@ -4,6 +4,9 @@ import {Posts} from "./Posts";
 
 
 
+
+
+
 export const Home = () => {
 	return (
 		<>

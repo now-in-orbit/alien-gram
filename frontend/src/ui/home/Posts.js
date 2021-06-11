@@ -1,16 +1,11 @@
 import React from 'react';
 import {CardColumns, Col, Container, Row} from 'react-bootstrap';
-import {ThreadComponent} from './components/ThreadComponent';
 //change misquotes to correct api
-import {
-	fetchAllPostAndPostProfiles,
-	fetchAllPostAndProfiles,
-	fetchAllPostAndProfileUsername,
-	fetchAllPosts, fetchPostByPostProfileId
-} from '../store/postSlice';
-import {PostCard} from './PostCard';
+import {fetchAllPostAndProfiles} from '../../store/postSlice';
+import {PostCard} from '../shared/components/PostCard';
 import {useDispatch, useSelector} from 'react-redux';
-import {fetchProfileByProfileId} from '../store/profileSlice';
+import {fetchAllTransmissionsAndProfiles} from '../../store/transmissionSlice';
+import {PostModal} from '../shared/components/main-nav/post/PostModal';
 
 export const Posts = () => {
 
@@ -20,6 +15,7 @@ export const Posts = () => {
 	const dispatch = useDispatch();
 	const initialEffects = () => {
 		dispatch(fetchAllPostAndProfiles())
+		dispatch(fetchAllTransmissionsAndProfiles())
 		// dispatch(fetchPostByPostProfileId());
 	};
 	React.useEffect(initialEffects, [dispatch]);
@@ -27,11 +23,18 @@ export const Posts = () => {
 	// Render our misquotes constant - before we have our data, render the skeleton.
 	// After we have our data, render the full object with our data.
 	const posts = useSelector((state) => state.posts ? state.posts : []);
-
+	const transmissions = useSelector((state) => state.transmissions ? state.transmissions : []);
+console.log("Post:", posts)
+	console.log("transmissions:", transmissions)
 
 	return (
 		<>
 			<Container>
+				<Row>
+					<Col>
+						<PostModal />
+					</Col>
+				</Row>
 				<Row>
 					<Col>
 						<h1 className = 'text-center mt-5'>Posts</h1>
@@ -42,6 +45,7 @@ export const Posts = () => {
 						{posts.map(post => <PostCard key = {post.postId} post = {post}  />)}
 					</CardColumns>
 				</Row>
+
 			</Container>
 
 		</>
