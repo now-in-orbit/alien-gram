@@ -10,7 +10,7 @@ export const profileValidator : Schema = {
         escape: true,
         trim: true,
         isLength: {
-            errorMessage: 'profileAtHandle must be between seven and thirty two characters',
+            errorMessage: 'profileUsername must be between seven and thirty two characters',
             options: {min:7, max: 32 }
         }
     },

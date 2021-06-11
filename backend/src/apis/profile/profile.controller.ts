@@ -23,7 +23,7 @@ export const putProfileController = async (request: Request, response: Response)
         }
 
         return profileId === profileIdFromSession
-        ? performUpdate({profileId, profileAvatarUrl, profileEmail, profileUsername})
+        ? performUpdate({profileId, profileAvatarUrl, profileEmail, profileFirstName, profileLastName, profileUsername})
         : updateFailed("You are not allowed to perform this action")
     } catch (error) {
         return response.json({status:400, data: null, message: error.message})
