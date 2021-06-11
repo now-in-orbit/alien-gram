@@ -1,18 +1,18 @@
 import React from 'react';
 import {CardColumns, Col, Container, Row} from 'react-bootstrap';
-import {ThreadComponent} from './components/ThreadComponent';
+import {ThreadComponent} from '../shared/components/ThreadComponent';
 //change misquotes to correct api
 import {
 	fetchAllPostAndPostProfiles,
 	fetchAllPostAndProfiles,
 	fetchAllPostAndProfileUsername,
 	fetchAllPosts, fetchPostByPostProfileId
-} from '../store/postSlice';
-import {PostCard} from './PostCard';
+} from '../../store/postSlice';
+import {PostCard} from '../shared/components/PostCard';
 import {useDispatch, useSelector} from 'react-redux';
-import {fetchProfileByProfileId} from '../store/profileSlice';
-import {fetchAllTransmissionsAndPosts, fetchAllTransmissionsAndProfiles} from "../store/transmissionSlice";
-import {TransmissionCard} from "./transmissions/TransmissionCard";
+import {fetchProfileByProfileId} from '../../store/profileSlice';
+import {fetchAllTransmissionsAndPosts, fetchAllTransmissionsAndProfiles} from "../../store/transmissionSlice";
+import {TransmissionCard} from "../shared/components/transmissions/TransmissionCard";
 
 export const Posts = () => {
 

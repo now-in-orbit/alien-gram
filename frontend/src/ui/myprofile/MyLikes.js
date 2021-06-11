@@ -1,8 +1,8 @@
 import React from 'react';
 import {Col, Container, Row} from "react-bootstrap";
-import {ThreadComponent} from "./components/ThreadComponent";
+import {ThreadComponent} from "../shared/components/ThreadComponent";
 
-export const Likes = () => {
+export const MyLikes = () => {
     return (
         <>
             <Container>

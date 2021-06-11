@@ -2,7 +2,7 @@ import React from "react";
 import Card from "react-bootstrap/Card";
 import {useSelector} from 'react-redux';
 import {httpConfig} from "../utils/httpConfig";
-import {getAllPosts} from "../store/postSlice";
+import {getAllPosts} from "../../../store/postSlice";
 import {useDispatch} from "react-redux";
 import {TransmissionComponent} from "./transmissions/TransmissionComponent";
 

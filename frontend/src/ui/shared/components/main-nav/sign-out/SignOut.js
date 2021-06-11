@@ -1,7 +1,7 @@
 import React from 'react'
 import {useDispatch} from 'react-redux'
-import { httpConfig } from '../../../../utils/httpConfig'
-import { getAuth } from '../../../../store/auth'
+import { httpConfig } from '../../../utils/httpConfig'
+import { getAuth } from '../../../../../store/auth'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import {Button} from "react-bootstrap"
 

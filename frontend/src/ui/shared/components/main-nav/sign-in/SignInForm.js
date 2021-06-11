@@ -1,11 +1,11 @@
 import React from 'react';
-import {httpConfig} from "../../../../utils/httpConfig";
+import {httpConfig} from "../../../utils/httpConfig";
 import {Formik} from "formik";
 import * as Yup from "yup";
 import {SignInFormContent} from "./SignInFormContent";
 import {useDispatch} from "react-redux";
 import * as jwtDecode from 'jwt-decode'
-import { getAuth } from '../../../../store/auth'
+import { getAuth } from '../../../../../store/auth'
 
 export const SignInForm = () => {
 

@@ -1,7 +1,7 @@
 import React from "react"
 import { Welcome } from "./Welcome"
 import {Posts} from "./Posts";
-import {TransmissionComponent} from "./transmissions/TransmissionComponent";
+import {TransmissionComponent} from "../shared/components/transmissions/TransmissionComponent";
 
 
 
