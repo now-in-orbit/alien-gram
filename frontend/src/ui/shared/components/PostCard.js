@@ -87,17 +87,11 @@ export function PostCard({post}) {
                             {post.postContent}
                         </div>
                     </Card.Text>
-<<<<<<< HEAD:frontend/src/ui/PostCard.js
-                    <div>
-                        <button onClick={clickLike}>{post.likeCount}<span role="img" aria-label="thumbs up emoji">👍️</span></button>
-                    </div>
-=======
                     <button onClick={clickLike}>{post.likeCount}<span role="img" aria-label="thumbs up emoji">👍️</span></button>
                     <Card.Text>
                         <FindTransmissionUsername />
                     <FindTransmissionsContent />
                     </Card.Text>
->>>>>>> 6d8b769c0cc3f26a719358296f6fe38eed32e08b:frontend/src/ui/shared/components/PostCard.js
                 </div>
             </Card>
         </>
