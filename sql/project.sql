@@ -4,10 +4,10 @@
 -- never ever ever ever ever ever ever ever ever ever ever ever ever ever ever ever ever ever ever ever
 -- do this on live data!!!!
 
+DROP TABLE IF EXISTS `like`;
 DROP TABLE IF EXISTS image;
 DROP TABLE IF EXISTS tweet;
 DROP TABLE IF EXISTS sighting;
-DROP TABLE IF EXISTS `like`;
 DROP TABLE IF EXISTS transmission;
 DROP TABLE IF EXISTS post;
 DROP TABLE IF EXISTS profile;
