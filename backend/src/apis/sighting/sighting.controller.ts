@@ -7,7 +7,7 @@ import {Status} from '../../utils/interfaces/Status';
 import {selectPostByPostProfileId} from "../../utils/post/selectPostByPostProfileId";
 import {Post} from "../../utils/interfaces/Post";
 import {insertPost} from "../../utils/post/insertPost";
-import {ufoSightingDataDownloader} from '../../utils/data-downloader/data-downloader'
+import {selectSightingCity} from "../../utils/sighting/selectSightingCity";
 
 export const getAllSightingsController = async (request: Request, response: Response): Promise<Response | void> => {
 	try {
@@ -25,6 +25,18 @@ export const getSightingsBySightingIdController = async (request: Request, respo
 	try {
 		const data = await selectSightingBySightingId(request.params.sightingId);
 		//return response
+		const status: Status = {status: 200, message: null, data};
+		return response.json(status);
+	} catch (error) {
+		console.log(error);
+	}
+};
+
+export const getSightingCitiesController = async (request: Request, response: Response): Promise<Response | void> => {
+
+	try {
+		const data = await selectSightingCity();
+		// return the response
 		const status: Status = {status: 200, message: null, data};
 		return response.json(status);
 	} catch (error) {

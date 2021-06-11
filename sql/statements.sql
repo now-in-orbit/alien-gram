@@ -7,3 +7,8 @@ DROP TABLE IF EXISTS sighting;
 
 
 insert into post(postId, postProfileId, postContent, postDate) values (uuid_to_bin(uuid()), uuid_to_bin('c09a5b7a-ca08-11eb-827a-0242ac1d0002'), 'I saw a little green man eat my dog', now())
+
+SELECT sightingCity FROM sighting GROUP BY sightingCity HAVING COUNT(sightingCity) = 1
+
+SELECT sightingLatitude FROM sighting GROUP BY sightingLatitude HAVING COUNT(sightingLatitude) = 1;
+SELECT sightingLongitude FROM sighting GROUP BY sightingLongitude HAVING COUNT(sightingLongitude) = 1;

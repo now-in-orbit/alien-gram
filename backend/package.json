@@ -35,6 +35,7 @@
     "express": "^4.17.1",
     "express-session": "^1.17.0",
     "express-validator": "^6.3.0",
+    "geocodio-library-node": "^1.3.3",
     "jsonwebtoken": "^8.5.1",
     "lodash": "^4.17.21",
     "mailgun-js": "^0.22.0",

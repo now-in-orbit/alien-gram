@@ -86,6 +86,8 @@ CREATE TABLE sighting
     sightingId       BINARY(16)  NOT NULL,
     sightingCity     VARCHAR(64) NOT NULL,
     sightingSummary  VARCHAR(1000),
+    sightingLatitude VARCHAR(20),
+    sightingLongitude VARCHAR(20),
     sightingDateTime DATETIME(6) NOT NULL, -- index the foreign keys...what foreign keys?
     PRIMARY KEY (sightingId)
 );
