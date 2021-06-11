@@ -1,18 +1,19 @@
 import React from 'react';
 import {Col, Container, Row} from "react-bootstrap";
+import {TransmissionComponent} from "./transmissions/TransmissionComponent";
 
 
-export const Likes = () => {
+export const MyTransmissions = () => {
     return (
         <>
             <Container>
                 <Row>
                     <Col>
-                        <h1 className="text-center mt-5">My Likes</h1>
+                        <h1 className="text-center mt-5">My Transmissions</h1>
                     </Col>
                 </Row>
                 <Row>
-                    <ThreadComponent />
+                    <TransmissionComponent />
                 </Row>
             </Container>
 

@@ -1,6 +1,6 @@
 import _ from 'lodash';
 import {createSlice} from '@reduxjs/toolkit'
-import {httpConfig} from "../utils/httpConfig"
+import {httpConfig} from "../ui/shared/utils/httpConfig"
 import {fetchAllPosts, fetchPostByPostId, getAllPosts, getPostsByProfileId} from "./postSlice";
 import {fetchProfileByProfileId} from "./profileSlice";
 

@@ -1,7 +1,7 @@
 import React from "react";
 import './Welcome.css';
 import {Container, Row, Col} from 'react-bootstrap';
-import {Ufo} from "../ufo-animation/Ufo"
+import {Ufo} from "./ufo-animation/Ufo"
 
 
 export const Welcome = () => {
