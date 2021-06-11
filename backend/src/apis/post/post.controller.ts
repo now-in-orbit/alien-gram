@@ -25,15 +25,6 @@ export const getAllPostsController = async (request: Request, response: Response
 };
 
 export const getPostsByPostProfileIdController = async (request: Request, response: Response): Promise<Response | void> => {
-	// try {
-	// 	//todo ask instructors about argument required for selectPostByProfileId
-	// 	const data = await selectPostByPostProfileId(request.params.postProfileId);
-	// 	//return response
-	// 	const status: Status = {status: 200, message: null, data};
-	// 	return response.json(status);
-	// } catch (error) {
-	// 	console.log(error);
-	// }
 	try {
 		const {postProfileId} = request.params;
 		const mySqlResult = await selectPostByPostProfileId(postProfileId)
@@ -45,12 +36,6 @@ export const getPostsByPostProfileIdController = async (request: Request, respon
 		return (response.json({status: 400, data: null, message: error.message}))
 	}
 };
-
-
-
-
-
-
 
 export const addPostController = async (request: Request, response: Response) => {
 	try {
@@ -64,6 +49,7 @@ export const addPostController = async (request: Request, response: Response) =>
 			postProfileId,
 			postContent,
 			postDate: null,
+			//todo update when can upload images
 			postImageUrl: null
 		};
 
@@ -78,12 +64,6 @@ export const addPostController = async (request: Request, response: Response) =>
 		console.log(error);
 	}
 };
-
-
-
-
-
-
 
 export const getPostsByPostIdController = async (request: Request, response: Response): Promise<Response | void> => {
 	try {
