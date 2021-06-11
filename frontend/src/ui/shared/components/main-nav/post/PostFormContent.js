@@ -1,7 +1,8 @@
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import React from "react";
+import {FormDebugger} from "../FormDebugger";
 
-export const TweetFormContent = (props) => {
+export const PostFormContent = (props) => {
     const {
         status,
         values,
@@ -29,9 +30,9 @@ export const TweetFormContent = (props) => {
                         </div>
                         <input
                             className="form-control"
-                            name="tweetContent"
+                            name="postContent"
                             type="text"
-                            value={values.tweetContent}
+                            value={values.postContent}
                             placeholder="Say Something"
                             onChange={handleChange}
                             onBlur={handleBlur}
@@ -39,9 +40,9 @@ export const TweetFormContent = (props) => {
                         />
                     </div>
                     {
-                        errors.tweetContent && touched.tweetContent && (
+                        errors.postContent && touched.postContent && (
                             <div className="alert alert-danger">
-                                {errors.tweetContent}
+                                {errors.postContent}
                             </div>
                         )
                     }

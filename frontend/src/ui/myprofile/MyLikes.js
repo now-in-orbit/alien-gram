@@ -11,7 +11,6 @@ export const MyLikes = () => {
                     </Col>
                 </Row>
                 <Row>
-
                 </Row>
             </Container>
 
