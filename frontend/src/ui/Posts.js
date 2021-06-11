@@ -1,6 +1,6 @@
 import React from 'react';
 import {CardColumns, Col, Container, Row} from 'react-bootstrap';
-import {ThreadComponent} from './components/ThreadComponent';
+
 //change misquotes to correct api
 import {
 	fetchAllPostAndPostProfiles,

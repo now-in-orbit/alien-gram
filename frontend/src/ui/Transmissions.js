@@ -1,6 +1,6 @@
 import React from 'react';
 import {Col, Container, Row} from "react-bootstrap";
-import {ThreadComponent} from "./components/ThreadComponent";
+
 import {TransmissionComponent} from "./transmissions/TransmissionComponent";
 
 export const Transmissions = () => {
