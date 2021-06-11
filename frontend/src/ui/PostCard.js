@@ -56,7 +56,9 @@ export function PostCard(props) {
                             {post.postContent}
                         </div>
                     </Card.Text>
-                    <button onClick={clickLike}>{post.likeCount}<span role="img" aria-label="thumbs up emoji">👍️</span></button>
+                    <div>
+                        <button onClick={clickLike}>{post.likeCount}<span role="img" aria-label="thumbs up emoji">👍️</span></button>
+                    </div>
                 </div>
             </Card>
         </>
