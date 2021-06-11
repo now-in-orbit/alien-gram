@@ -1,17 +1,11 @@
 import React from 'react';
 import {CardColumns, Col, Container, Row} from 'react-bootstrap';
 //change misquotes to correct api
-import {
-	fetchAllPostAndPostProfiles,
-	fetchAllPostAndProfiles,
-	fetchAllPostAndProfileUsername,
-	fetchAllPosts, fetchPostByPostProfileId
-} from '../../store/postSlice';
+import {fetchAllPostAndProfiles} from '../../store/postSlice';
 import {PostCard} from '../shared/components/PostCard';
 import {useDispatch, useSelector} from 'react-redux';
-import {fetchProfileByProfileId} from '../../store/profileSlice';
-import {fetchAllTransmissionsAndPosts, fetchAllTransmissionsAndProfiles} from "../../store/transmissionSlice";
-import {TransmissionCard} from "../shared/components/transmissions/TransmissionCard";
+import {fetchAllTransmissionsAndProfiles} from '../../store/transmissionSlice';
+import {PostModal} from '../shared/components/main-nav/post/PostModal';
 
 export const Posts = () => {
 
@@ -36,6 +30,11 @@ console.log("Post:", posts)
 	return (
 		<>
 			<Container>
+				<Row>
+					<Col>
+						<PostModal />
+					</Col>
+				</Row>
 				<Row>
 					<Col>
 						<h1 className = 'text-center mt-5'>Posts</h1>

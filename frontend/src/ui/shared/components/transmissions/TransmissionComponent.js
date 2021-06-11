@@ -1,14 +1,7 @@
 import React from 'react';
-import {useDispatch, useSelector} from 'react-redux';
-import {fetchAllPostAndProfiles} from "../../../../store/postSlice";
-import {CardColumns, Col, Container, Row} from "react-bootstrap";
-import {PostCard} from "../PostCard";
-import {
-    fetchAllTransmissions,
-    fetchAllTransmissionsAndPosts,
-    fetchAllTransmissionsAndProfiles
-} from "../../../../store/transmissionSlice";
-import {TransmissionCard} from "./TransmissionCard";
+import {useDispatch} from 'react-redux';
+import {CardColumns, Container, Row} from 'react-bootstrap';
+import {fetchAllTransmissionsAndPosts} from '../../../../store/transmissionSlice';
 
 
 export const TransmissionComponent = () => {

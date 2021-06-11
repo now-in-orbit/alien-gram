@@ -12,7 +12,7 @@ export const PostModal = () => {
 
     return (
         <>
-            <Button variant="primary" onClick={handleShow}>
+            <Button variant="primary" onClick={handleShow} block>
                 Create Post
             </Button>
 

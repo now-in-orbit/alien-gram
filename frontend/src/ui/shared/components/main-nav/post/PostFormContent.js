@@ -1,6 +1,6 @@
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import React from "react";
-import {FormDebugger} from "../FormDebugger";
+import {FormDebugger} from '../../FormDebugger';
 
 export const PostFormContent = (props) => {
     const {

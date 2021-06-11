@@ -3,7 +3,7 @@ import {httpConfig} from "../../../utils/httpConfig";
 import * as Yup from "yup";
 import {Formik} from "formik";
 import { useSelector, useDispatch } from 'react-redux'
-import {fetchAllPosts} from "../../../store/postSlice";
+import {fetchAllPosts} from "../../../../../store/postSlice";
 import {PostFormContent} from "./PostFormContent";
 
 export const PostForm = () => {
