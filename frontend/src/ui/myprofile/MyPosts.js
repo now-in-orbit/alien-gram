@@ -4,7 +4,7 @@ import { PostCard } from '../shared/components/PostCard'
 import {fetchPostByPostProfileId} from '../../store/postSlice'
 import {fetchProfileByProfileId} from '../../store/profileSlice';
 import {useJwtToken} from '../shared/components/useJwtToken';
-
+import {Col, Container, Row} from 'react-bootstrap';
 
 export const MyPosts = ({match}) => {
 	const {authenticatedUser, isLoading} = useJwtToken();
@@ -36,17 +36,23 @@ export const MyPosts = ({match}) => {
 			? state.profiles[0]
 			: null
 	));
-console.log(posts)
+
+
+
 	return (
 		<>
-			<main className="container">
-				{profile && (<h2>{profile.profileUsername}</h2>)}
-				<div className="card-group card-columns">
+			<Container>
+				<Row className='text-center mt-5'>
+					<Col>
+				<h1>My Posts</h1>
+					</Col>
+				</Row>
+				<div>
 					{
 						posts.map(post => <PostCard key={post.postId} post={post}/>)
 					}
 				</div>
-			</main>
+			</Container>
 		</>
 	)
 };

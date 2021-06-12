@@ -3,6 +3,7 @@ import ReactMapGL from 'react-map-gl';
 import 'mapbox-gl/dist/mapbox-gl.css';
 import {Col, Container, Image, Row} from "react-bootstrap";
 import {Pin} from './Pin';
+import useMapControl from 'react-map-gl/dist/es6/components/use-map-control';
 
 
 export const Map = () => {
@@ -94,12 +95,13 @@ export const Map = () => {
         longitude: -105.8701,
         zoom: 5.5
     });
+
     return (
         <>
             <Container fluid className='mt-5'>
                 <Row>
                     <Col md={4}>
-                        <p>Pokem ipsum dolor sit amet Celebi Druddigon lorem ipsum dolor sit amet Koffing Anorith Magnezone. Charmander Flaaffy Starmie Buneary Spheal Totodile Fire. Pokemon The Movie 2000 Registeel Vanilluxe Kirlia Dragon Swift Golbat. Glitch City Rattata Lavender Town Happiny Anorith Cacnea Alomomola. Anim id est laborum Staryu Yellow Oshawott Tangrowth Brock Machop.
+                        <p >Pokem ipsum dolor sit amet Celebi Druddigon lorem ipsum dolor sit amet Koffing Anorith Magnezone. Charmander Flaaffy Starmie Buneary Spheal Totodile Fire. Pokemon The Movie 2000 Registeel Vanilluxe Kirlia Dragon Swift Golbat. Glitch City Rattata Lavender Town Happiny Anorith Cacnea Alomomola. Anim id est laborum Staryu Yellow Oshawott Tangrowth Brock Machop.
 
                             V for victory Klink fishing rod Drapion Numel Leech Life Luvdisc. Vermilion City Slowbro Poliwag Poliwrath Terrakion Croconaw Frillish. Lavender Town Klinklang surrender now or prepare to fight Simipour searching far and wide Rage Sharpedo. Razor Leaf Landorus Rayquaza Walrein Lavender Town Emolga Rainbow Badge. Grass Victini Espeon Feebas Magikarp Espeon Mawile.
 
@@ -116,7 +118,7 @@ export const Map = () => {
                             onViewportChange={(viewport) => setViewport(viewport)}
                             mapStyle="mapbox://styles/mapbox/dark-v9"
                         >
-                            {points.map((point, index) => <Pin lat={point.lat} lng={point.lng} index={index} key={index}/>)}
+                            {points.map((point, index) => <Pin lat={point.lat} lng={point.lng} index={index} key={index} />)}
                         </ReactMapGL>
                     </Col>
                 </Row>

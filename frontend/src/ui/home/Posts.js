@@ -14,8 +14,8 @@ export const Posts = () => {
 	// This is how we make sure this component looks for our data from Redux's call to the backend.
 	const dispatch = useDispatch();
 	const initialEffects = () => {
-		dispatch(fetchAllPostAndProfiles())
-		dispatch(fetchAllTransmissionsAndProfiles())
+		dispatch(fetchAllPostAndProfiles());
+		dispatch(fetchAllTransmissionsAndProfiles());
 		// dispatch(fetchPostByPostProfileId());
 	};
 	React.useEffect(initialEffects, [dispatch]);
@@ -24,8 +24,8 @@ export const Posts = () => {
 	// After we have our data, render the full object with our data.
 	const posts = useSelector((state) => state.posts ? state.posts : []);
 	const transmissions = useSelector((state) => state.transmissions ? state.transmissions : []);
-console.log("Post:", posts)
-	console.log("transmissions:", transmissions)
+	console.log('Post:', posts);
+	console.log('transmissions:', transmissions);
 
 	return (
 		<>
@@ -40,11 +40,11 @@ console.log("Post:", posts)
 						<h1 className = 'text-center mt-5'>Posts</h1>
 					</Col>
 				</Row>
-				<Row>
-					<CardColumns className = 'p-4'>
-						{posts.map(post => <PostCard key = {post.postId} post = {post}  />)}
-					</CardColumns>
-				</Row>
+
+				<div className = 'p-4'>
+					{posts.map(post => <PostCard key = {post.postId} post = {post} />)}
+				</div>
+
 
 			</Container>
 

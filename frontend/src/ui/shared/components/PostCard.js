@@ -5,6 +5,7 @@ import {httpConfig} from "../utils/httpConfig";
 import {getAllPosts} from "../../../store/postSlice";
 import {useDispatch} from "react-redux";
 import {TransmissionComponent} from "./transmissions/TransmissionComponent";
+import {Button, CardDeck} from 'react-bootstrap';
 
 
 export function PostCard({post}) {
@@ -26,7 +27,7 @@ export function PostCard({post}) {
         const profile = profiles.find(profile => post.postProfileId === profile.profileId)
         return (
             <>
-                {profile && <img src={profile.profileAvatarUrl} alt='Avatar'/>}
+                {profile && <img className='fluid' src={profile.profileAvatarUrl} alt='Avatar'/>}
             </>
         )
     }
@@ -77,23 +78,34 @@ export function PostCard({post}) {
 
     return (
         <>
-            <Card className="card text-center">
-                <div className="card-body">
-                    <div>
-                        <FindAvatarUrl/><FindUsername/>
-                    </div>
+            {/*<Card className="card text-center">*/}
+            {/*    <div className="card-body">*/}
+            {/*        <div>*/}
+            {/*            <FindAvatarUrl/><FindUsername/>*/}
+            {/*        </div>*/}
+            {/*        <Card.Text>*/}
+            {/*            <div>*/}
+            {/*                {post.postContent}*/}
+            {/*            </div>*/}
+            {/*        </Card.Text>*/}
+            {/*        <button onClick={clickLike}>{post.likeCount}<span role="img" aria-label="thumbs up emoji">👍️</span></button>*/}
+            {/*        <Card.Text>*/}
+            {/*            <FindTransmissionUsername />*/}
+            {/*        <FindTransmissionsContent />*/}
+            {/*        </Card.Text>*/}
+            {/*    </div>*/}
+            {/*</Card>*/}
+
+            <Card className='my-5 border-success'>
+                <Card.Header><FindAvatarUrl/><FindUsername/></Card.Header>
+                <Card.Body>
                     <Card.Text>
-                        <div>
-                            {post.postContent}
-                        </div>
+                        {post.postContent}
                     </Card.Text>
-                    <button onClick={clickLike}>{post.likeCount}<span role="img" aria-label="thumbs up emoji">👍️</span></button>
-                    <Card.Text>
-                        <FindTransmissionUsername />
-                    <FindTransmissionsContent />
-                    </Card.Text>
-                </div>
+                    <Button className='float-right' onClick={clickLike}>{post.likeCount}<span role="img" aria-label="thumbs up emoji">👍️</span></Button>
+                </Card.Body>
             </Card>
+
         </>
     )
 }
