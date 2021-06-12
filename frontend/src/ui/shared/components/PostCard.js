@@ -36,10 +36,18 @@ export function PostCard({post}) {
     const transmissions = useSelector((state) => state.transmissions ? state.transmissions : null)
 
     const FindTransmissionsContent = (profiles) => {
-        const transmission = transmissions.find(transmission => transmission.transmissionPostId === post.postId)
+        const transmission = []
+
+            transmissions.map(transmissionArg => {
+            if (transmissionArg.transmissionPostId === post.postId) {
+                transmission.push(transmissionArg)
+            }
+            else {
+            }
+        })
         return (
             <>
-                {transmission && <h3>{transmission.transmissionContent}</h3>}
+                {transmission && <h3>{transmission.map(transmission => transmission.transmissionContent)}</h3>}
             </>
         )
     }
