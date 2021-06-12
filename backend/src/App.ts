@@ -16,6 +16,7 @@ import {signinRoute} from "./apis/sign-in/signin.route";
 import {signOutRoute} from "./apis/sign-out/sign-out.route";
 import {sightingRoute} from './apis/sighting/sighting.route'
 import {likeRoute} from "./apis/like/like.route";
+import {dirtySightingRoute} from "./apis/dirty-sighting/dirty.sighting.route";
 
 
 // The following class creates the app and instantiates the server
@@ -70,6 +71,7 @@ export class App {
 		this.app.use('/apis/transmission', transmissionRoute)
 		this.app.use('/apis/sighting', sightingRoute)
 		this.app.use('/apis/like', likeRoute)
+		this.app.use('/apis/dirty', dirtySightingRoute)
 	}
 
 	// starts the server and tells the terminal to post a message that the server is running and on what port

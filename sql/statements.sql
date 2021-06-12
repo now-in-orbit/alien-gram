@@ -12,3 +12,13 @@ SELECT sightingCity FROM sighting GROUP BY sightingCity HAVING COUNT(sightingCit
 
 SELECT sightingLatitude FROM sighting GROUP BY sightingLatitude HAVING COUNT(sightingLatitude) = 1;
 SELECT sightingLongitude FROM sighting GROUP BY sightingLongitude HAVING COUNT(sightingLongitude) = 1;
+select distinct(sightingLatitude), sightingLongitude from sighting;
+
+
+select sightingCity, sightingLatitude, sightingLongitude from sighting group by sightingLatitude, sightingLongitude;
+
+select sightingCity, sightingSummary, distinct(sightinglatitude) from sighting;
+
+
+select sightingCity, sightingSummary, sightingLatitude, sightingLongitude, sightingDateTime from sighting where sightingLatitude = '35.199592';
+
