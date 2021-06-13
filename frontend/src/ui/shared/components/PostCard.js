@@ -2,12 +2,14 @@ import React from "react";
 import Card from "react-bootstrap/Card";
 import {useSelector} from 'react-redux';
 import {httpConfig} from "../utils/httpConfig";
-import {getAllPosts} from "../../../store/postSlice";
+import {fetchAllPostAndProfiles, fetchAllPosts, getAllPosts} from "../../../store/postSlice";
 import {useDispatch} from "react-redux";
 import {Col} from "react-bootstrap";
 import {TransmissionModal} from "./transmissions/TransmissionModal";
 import {TransmissionContentForm} from "./transmissions/TransmissionContentForm";
 import {TransmissionsForm} from "./transmissions/TransmissionsForm";
+import {fetchAllTransmissionsAndProfiles} from "../../../store/transmissionSlice";
+import {getLikeAll} from "../../../store/LikeSlice";
 
 
 
@@ -70,6 +72,12 @@ export function PostCard({post}) {
     }
 
     const dispatch = useDispatch()
+    const initialEffects = () => {
+        dispatch(fetchAllPosts())
+
+    };
+    React.useEffect(initialEffects, [dispatch]);
+
 
     const clickLike = () => {
         httpConfig.post("/apis/like/", {likePostId: post.postId})
