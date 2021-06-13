@@ -4,7 +4,11 @@ import {useSelector} from 'react-redux';
 import {httpConfig} from "../utils/httpConfig";
 import {getAllPosts} from "../../../store/postSlice";
 import {useDispatch} from "react-redux";
-import {TransmissionComponent} from "./transmissions/TransmissionComponent";
+import {Col} from "react-bootstrap";
+import {TransmissionModal} from "./transmissions/TransmissionModal";
+import {TransmissionContentForm} from "./transmissions/TransmissionContentForm";
+import {TransmissionsForm} from "./transmissions/TransmissionsForm";
+
 
 
 export function PostCard({post}) {
@@ -35,17 +39,24 @@ export function PostCard({post}) {
     //This attaches transmissions to post by postId
     const transmissions = useSelector((state) => state.transmissions ? state.transmissions : null)
 
-    const FindTransmissionsContent = (profiles) => {
-        const transmission = transmissions.find(transmission => transmission.transmissionPostId === post.postId)
+    const FindTransmissionsContent = () => {
+
+            const postTransmissions = transmissions.filter(transmission => transmission.transmissionPostId === post.postId)
         return (
-            <>
-                {transmission && <h3>{transmission.transmissionContent}</h3>}
-            </>
-        )
+                postTransmissions.map(transmission => {
+                    return (
+
+                    <>
+                        <FindTransmissionUsername key = {transmission.transmissionId} transmission = {transmission}  />
+                        <h3>{transmission.transmissionContent}</h3>
+                    </>
+
+                    )}
+        ))
     }
 
-    const FindTransmissionUsername = () => {
-        const transmission = transmissions.find(transmission => transmission.transmissionPostId === post.postId)
+    function FindTransmissionUsername ({transmission}) {
+        // const transmission = transmissions.find(transmission => transmission.transmissionPostId === post.postId)
         if (transmission) {
         const profile = profiles.find(profile => transmission.transmissionProfileId === profile.profileId)
         return (
@@ -57,8 +68,6 @@ export function PostCard({post}) {
         return <></>
         }
     }
-
-
 
     const dispatch = useDispatch()
 
@@ -74,7 +83,6 @@ export function PostCard({post}) {
             );
     }
 
-
     return (
         <>
             <Card className="card text-center">
@@ -87,11 +95,14 @@ export function PostCard({post}) {
                             {post.postContent}
                         </div>
                     </Card.Text>
-                    <button onClick={clickLike}>{post.likeCount}<span role="img" aria-label="thumbs up emoji">👍️</span></button>
+                    <button onClick={clickLike}>{post.likeCount}<span role="img" aria-label="thumbs up emoji">👍️    </span></button>
                     <Card.Text>
-                        <FindTransmissionUsername />
+                        {/*<FindTransmissionUsername />*/}
                     <FindTransmissionsContent />
                     </Card.Text>
+                    <Col>
+                        <TransmissionModal post={post}/>
+                    </Col>
                 </div>
             </Card>
         </>

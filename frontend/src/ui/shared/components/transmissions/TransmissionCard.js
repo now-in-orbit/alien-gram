@@ -1,11 +1,11 @@
 import React from "react";
 import Card from "react-bootstrap/Card";
-import {useSelector} from 'react-redux';
 
 
 export function TransmissionCard(props) {
 
     const {transmission} = props
+
 
     return (
         <>
