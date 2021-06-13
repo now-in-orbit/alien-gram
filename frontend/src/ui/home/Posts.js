@@ -6,8 +6,11 @@ import {PostCard} from '../shared/components/PostCard';
 import {useDispatch, useSelector} from 'react-redux';
 import {fetchAllTransmissionsAndProfiles} from '../../store/transmissionSlice';
 import {PostModal} from '../shared/components/main-nav/post/PostModal';
+import {fetchAllLikes} from "../../store/LikeSlice";
 
 export const Posts = () => {
+
+
 
 
 	// Tell this component that it needs to watch for items that live outside of this component.
@@ -16,6 +19,7 @@ export const Posts = () => {
 	const initialEffects = () => {
 		dispatch(fetchAllPostAndProfiles())
 		dispatch(fetchAllTransmissionsAndProfiles())
+		dispatch(fetchAllLikes())
 		// dispatch(fetchPostByPostProfileId());
 	};
 	React.useEffect(initialEffects, [dispatch]);

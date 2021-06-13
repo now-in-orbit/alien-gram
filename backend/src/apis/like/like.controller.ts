@@ -11,6 +11,7 @@ import {deleteLike} from "../../utils/like/deleteLike";
 import {insertLike} from "../../utils/like/insertLike";
 import {selectLikeByLikePostId} from "../../utils/like/selectLikeByLikePostId";
 import {selectLikeByLikeProfileId} from "../../utils/like/selectLikeByLikeProfileId";
+import {selectLikeAll} from "../../utils/like/selectLikeAll";
 
 
 export const toggleLikeController = async (request: Request, response: Response) => {
@@ -65,6 +66,18 @@ export const getLikeByLikePostIdController = async (request: Request, response: 
 	try {
 		const {likePostId} = request.params;
 		const mySqlResult = await selectLikeByLikePostId(likePostId)
+		const data = mySqlResult ?? null
+		const status: Status = {status: 200, data, message: null}
+		return response.json(status)
+
+	} catch (error) {
+		return (response.json({status: 400, data: null, message: error.message}))
+	}
+};
+
+export const getLikeAllController = async (request: Request, response: Response): Promise<Response> => {
+	try {
+		const mySqlResult = await selectLikeAll()
 		const data = mySqlResult ?? null
 		const status: Status = {status: 200, data, message: null}
 		return response.json(status)
