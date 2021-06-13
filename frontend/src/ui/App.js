@@ -5,7 +5,7 @@ import { FourOhFour } from './FourOhFour';
 import { Welcome } from './home/Welcome';
 import React from 'react';
 import {Navigation} from "./shared/components/main-nav/Navigation";
-import {Map} from "./Map"
+import {Map} from './map/Map'
 import {MyProfile} from "./myprofile/MyProfile";
 import {MyPosts} from "./myprofile/MyPosts"
 import {Posts} from "./home/Posts"
