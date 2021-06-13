@@ -10,16 +10,15 @@ import {fetchAllLikes} from "../../store/LikeSlice";
 
 export const Posts = () => {
 
-
-
-
 	// Tell this component that it needs to watch for items that live outside of this component.
 	// This is how we make sure this component looks for our data from Redux's call to the backend.
 	const dispatch = useDispatch();
 	const initialEffects = () => {
+
 		dispatch(fetchAllPostAndProfiles())
 		dispatch(fetchAllTransmissionsAndProfiles())
 		dispatch(fetchAllLikes())
+
 		// dispatch(fetchPostByPostProfileId());
 	};
 	React.useEffect(initialEffects, [dispatch]);
@@ -28,8 +27,6 @@ export const Posts = () => {
 	// After we have our data, render the full object with our data.
 	const posts = useSelector((state) => state.posts ? state.posts : []);
 	const transmissions = useSelector((state) => state.transmissions ? state.transmissions : []);
-// console.log("Post:", posts)
-// 	console.log("transmissions:", transmissions)
 
 	return (
 		<>
@@ -44,11 +41,11 @@ export const Posts = () => {
 						<h1 className = 'text-center mt-5'>Posts</h1>
 					</Col>
 				</Row>
-				<Row>
-					<CardColumns className = 'p-4'>
-						{posts.map(post => <PostCard key = {post.postId} post = {post}  />)}
-					</CardColumns>
-				</Row>
+
+				<div className = 'p-4'>
+					{posts.map(post => <PostCard key = {post.postId} post = {post} />)}
+				</div>
+
 
 			</Container>
 
