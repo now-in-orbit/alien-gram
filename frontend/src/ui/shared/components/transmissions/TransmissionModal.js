@@ -4,7 +4,7 @@ import {Modal} from "react-bootstrap";
 import {TransmissionsForm} from "./TransmissionsForm";
 
 
-export const TransmissionModal = ({transmissionPostId}) => {
+export const TransmissionModal = ({post}) => {
     const [show, setShow] = useState(false);
 
     const handleClose = () => setShow(false);
@@ -22,7 +22,7 @@ export const TransmissionModal = ({transmissionPostId}) => {
                     <Modal.Title>Create Transmission</Modal.Title>
                 </Modal.Header>
                 <Modal.Body>
-                    <TransmissionsForm />
+                    <TransmissionsForm post={post} />
                 </Modal.Body>
                 <Modal.Footer>
                     <Button variant="secondary" onClick={handleClose}>
