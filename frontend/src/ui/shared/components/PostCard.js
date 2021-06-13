@@ -4,6 +4,8 @@ import {useSelector} from 'react-redux';
 import {httpConfig} from "../utils/httpConfig";
 import {getAllPosts} from "../../../store/postSlice";
 import {useDispatch} from "react-redux";
+import {Col} from "react-bootstrap";
+import {TransmissionModal} from "./transmissions/TransmissionModal";
 
 
 
@@ -99,6 +101,9 @@ export function PostCard({post}) {
                         {/*<FindTransmissionUsername />*/}
                     <FindTransmissionsContent />
                     </Card.Text>
+                    <Col>
+                        <TransmissionModal/>
+                    </Col>
                 </div>
             </Card>
         </>
