@@ -2,7 +2,7 @@ export interface Sighting {
 	sightingId: string | null;
 	sightingCity: string;
 	sightingSummary: string;
-	sightingLatitude: number;
-	sightingLongitude: number;
+	sightingLatitude: string;
+	sightingLongitude: string;
 	sightingDateTime: string | Date;
 }

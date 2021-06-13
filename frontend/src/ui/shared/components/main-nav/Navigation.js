@@ -34,7 +34,7 @@ export const Navigation = () => {
     };
     return (
         <>
-            <Navbar bg = 'dark' expand = 'lg' variant = 'dark'>
+            <Navbar bg = 'dark' expand = 'lg' variant = 'dark' className='sticky-top'>
                 <Navbar.Brand href = '/'>AlienGram</Navbar.Brand>
                 <Navbar.Toggle aria-controls = 'basic-navbar-nav' />
                 <Navbar.Collapse id = 'basic-navbar-nav'>

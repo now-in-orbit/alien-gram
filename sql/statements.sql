@@ -20,5 +20,11 @@ select sightingCity, sightingLatitude, sightingLongitude from sighting group by 
 select sightingCity, sightingSummary, distinct(sightinglatitude) from sighting;
 
 
-select sightingCity, sightingSummary, sightingLatitude, sightingLongitude, sightingDateTime from sighting where sightingLatitude = '35.199592';
+select bin_to_uuid(sightingId), sightingSummary, sightingLatitude, sightingLongitude, sightingDateTime from sighting where sightingCity = '';
+select bin_to_uuid(sightingId), sightingSummary, sightingLatitude, sightingLongitude, sightingDateTime from sighting;
 
+delete from sighting where sightingCity = '';
+
+select sightingCity from sighting where sightingLatitude = '35.199592';
+
+select sightingCity, sightingSummary, sightingLatitude, sightingLongitude, sightingDateTime from sighting where sightingLatitude = '32.416897';

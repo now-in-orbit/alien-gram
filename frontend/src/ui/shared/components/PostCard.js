@@ -10,9 +10,6 @@ import {Button, CardDeck} from 'react-bootstrap';
 
 export function PostCard({post}) {
 
-
-
-
     const profiles = useSelector((state) => state.profiles ? state.profiles : null)
 
     const FindUsername = () => {

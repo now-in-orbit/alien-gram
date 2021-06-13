@@ -4,9 +4,10 @@ import transmissions from "./transmissionSlice";
 import {combineReducers, configureStore} from "@reduxjs/toolkit";
 import auth from './auth';
 import dirtySightings from './dirtySightingSlice'
+import sightings from './sightingSlice'
 
 
-const reducer =  combineReducers({posts, profiles, transmissions, auth, dirtySightings})
+const reducer =  combineReducers({posts, profiles, transmissions, auth, dirtySightings, sightings})
 
 
 
