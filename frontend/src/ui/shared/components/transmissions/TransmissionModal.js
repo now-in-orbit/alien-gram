@@ -4,21 +4,22 @@ import {Modal} from "react-bootstrap";
 import {TransmissionsForm} from "./TransmissionsForm";
 
 
-export const TransmissionModal = () => {
+export const TransmissionModal = ({transmissionPostId}) => {
     const [show, setShow] = useState(false);
 
     const handleClose = () => setShow(false);
     const handleShow = () => setShow(true);
 
+
     return (
         <>
             <Button variant="primary" onClick={handleShow} block className='mt-5'>
-                Create Post
+                Create Transmission
             </Button>
 
             <Modal show={show} onHide={handleClose}>
                 <Modal.Header closeButton>
-                    <Modal.Title>Create Post</Modal.Title>
+                    <Modal.Title>Create Transmission</Modal.Title>
                 </Modal.Header>
                 <Modal.Body>
                     <TransmissionsForm />

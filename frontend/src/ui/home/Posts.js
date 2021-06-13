@@ -24,8 +24,8 @@ export const Posts = () => {
 	// After we have our data, render the full object with our data.
 	const posts = useSelector((state) => state.posts ? state.posts : []);
 	const transmissions = useSelector((state) => state.transmissions ? state.transmissions : []);
-console.log("Post:", posts)
-	console.log("transmissions:", transmissions)
+// console.log("Post:", posts)
+// 	console.log("transmissions:", transmissions)
 
 	return (
 		<>

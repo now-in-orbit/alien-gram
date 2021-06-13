@@ -6,6 +6,8 @@ import {getAllPosts} from "../../../store/postSlice";
 import {useDispatch} from "react-redux";
 import {Col} from "react-bootstrap";
 import {TransmissionModal} from "./transmissions/TransmissionModal";
+import {TransmissionContentForm} from "./transmissions/TransmissionContentForm";
+import {TransmissionsForm} from "./transmissions/TransmissionsForm";
 
 
 
@@ -83,6 +85,20 @@ export function PostCard({post}) {
             );
     }
 
+    //function to return transmissionPostId for connection between individual posts and transmission
+    // const clickPost = () => {
+    //     httpConfig.get("/apis/post/", {postId: post.postId})
+    //         .then(reply => {
+    //                 if (reply.status === 200) {
+    //                     console.log(reply)
+    //                     dispatch(getAllPosts())
+    //                 }
+    //                 console.log(reply)
+    //             }
+    //         );
+    //     console.log("postID on click=", clickPost)
+    // }
+
 
     return (
         <>
@@ -101,6 +117,8 @@ export function PostCard({post}) {
                         {/*<FindTransmissionUsername />*/}
                     <FindTransmissionsContent />
                     </Card.Text>
+                    {/*<button onClick={clickPost}><span role="img" aria-label="thumbs up emoji">👍️</span>Test Button</button>*/}
+
                     <Col>
                         <TransmissionModal/>
                     </Col>
