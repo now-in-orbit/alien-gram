@@ -4,7 +4,6 @@ select bin_to_uuid(postId) as postId, bin_to_uuid(postProfileId) as postProfileI
 
 DROP TABLE IF EXISTS sighting;
 
-
 insert into post(postId, postProfileId, postContent, postDate) values (uuid_to_bin(uuid()), uuid_to_bin('c09a5b7a-ca08-11eb-827a-0242ac1d0002'), 'I saw a little green man eat my dog', now())
 
 

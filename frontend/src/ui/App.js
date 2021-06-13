@@ -6,7 +6,7 @@ import { Welcome } from './home/Welcome';
 import React from 'react';
 import {Navigation} from "./shared/components/main-nav/Navigation";
 import {Map} from "./Map"
-import {MyProfile} from './myprofile/MyProfile';
+import {MyProfile} from "./myprofile/MyProfile";
 import {MyPosts} from "./myprofile/MyPosts"
 import {Posts} from "./home/Posts"
 import {MyTransmissions} from "./myprofile/MyTransmissions";
@@ -28,7 +28,7 @@ export const App = (store) => (
 				<Route exact path='/fourohfour' component={FourOhFour} />
 				<Route exact path='/welcome' component={Welcome} />
 				<Route exact path='/map' component={Map} />
-				<Route exact path='/profile' component={MyProfile}/>
+				<Route exact path='/myprofile' component={MyProfile}/>
 				<Route exact path='/myposts' component={MyPosts} />
 				<Route exact path='/transmissions' component={MyTransmissions} />
 				<Route exact path='/likes' component={MyLikes} />

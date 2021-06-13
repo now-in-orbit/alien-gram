@@ -44,7 +44,7 @@ export const Navigation = () => {
                         {auth ? (
                             <>
                                 <NavDropdown title = {auth?.profileUsername ?? ''} id = 'basic-nav-dropdown'>
-                                    <NavDropdown.Item href = '/Profile'>My Profile</NavDropdown.Item>
+                                    <NavDropdown.Item href = '/MyProfile'>My Profile</NavDropdown.Item>
                                     <NavDropdown.Item href = '/MyPosts'>My Posts</NavDropdown.Item>
                                     <NavDropdown.Item href = '/MyTransmissions'>MyTransmissions</NavDropdown.Item>
                                     <NavDropdown.Item href = '/MyLikes'>MyLikes</NavDropdown.Item>
