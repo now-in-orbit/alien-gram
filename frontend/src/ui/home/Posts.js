@@ -6,11 +6,11 @@ import {PostCard} from '../shared/components/PostCard';
 import {useDispatch, useSelector} from 'react-redux';
 import {fetchAllTransmissionsAndProfiles} from '../../store/transmissionSlice';
 import {PostModal} from '../shared/components/main-nav/post/PostModal';
-<<<<<<< HEAD
+
 import "../shared/components/PostCard.css"
-=======
+
 import {fetchAllLikes} from "../../store/LikeSlice";
->>>>>>> 29ffd5e5f1b39cc454db92c0b5fa00510d97670b
+
 
 export const Posts = () => {
 

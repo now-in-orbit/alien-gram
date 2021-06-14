@@ -34,13 +34,11 @@ export const Navigation = () => {
     };
     return (
         <>
-<<<<<<< HEAD
-            <Navbar className='Navbar'>
-                <Navbar.Brand className='navTitle' href = '/'>AlienGram</Navbar.Brand>
-=======
+
+
             <Navbar bg = 'dark' expand = 'lg' variant = 'dark' className='sticky-top'>
                 <Navbar.Brand href = '/'>AlienGram</Navbar.Brand>
->>>>>>> 29ffd5e5f1b39cc454db92c0b5fa00510d97670b
+
                 <Navbar.Toggle aria-controls = 'basic-navbar-nav' />
                 <Navbar.Collapse id = 'basic-navbar-nav'>
                     <Nav className = 'ml-auto'>
