@@ -6,6 +6,8 @@ import {
     fetchTransmissionByTransmissionProfileId,
 } from "../../store/transmissionSlice";
 import {TransmissionCard} from "../shared/components/transmissions/TransmissionCard";
+import {fetchAllPostAndProfiles, getAllPosts} from "../../store/postSlice";
+import {Col, Container, Row} from "react-bootstrap";
 
 
 
@@ -19,6 +21,7 @@ export const MyTransmissions = () => {
         if (authenticatedUser?.profileId) {
             dispatch(fetchProfileByProfileId(authenticatedUser.profileId));
             dispatch(fetchTransmissionByTransmissionProfileId(authenticatedUser.profileId));
+            dispatch(fetchAllPostAndProfiles())
 
         }
     };
@@ -42,18 +45,22 @@ export const MyTransmissions = () => {
     ));
 
 
+
+
     return (
         <>
-            <main className="container">
-                {profile && (<h2>{profile.profileUsername}</h2>)}
-                <div className="card-group card-columns">
+            <Container>
+                <Row className='text-center mt-5'>
+                    <Col>
+                        <h1>My Transmissions</h1>
+                    </Col>
+                </Row>
+                <div>
                     {
                         transmissions.map(transmission => <TransmissionCard key={transmission.transmissionId} transmission={transmission}/>)
                     }
                 </div>
-
-
-            </main>
+            </Container>
         </>
     )
 };
