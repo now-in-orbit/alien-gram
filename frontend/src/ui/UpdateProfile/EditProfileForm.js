@@ -25,7 +25,7 @@ export const EditProfileForm = (props) => {
 
     function submitEditedProfile(values, {resetForm, setStatus}) {
 
-        const submitUpdatedProfile = (profile, updatedProfile) => {
+        const submitUpdatedProfile = (updatedProfile) => {
             httpConfig.put(`/apis/profile/${profile.profileId}`, updatedProfile)
                 .then(reply => {
                     let {message, type} = reply;
