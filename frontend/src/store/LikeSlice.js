@@ -2,6 +2,7 @@ import _ from 'lodash';
 import {createSlice} from '@reduxjs/toolkit'
 import {httpConfig} from "../ui/shared/utils/httpConfig"
 import {fetchProfileByProfileId, getProfileByProfileId} from './profileSlice';
+import {getTransmissionsByPostId} from "./transmissionSlice";
 
 // Define our reducer and action.
 const likeSlice = createSlice({
@@ -11,15 +12,22 @@ const likeSlice = createSlice({
         getLikeAll: (posts, action) => {
             return action.payload
         },
+        getLikeByLikeProfile: (posts, action) => {
+            return action.payload
+        },
     },
 })
 
 // Make our actions callable as function getAllMisquotes.
-export const {getLikeAll} = likeSlice.actions
+export const {getLikeAll, getLikeByLikeProfile} = likeSlice.actions
 
 export const fetchAllLikes = () => async dispatch => {
     const {data} = await httpConfig(`/apis/like/`)
     dispatch(getLikeAll(data))
+}
+export const fetchLikeByLikeProfileId = (likeProfileId) => async dispatch => {
+    const {data} = await httpConfig(`/apis/like/likeProfileId/${likeProfileId}`);
+    dispatch(getLikeByLikeProfile(data))
 }
 
 

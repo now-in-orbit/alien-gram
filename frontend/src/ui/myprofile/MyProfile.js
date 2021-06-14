@@ -1,11 +1,8 @@
 import React, {useEffect} from "react"
 import {Container, Row, Col, Image, Form, Button} from 'react-bootstrap'
 import { useDispatch, useSelector } from 'react-redux'
-import {EditProfileForm} from "../UpdateProfile/EditProfileForm";
 import {fetchProfileByProfileId, fetchProfileUpdateByProfile} from "../../store/profileSlice";
-import {EditProfileFormContent} from "../UpdateProfile/EditProfileFormContent";
 import {useJwtToken} from "../shared/components/useJwtToken";
-import {fetchTransmissionByTransmissionProfileId} from "../../store/transmissionSlice";
 import {UpdateProfileModal} from "../UpdateProfile/UpdateProfileModal";
 import {ProfileCard} from "../shared/components/ProfileCard";
 

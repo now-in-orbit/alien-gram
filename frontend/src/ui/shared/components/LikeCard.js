@@ -2,7 +2,7 @@ import React from "react";
 import Card from "react-bootstrap/Card";
 
 
-export function LikeCard({}) {
+export function LikeCard({like}) {
 
     return (
         <>
@@ -12,6 +12,7 @@ export function LikeCard({}) {
                     </div>
                     <Card.Text>
                         <div>
+                            {/*{like}*/}
                         </div>
                     </Card.Text>
                 </div>

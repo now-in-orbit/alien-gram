@@ -3,14 +3,10 @@ import React, { useEffect } from 'react';
 import {fetchProfileByProfileId} from '../../store/profileSlice';
 import {useJwtToken} from '../shared/components/useJwtToken';
 import {
-    fetchAllTransmissions,
     fetchTransmissionByTransmissionProfileId,
-    fetchTransmissionsByTransmissionPostId
 } from "../../store/transmissionSlice";
 import {TransmissionCard} from "../shared/components/transmissions/TransmissionCard";
-import {PostCard} from "../shared/components/PostCard";
-import {fetchAllPosts, fetchPostByPostProfileId} from "../../store/postSlice";
-import {TransmissionsForm} from "../shared/components/transmissions/TransmissionsForm";
+
 
 
 export const MyTransmissions = () => {

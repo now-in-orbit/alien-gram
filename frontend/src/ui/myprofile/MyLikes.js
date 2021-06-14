@@ -2,12 +2,8 @@ import { useDispatch, useSelector } from "react-redux";
 import React, { useEffect } from 'react';
 import {fetchProfileByProfileId} from '../../store/profileSlice';
 import {useJwtToken} from '../shared/components/useJwtToken';
-import {
-    fetchTransmissionByTransmissionProfileId,
-    fetchTransmissionsByTransmissionPostId
-} from "../../store/transmissionSlice";
-import {Col, Container, Row} from "react-bootstrap";
-import {TransmissionCard} from "../shared/components/transmissions/TransmissionCard";
+import {fetchLikeByLikeProfileId} from "../../store/LikeSlice";
+
 
 
 export const MyLikes = () => {
@@ -19,6 +15,7 @@ export const MyLikes = () => {
         // The dispatch function takes actions as arguments to make changes to the store/redux.
         if (authenticatedUser?.profileId) {
             dispatch(fetchProfileByProfileId(authenticatedUser.profileId));
+            dispatch(fetchLikeByLikeProfileId(authenticatedUser.profileId));
             // dispatch(fetchTransmissionByTransmissionProfileId(authenticatedUser.profileId));
         }
     };
@@ -36,16 +33,23 @@ export const MyLikes = () => {
             : null
     ));
 
-    console.log()
+    const likes = useSelector(state => (
+        state.likes
+            ? state.likes
+            : []
+    ));
+
+    console.log("Likes", likes)
+
     return (
         <>
             <main className="container">
-                {profile && (<h2>{profile.profileUsername}</h2>)}
                 <div className="card-group card-columns">
-                    {
-                        // transmissions.map(transmission => <TransmissionCard key={transmission.transmissionId}  transmission={transmission}/>)
-                    }
                 </div>
+                {
+                    // likes.map(like => <LikeCard like={like}/>)
+                }
+
             </main>
         </>
     )

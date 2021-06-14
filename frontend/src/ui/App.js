@@ -32,7 +32,7 @@ export const App = (store) => (
 				<Route exact path='/myprofile' component={MyProfile}/>
 				<Route exact path='/myposts' component={MyPosts} />
 				<Route exact path='/mytransmissions' component={MyTransmissions} />
-				<Route exact path='/likes' component={MyLikes} />
+				<Route exact path='/mylikes' component={MyLikes} />
 
 			</Switch>
 		</BrowserRouter>

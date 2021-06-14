@@ -9,15 +9,15 @@ export function ProfileCard({profile}) {
         <>
             <Card className="card text-center">
                 <div className="card-body">
-                    <Row>
-                        {profile.profileAvatarUrl}
-                    </Row>
-                    <Row>
-                        {profile.profileEmail}
-                    </Row>
-                    <Row>
-                        {profile.profileUsername}
-                    </Row>
+                    {/*<Row>*/}
+                    {/*    {profile.profileAvatarUrl}*/}
+                    {/*</Row>*/}
+                    {/*<Row>*/}
+                    {/*    {profile.profileEmail}*/}
+                    {/*</Row>*/}
+                    {/*<Row>*/}
+                    {/*    {profile.profileUsername}*/}
+                    {/*</Row>*/}
                     {/*<Row>*/}
                     {/*    {profile.profileFirstName}*/}
                     {/*</Row>*/}
