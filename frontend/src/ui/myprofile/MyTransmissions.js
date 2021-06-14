@@ -8,6 +8,7 @@ import {
 import {TransmissionCard} from "../shared/components/transmissions/TransmissionCard";
 import {fetchAllPostAndProfiles, getAllPosts} from "../../store/postSlice";
 import {Col, Container, Row} from "react-bootstrap";
+import "../shared/components/transmissions/transmission.css";
 
 
 
@@ -52,14 +53,18 @@ export const MyTransmissions = () => {
             <Container>
                 <Row className='text-center mt-5'>
                     <Col>
-                        <h1>My Transmissions</h1>
+                        <div className="mt-5">
+                            <h1 className="text-white">My Transmissions</h1>
+                        </div>
                     </Col>
                 </Row>
-                <div>
+                <Row className='justify-content-center mt-5'>
+                    <Col md={8}>
                     {
                         transmissions.map(transmission => <TransmissionCard key={transmission.transmissionId} transmission={transmission}/>)
                     }
-                </div>
+                    </Col>
+                </Row>
             </Container>
         </>
     )

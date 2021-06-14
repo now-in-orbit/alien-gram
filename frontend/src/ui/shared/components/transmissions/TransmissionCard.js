@@ -1,6 +1,7 @@
 import React from "react";
 import Card from "react-bootstrap/Card";
 import {useDispatch, useSelector} from "react-redux";
+import "./transmission.css";
 import {httpConfig} from "../../utils/httpConfig";
 import {getAllPosts} from "../../../../store/postSlice";
 import {Col} from "react-bootstrap";
@@ -68,17 +69,19 @@ export function TransmissionCard({transmission}) {
 
     return (
         <>
-            <Card className="card text-center">
-                <div className="card-body">
-                    <Card.Text>
-                        <div>
-                            <FindPostContent />
-                        </div>
-                    </Card.Text>
-                    <FindTransmissionUsername />
-                    <Card.Text>
-                        {transmission.transmissionContent}
-                    </Card.Text>
+            <Card className="card text-center mt-2">
+                <div class="mx-auto">
+                    <div className="card-body">
+                        <Card.Text>
+                            <div>
+                                <FindPostContent />
+                            </div>
+                        </Card.Text>
+                        <FindTransmissionUsername />
+                        <Card.Text>
+                            {transmission.transmissionContent}
+                        </Card.Text>
+                    </div>
                 </div>
             </Card>
         </>
