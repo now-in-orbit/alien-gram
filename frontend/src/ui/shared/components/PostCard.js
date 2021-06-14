@@ -9,10 +9,7 @@ import {getAllPosts} from '../../../store/postSlice';
 import {useDispatch} from 'react-redux';
 
 
-
-
 export function PostCard({post, transmission}) {
-
 
 
     const profiles = useSelector((state) => state.profiles ? state.profiles : null)
@@ -85,27 +82,27 @@ export function PostCard({post, transmission}) {
 
     return (
         <>
-                    <Card className="card text-center">
-                        <div className="card-body">
-                            <div>
-                                <FindAvatarUrl/><FindUsername/>
-                            </div>
-                            <Card.Text>
-                                <div>
-                                    {post.postContent}
-                                </div>
-                            </Card.Text>
-                            <button onClick={clickLike}>{post.likeCount}<span role="img"
-                                                                              aria-label="thumbs up emoji">👍️    </span>
-                            </button>
-                            <Card.Text>
-                                <FindTransmissionsContent/>
-                            </Card.Text>
-                            <Col>
-                                <TransmissionModal post={post}/>
-                            </Col>
+            <Card className="card text-center">
+                <div className="card-body">
+                    <div>
+                        <FindAvatarUrl/><FindUsername/>
+                    </div>
+                    <Card.Text>
+                        <div>
+                            {post.postContent}
                         </div>
-                    </Card>
+                    </Card.Text>
+                    <button onClick={clickLike}>{post.likeCount}<span role="img"
+                                                                      aria-label="thumbs up emoji">👍️    </span>
+                    </button>
+                    <Card.Text>
+                        <FindTransmissionsContent/>
+                    </Card.Text>
+                    <Col>
+                        <TransmissionModal post={post}/>
+                    </Col>
+                </div>
+            </Card>
         </>
     )
 }

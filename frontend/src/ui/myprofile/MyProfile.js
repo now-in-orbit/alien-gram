@@ -39,7 +39,7 @@ const profile = useSelector(state => (
 			<Container>
 				<Row>
 					<Col>
-						<UpdateProfileModal />
+						<UpdateProfileModal profile={profile}/>
 					</Col>
 				</Row>
 				<ProfileCard profile={profile}/>

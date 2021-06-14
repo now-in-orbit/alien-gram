@@ -12,6 +12,15 @@ export const putProfileController = async (request: Request, response: Response)
         // @ts-ignore
         const profileIdFromSession: string = <string>request.session?.profile.profileId
 
+        // const partialProfile: PartialProfile {
+        //     profileId : null,
+        //     profileAvatarUrl : null,
+        //     profileEmail : null,
+        //     profileFirstName : null,
+        //     profileLastName : null,
+        //     profileUsername : null
+        // }
+
         const performUpdate = async (partialProfile: PartialProfile) : Promise<Response> => {
             const previousProfile: Profile = await selectWholeProfileByProfileId(<string>partialProfile.profileId)
             const newProfile: Profile = {...previousProfile, ...partialProfile}

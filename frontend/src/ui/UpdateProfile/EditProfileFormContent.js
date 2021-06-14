@@ -1,7 +1,7 @@
 import React from 'react'
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome'
-// import { ImageDropZone } from '../shared/components/ImageDropZone'
 import {FormDebugger} from '../shared/components/FormDebugger'
+import {ImageDropZone} from "../shared/components/ImageDropZone";
 
 export const EditProfileFormContent = (props) => {
     const {
@@ -129,24 +129,24 @@ export const EditProfileFormContent = (props) => {
                     }
                 </div>
 
-                {/*<ImageDropZone*/}
-                {/*    formikProps={{*/}
-                {/*        values,*/}
-                {/*        handleChange,*/}
-                {/*        handleBlur,*/}
-                {/*        setFieldValue,*/}
-                {/*        fieldValue: "profileAvatarUrl"*/}
-                {/*    }}*/}
-                {/*/>*/}
-                {/*<div className="form-group">*/}
-                {/*    <button className="btn btn-primary mb-2" type="submit">Submit</button>*/}
-                {/*    <button*/}
-                {/*        className="btn btn-danger mb-2"*/}
-                {/*        onClick={handleReset}*/}
-                {/*        disabled={!dirty || isSubmitting}*/}
-                {/*    >Reset*/}
-                {/*    </button>*/}
-                {/*</div>*/}
+                <ImageDropZone
+                    formikProps={{
+                        values,
+                        handleChange,
+                        handleBlur,
+                        setFieldValue,
+                        fieldValue: "profileAvatarUrl"
+                    }}
+                />
+                <div className="form-group">
+                    <button className="btn btn-primary mb-2" type="submit">Submit</button>
+                    <button
+                        className="btn btn-danger mb-2"
+                        onClick={handleReset}
+                        disabled={!dirty || isSubmitting}
+                    >Reset
+                    </button>
+                </div>
                 <FormDebugger {...props} />
             </form>
 

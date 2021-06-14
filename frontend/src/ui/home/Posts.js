@@ -45,12 +45,9 @@ export const Posts = () => {
 						<h1 className = 'postTitle text-center mt-5'>Posts</h1>
 					</Col>
 				</Row>
-
 				<div className = 'p-4'>
 					{posts.map(post => <PostCard key = {post.postId} post = {post} />)}
 				</div>
-
-
 			</Container>
 
 		</>
