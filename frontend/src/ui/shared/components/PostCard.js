@@ -14,7 +14,7 @@ import {TransmissionComponent} from './transmissions/TransmissionComponent';
 import {Button, CardDeck} from 'react-bootstrap';
 
 
-export function PostCard({post}) {
+export function PostCard({post, transmission}) {
 
 	const profiles = useSelector((state) => state.profiles ? state.profiles : null);
 
@@ -72,11 +72,11 @@ export function PostCard({post}) {
 	}
 
 	const dispatch = useDispatch();
-	const initialEffects = () => {
-		dispatch(fetchAllPosts());
-
-	};
-	React.useEffect(initialEffects, [dispatch]);
+	// const initialEffects = () => {
+	// 	dispatch(fetchAllPosts());
+	//
+	// };
+	// React.useEffect(initialEffects, [dispatch]);
 
 
 	const clickLike = () => {
@@ -119,7 +119,6 @@ export function PostCard({post}) {
 					<button onClick = {clickLike}>{post.likeCount}<span role = 'img' aria-label = 'thumbs up emoji'>👍️    </span>
 					</button>
 					<Card.Text>
-						{/*<FindTransmissionUsername />*/}
 						<FindTransmissionsContent />
 					</Card.Text>
 					<Col>
