@@ -11,6 +11,8 @@ import {MyPosts} from "./myprofile/MyPosts"
 import {Posts} from "./home/Posts"
 import {MyTransmissions} from "./myprofile/MyTransmissions";
 import {MyLikes} from "./myprofile/MyLikes";
+import "../ui/App.css"
+
 
 
 

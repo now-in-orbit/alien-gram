@@ -6,6 +6,7 @@ import {PostCard} from '../shared/components/PostCard';
 import {useDispatch, useSelector} from 'react-redux';
 import {fetchAllTransmissionsAndProfiles} from '../../store/transmissionSlice';
 import {PostModal} from '../shared/components/main-nav/post/PostModal';
+import "../shared/components/PostCard.css"
 
 export const Posts = () => {
 
@@ -37,7 +38,7 @@ export const Posts = () => {
 				</Row>
 				<Row>
 					<Col>
-						<h1 className = 'text-center mt-5'>Posts</h1>
+						<h1 className = 'postTitle text-center mt-5'>Posts</h1>
 					</Col>
 				</Row>
 				<Row>

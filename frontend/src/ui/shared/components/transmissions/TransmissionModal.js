@@ -2,6 +2,7 @@ import React, {useState} from "react";
 import {Button} from "react-bootstrap";
 import {Modal} from "react-bootstrap";
 import {TransmissionsForm} from "./TransmissionsForm";
+import "../PostCard.css"
 
 
 export const TransmissionModal = ({post}) => {
@@ -13,7 +14,7 @@ export const TransmissionModal = ({post}) => {
 
     return (
         <>
-            <Button variant="primary" onClick={handleShow} block className='mt-5'>
+            <Button variant="primary" onClick={handleShow} block className='createTransmission mt-5'>
                 Create Transmission
             </Button>
 

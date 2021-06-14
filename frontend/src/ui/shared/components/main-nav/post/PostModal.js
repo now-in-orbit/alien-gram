@@ -2,6 +2,7 @@ import React, {useState} from "react";
 import {Button} from "react-bootstrap";
 import {Modal} from "react-bootstrap";
 import {PostForm} from "./PostForm";
+import "../../PostCard.css"
 
 
 export const PostModal = () => {
@@ -12,7 +13,7 @@ export const PostModal = () => {
 
     return (
         <>
-            <Button variant="primary" onClick={handleShow} block className='mt-5'>
+            <Button onClick={handleShow} className='createButton float-right btn-lg btn'>
                 Create Post
             </Button>
 

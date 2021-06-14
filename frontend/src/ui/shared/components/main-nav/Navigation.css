@@ -2,3 +2,11 @@
     right: 0 !important;
     left: auto !important;
 }
+
+.Navbar {
+    background-color: black !important;
+}
+
+.navTitle {
+    color: white !important;
+}
