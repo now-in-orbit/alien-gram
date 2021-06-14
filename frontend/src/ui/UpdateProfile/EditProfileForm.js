@@ -1,7 +1,7 @@
 import React from "react"
 import * as Yup from "yup";
-import { Formik } from "formik";
-import { EditProfileFormContent } from './EditProfileFormContent'
+import {Formik} from "formik";
+import {EditProfileFormContent} from './EditProfileFormContent'
 import {httpConfig} from "../shared/utils/httpConfig";
 
 
@@ -23,7 +23,7 @@ export const EditProfileForm = (props) => {
         profileAvatarUrl: Yup.mixed(),
     });
 
-    function submitEditedProfile (values, {resetForm, setStatus}) {
+    function submitEditedProfile(values, {resetForm, setStatus}) {
 
         const submitUpdatedProfile = (updatedProfile) => {
             httpConfig.put(`/apis/profile/${profile.profileId}`, updatedProfile)
@@ -38,13 +38,14 @@ export const EditProfileForm = (props) => {
                 })
         };
 
+        submitUpdatedProfile({...values})
+
         // if (values.profileAvatarUrl !== undefined) {
         //     httpConfig.post(`/apis/image-upload/`, values.profileAvatarUrl)
         //         .then(reply => {
         //                 let {message, type} = reply;
         //
         //                 if (reply.status === 200) {
-        //                     submitUpdatedProfile({...values, profileAvatarUrl:message})
         //                 } else {
         //                     setStatus({message, type});
         //                 }
@@ -65,4 +66,4 @@ export const EditProfileForm = (props) => {
         </Formik>
     )
 
-};
+}

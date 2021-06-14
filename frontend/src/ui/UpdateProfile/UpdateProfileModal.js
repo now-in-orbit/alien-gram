@@ -5,7 +5,7 @@ import {EditProfileForm} from "./EditProfileForm";
 
 
 
-export const UpdateProfileModal = () => {
+export const UpdateProfileModal = ({profile}) => {
     const [show, setShow] = useState(false);
 
     const handleClose = () => setShow(false);
@@ -22,7 +22,7 @@ export const UpdateProfileModal = () => {
                     <Modal.Title>Update Profile</Modal.Title>
                 </Modal.Header>
                 <Modal.Body>
-                    <EditProfileForm />}
+                    <EditProfileForm profile={profile} />
                 </Modal.Body>
                 <Modal.Footer>
                     <Button variant="secondary" onClick={handleClose}>

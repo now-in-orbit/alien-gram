@@ -33,7 +33,6 @@ export const App = (store) => (
 				<Route exact path='/myposts' component={MyPosts} />
 				<Route exact path='/mytransmissions' component={MyTransmissions} />
 				<Route exact path='/mylikes' component={MyLikes} />
-
 			</Switch>
 		</BrowserRouter>
 		</Provider>
