@@ -5,7 +5,7 @@ import {Col, Container, Row, Button} from "react-bootstrap";
 import {TransmissionModal} from "./transmissions/TransmissionModal";
 import "./PostCard.css";
 import {httpConfig} from '../utils/httpConfig';
-import {getAllPosts} from '../../../store/postSlice';
+import {fetchAllPosts, getAllPosts} from '../../../store/postSlice';
 import {useDispatch} from 'react-redux';
 
 
@@ -73,7 +73,7 @@ export function PostCard({post, transmission}) {
             .then(reply => {
                     if (reply.status === 200) {
                         console.log(reply)
-                        dispatch(getAllPosts())
+                        dispatch(fetchAllPosts())
                     }
                     console.log(reply)
                 }
