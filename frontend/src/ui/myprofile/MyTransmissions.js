@@ -2,8 +2,11 @@ import { useDispatch, useSelector } from "react-redux";
 import React, { useEffect } from 'react';
 import {fetchProfileByProfileId} from '../../store/profileSlice';
 import {useJwtToken} from '../shared/components/useJwtToken';
-import {fetchTransmissionByTransmissionProfileId} from "../../store/transmissionSlice";
+import {
+    fetchTransmissionByTransmissionProfileId,
+} from "../../store/transmissionSlice";
 import {TransmissionCard} from "../shared/components/transmissions/TransmissionCard";
+
 
 
 export const MyTransmissions = () => {
@@ -16,6 +19,7 @@ export const MyTransmissions = () => {
         if (authenticatedUser?.profileId) {
             dispatch(fetchProfileByProfileId(authenticatedUser.profileId));
             dispatch(fetchTransmissionByTransmissionProfileId(authenticatedUser.profileId));
+
         }
     };
 
@@ -36,7 +40,8 @@ export const MyTransmissions = () => {
             ? state.profiles[0]
             : null
     ));
-    console.log(transmissions)
+
+
     return (
         <>
             <main className="container">
@@ -46,6 +51,8 @@ export const MyTransmissions = () => {
                         transmissions.map(transmission => <TransmissionCard key={transmission.transmissionId} transmission={transmission}/>)
                     }
                 </div>
+
+
             </main>
         </>
     )

@@ -16,16 +16,11 @@ import {fetchAllPostAndProfiles, fetchAllPosts, getAllPosts} from '../../../stor
 import {useDispatch} from 'react-redux';
 import {Col} from 'react-bootstrap';
 import {TransmissionModal} from './transmissions/TransmissionModal';
-import {TransmissionContentForm} from './transmissions/TransmissionContentForm';
-import {TransmissionsForm} from './transmissions/TransmissionsForm';
-import {fetchAllTransmissionsAndProfiles} from '../../../store/transmissionSlice';
-import {getLikeAll} from '../../../store/LikeSlice';
-import {TransmissionComponent} from './transmissions/TransmissionComponent';
 import {Button, CardDeck} from 'react-bootstrap';
 >>>>>>> 29ffd5e5f1b39cc454db92c0b5fa00510d97670b
 
 
-export function PostCard({post}) {
+export function PostCard({post, transmission}) {
 
 <<<<<<< HEAD
 
@@ -180,11 +175,11 @@ export function PostCard({post}) {
 	}
 
 	const dispatch = useDispatch();
-	const initialEffects = () => {
-		dispatch(fetchAllPosts());
-
-	};
-	React.useEffect(initialEffects, [dispatch]);
+	// const initialEffects = () => {
+	// 	dispatch(fetchAllPosts());
+	//
+	// };
+	// React.useEffect(initialEffects, [dispatch]);
 
 
 	const clickLike = () => {
@@ -227,7 +222,6 @@ export function PostCard({post}) {
 					<button onClick = {clickLike}>{post.likeCount}<span role = 'img' aria-label = 'thumbs up emoji'>👍️    </span>
 					</button>
 					<Card.Text>
-						{/*<FindTransmissionUsername />*/}
 						<FindTransmissionsContent />
 					</Card.Text>
 					<Col>
