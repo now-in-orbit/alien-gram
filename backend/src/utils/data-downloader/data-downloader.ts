@@ -7,7 +7,7 @@ import {finished} from 'stream';
 const fs = require('fs')
 const csv = require('csv-parser')
 
-export const ufoSightingDataDownloader = (): Promise<any> => {
+function ufoSightingDataDownloader(): Promise<any>{
 	async function main() {
 		try {
 			await downloadSightings()
@@ -20,24 +20,27 @@ export const ufoSightingDataDownloader = (): Promise<any> => {
 
 	return main()
 
-	const downloadSightings = async () => {
+	async function downloadSightings() {
 		try {
 			const results: any = [];
 
-			fs.createReadStream('./ufo.csv')
+			fs.createReadStream('./ufo_geocodio.csv')
 				.pipe(csv())
 				.on('data', (data: any) => results.push(data))
 				.on('end', async () => {
 					try {
 						for (let result of results) {
-							const {sightingCity, sightingSummary, sightingDateTime} = result
+							const {sightingCity, sightingSummary, sightingDateTime, sightingLatitude, sightingLongitude} = result
 							const sighting: Sighting = {
 								sightingId: uuid(),
 								sightingCity: result.city as string,
 								sightingSummary: result.summary as string,
+								sightingLatitude: result.Latitude,
+								sightingLongitude: result.Longitude,
 								sightingDateTime: new Date(result.date_time)
 							}
-							console.log(sighting.sightingDateTime)
+							console.log(sighting.sightingLatitude)
+							console.log(sighting.sightingLongitude)
 							const reply = await insertSighting(sighting)
 							console.log(reply)
 						}

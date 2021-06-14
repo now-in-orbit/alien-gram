@@ -1,0 +1,14 @@
+import {Post} from "../interfaces/Post";
+import {connect} from "../database.utils";
+import {Like} from "../interfaces/Like";
+
+export const selectLikeAll = async () => {
+    try {
+        const mysqlConnection = await connect();
+        const [rows] = await mysqlConnection.execute ('SELECT BIN_TO_UUID(likeProfileId) as likeProfileId, BIN_TO_UUID(likePostId) as likePostId, likeDateTime FROM `like`')
+        return rows;
+
+    } catch(error) {
+        console.log(error)
+    }
+};
