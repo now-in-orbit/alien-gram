@@ -36,14 +36,14 @@ export const Navigation = () => {
         <>
 
 
-            <Navbar bg = 'dark' expand = 'lg' variant = 'dark' className='sticky-top'>
-                <Navbar.Brand href = '/'>AlienGram</Navbar.Brand>
+            <Navbar className='Navbar sticky-top'>
+                <Navbar.Brand className="navTitle" href = '/'>AlienGram</Navbar.Brand>
 
                 <Navbar.Toggle aria-controls = 'basic-navbar-nav' />
                 <Navbar.Collapse id = 'basic-navbar-nav'>
                     <Nav className = 'ml-auto'>
-                        <Nav.Link className = 'navlink' href = '/'>Home</Nav.Link>
-                        <Nav.Link href = '/map'>Map</Nav.Link>
+                        <Nav.Link className = 'navLink' href = '/'>Home</Nav.Link>
+                        <Nav.Link className = 'navLink' href = '/map'>Map</Nav.Link>
                         {auth ? (
                             <>
                                 <NavDropdown title = {auth?.profileUsername ?? ''} id = 'basic-nav-dropdown'>

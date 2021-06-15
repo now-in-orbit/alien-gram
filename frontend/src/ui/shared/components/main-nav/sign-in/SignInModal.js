@@ -2,9 +2,9 @@ import React from "react";
 import {Button, ModalFooter} from "react-bootstrap";
 import {Modal} from "react-bootstrap";
 import {SignInForm} from "./SignInForm";
-import "../../PostCard.css"
 import AlienVid from "../../../../../images/alien-hello/alien-1.mp4";
 import './SignInStyle.css'
+import "../../Home.css"
 
 
 export const SignInModal = (props) => {

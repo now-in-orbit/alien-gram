@@ -3,7 +3,7 @@ import Card from 'react-bootstrap/Card';
 import {useSelector} from 'react-redux';
 import {Col, Container, Row, Button} from "react-bootstrap";
 import {TransmissionModal} from "./transmissions/TransmissionModal";
-import "./PostCard.css";
+import "./Home.css";
 import {httpConfig} from '../utils/httpConfig';
 import {fetchAllPosts, getAllPosts} from '../../../store/postSlice';
 import {useDispatch} from 'react-redux';
@@ -82,7 +82,7 @@ export function PostCard({post, transmission}) {
 
     return (
         <>
-            <Card className="card text-center">
+            <Card className="card text-center my-4 mx-auto">
                 <div className="card-body">
                     <div>
                         <FindAvatarUrl/><FindUsername/>

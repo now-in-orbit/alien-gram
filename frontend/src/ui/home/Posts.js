@@ -7,7 +7,7 @@ import {useDispatch, useSelector} from 'react-redux';
 import {fetchAllTransmissionsAndProfiles} from '../../store/transmissionSlice';
 import {PostModal} from '../shared/components/main-nav/post/PostModal';
 
-import "../shared/components/PostCard.css"
+import "../shared/components/Home.css"
 
 import {fetchAllLikes} from "../../store/LikeSlice";
 
