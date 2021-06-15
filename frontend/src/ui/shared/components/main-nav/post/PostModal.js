@@ -2,7 +2,7 @@ import React, {useState} from "react";
 import {Button} from "react-bootstrap";
 import {Modal} from "react-bootstrap";
 import {PostForm} from "./PostForm";
-import "../../PostCard.css"
+import "../../Home.css"
 
 
 export const PostModal = () => {
