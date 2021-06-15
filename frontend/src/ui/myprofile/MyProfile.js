@@ -34,6 +34,35 @@ const profile = useSelector(state => (
 
 	console.log("profile", profile)
 
+	function Profile({profile}) {
+		if (profile!==undefined) {
+			return (
+				<>
+					<Container>
+						<Row>
+							{profile.profileAvatarUrl}
+						</Row>
+						<Row>
+							<h2 className="text-white"> {profile.profileEmail} </h2>
+						</Row>
+						<Row>
+							<h2 className="text-white"> {profile.profileUsername} </h2>
+						</Row>
+						<Row>
+							<h2 className="text-white"> {profile.profileFirstName} </h2>
+						</Row>
+						<Row>
+							<h2 className="text-white"> {profile.profileLastName} </h2>
+						</Row>
+					</Container>
+				</>
+			)
+		} else {
+
+			return <></>
+		}
+	}
+
 	return(
 		<>
 			<Container>
@@ -42,7 +71,9 @@ const profile = useSelector(state => (
 						<UpdateProfileModal profile={profile}/>
 					</Col>
 				</Row>
-				<ProfileCard profile={profile}/>
+				<div>
+					<Profile profile={profile}/>
+				</div>
 			</Container>
 		</>
 	)
