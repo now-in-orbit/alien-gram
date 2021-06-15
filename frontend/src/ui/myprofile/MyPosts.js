@@ -5,6 +5,7 @@ import {fetchPostByPostProfileId} from '../../store/postSlice'
 import {fetchProfileByProfileId} from '../../store/profileSlice';
 import {useJwtToken} from '../shared/components/useJwtToken';
 import {Col, Container, Row} from 'react-bootstrap';
+import './MyProfile.css'
 
 export const MyPosts = ({match}) => {
 	const {authenticatedUser, isLoading} = useJwtToken();
@@ -44,7 +45,7 @@ export const MyPosts = ({match}) => {
 			<Container>
 				<Row className='text-center mt-5'>
 					<Col>
-				<h1>My Posts</h1>
+				<h1 className='title'>My Posts</h1>
 					</Col>
 				</Row>
 				<div>

@@ -39,8 +39,6 @@ function ufoSightingDataDownloader(): Promise<any>{
 								sightingLongitude: result.Longitude,
 								sightingDateTime: new Date(result.date_time)
 							}
-							console.log(sighting.sightingLatitude)
-							console.log(sighting.sightingLongitude)
 							const reply = await insertSighting(sighting)
 							console.log(reply)
 						}

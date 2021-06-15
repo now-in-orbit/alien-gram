@@ -14,7 +14,7 @@ export const TransmissionModal = ({post}) => {
 
     return (
         <>
-            <Button variant="primary" onClick={handleShow} block className='createTransmission mt-5 w-25 ml-auto'>
+            <Button variant="primary" onClick={handleShow} className='createTransmission ml-1'>
                 Create Transmission
             </Button>
 

@@ -7,6 +7,7 @@ import {useDispatch, useSelector} from 'react-redux';
 import {fetchSightingLatLng} from '../../store/dirtySightingSlice';
 import {PostCard} from '../shared/components/PostCard';
 import {MapContent} from './MapContent';
+import './MapStyles.css'
 
 
 export const Map = ({sighting}) => {
@@ -36,6 +37,18 @@ export const Map = ({sighting}) => {
 		sightingCity = 'Bernalillo'
 	} else if(sightingCity.includes('Rio Rancho')) {
 		sightingCity = 'Rio Rancho'
+	} else if (sightingCity.includes('Jal')){
+		sightingCity = 'Jal'
+	} else if (sightingCity.includes('Carlsbad')){
+		sightingCity = 'Carlsbad'
+	} else if (sightingCity.includes('Cloudcroft')){
+		sightingCity = 'Cloudcroft'
+	} else if (sightingCity.includes('Mescalero')){
+		sightingCity = 'Mescalero Indian Reservation'
+	} else if (sightingCity.includes('White Sands')){
+		sightingCity = 'White Sands'
+	} else if (sightingCity.includes('Socorro')){
+		sightingCity = 'Socorro'
 	}
 
 	return (
@@ -43,8 +56,8 @@ export const Map = ({sighting}) => {
 			<Container fluid className = 'mt-5'>
 				<Row>
 					<Col md = {4}>
-						<h3>City: {sightingCity}</h3>
-						<hr/>
+						<h3 className='title'>City: {sightingCity}</h3>
+						<hr className='separator'/>
 						{sightings.map(sighting => <MapContent key = {sighting.sightingId} sighting = {sighting} />)}
 					</Col>
 					<Col md = {8}>
