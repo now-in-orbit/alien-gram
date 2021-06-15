@@ -1,8 +1,10 @@
 import React from "react";
-import {Button} from "react-bootstrap";
+import {Button, ModalFooter} from "react-bootstrap";
 import {Modal} from "react-bootstrap";
 import {SignInForm} from "./SignInForm";
 import "../../PostCard.css"
+import AlienVid from "../../../../../images/alien-hello/alien-1.mp4";
+import './SignInStyle.css'
 
 
 export const SignInModal = (props) => {
@@ -16,20 +18,17 @@ export const SignInModal = (props) => {
 			</Button>
 
 			<Modal show={show} onHide={handleClose}>
-				<Modal.Header closeButton>
+				<Modal.Header closeButton className='backgroundColor'>
 					<Modal.Title>Sign In</Modal.Title>
 				</Modal.Header>
-				<Modal.Body>
+				<Modal.Body className='backgroundColor'>
 					<SignInForm/>
 				</Modal.Body>
-				<Modal.Footer>
-					<Button variant="secondary" onClick={handleClose}>
-						Close
-					</Button>
-					<Button variant="primary" onClick={handleClose}>
-						Save Changes
-					</Button>
-				</Modal.Footer>
+				<div className='backgroundColor'>
+					<video className='backgroundIMGSize' autoPlay muted >
+						<source src={AlienVid} type='video/mp4'/>
+					</video>
+				</div>
 			</Modal>
 		</>
 	);
