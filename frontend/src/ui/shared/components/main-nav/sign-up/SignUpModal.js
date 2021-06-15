@@ -2,6 +2,7 @@ import React, {useState} from "react";
 import {Button} from "react-bootstrap";
 import {Modal} from "react-bootstrap";
 import {SignUpForm} from "./SignUpForm";
+import '../sign-in/SignInStyle.css'
 
 
 export const SignUpModal = () => {
@@ -17,18 +18,15 @@ export const SignUpModal = () => {
 			</Button>
 
 			<Modal show={show} onHide={handleClose}>
-				<Modal.Header closeButton>
+				<Modal.Header closeButton className='backgroundColor'>
 					<Modal.Title>Sign Up</Modal.Title>
 				</Modal.Header>
-				<Modal.Body>
+				<Modal.Body className='backgroundColor'>
 					<SignUpForm/>
 				</Modal.Body>
-				<Modal.Footer>
+				<Modal.Footer className='backgroundColor'>
 					<Button variant="secondary" onClick={handleClose}>
 						Close
-					</Button>
-					<Button variant="primary" onClick={handleClose}>
-						Save Changes
 					</Button>
 				</Modal.Footer>
 			</Modal>

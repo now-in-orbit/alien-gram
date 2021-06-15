@@ -3,6 +3,7 @@ import {Button} from "react-bootstrap";
 import {Modal} from "react-bootstrap";
 import {TransmissionsForm} from "./TransmissionsForm";
 import "../Home.css"
+import'../main-nav/sign-in/SignInStyle.css'
 
 
 export const TransmissionModal = ({post}) => {
@@ -19,13 +20,13 @@ export const TransmissionModal = ({post}) => {
             </Button>
 
             <Modal show={show} onHide={handleClose}>
-                <Modal.Header closeButton>
+                <Modal.Header closeButton className='backgroundColor'>
                     <Modal.Title>Create Transmission</Modal.Title>
                 </Modal.Header>
-                <Modal.Body>
+                <Modal.Body className='backgroundColor'>
                     <TransmissionsForm post={post} />
                 </Modal.Body>
-                <Modal.Footer>
+                <Modal.Footer className='backgroundColor'>
                     <Button variant="secondary" onClick={handleClose}>
                         Close
                     </Button>

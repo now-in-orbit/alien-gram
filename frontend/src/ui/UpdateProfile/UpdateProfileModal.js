@@ -2,6 +2,7 @@ import React, {useState} from "react";
 import {Button} from "react-bootstrap";
 import {Modal} from "react-bootstrap";
 import {EditProfileForm} from "./EditProfileForm";
+import './UpdateProfileStyle.css'
 
 
 
@@ -18,13 +19,13 @@ export const UpdateProfileModal = ({profile}) => {
             </Button>
 
             <Modal show={show} onHide={handleClose}>
-                <Modal.Header closeButton>
+                <Modal.Header closeButton className='backgroundColor'>
                     <Modal.Title>Update Profile</Modal.Title>
                 </Modal.Header>
-                <Modal.Body>
+                <Modal.Body className='backgroundColor'>
                     <EditProfileForm profile={profile} />
                 </Modal.Body>
-                <Modal.Footer>
+                <Modal.Footer className='backgroundColor'>
                     <Button variant="secondary" onClick={handleClose}>
                         Close
                     </Button>
