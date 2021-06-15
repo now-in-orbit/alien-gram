@@ -12,6 +12,7 @@ import "../shared/components/transmissions/transmission.css";
 
 
 
+
 export const MyTransmissions = () => {
     const {authenticatedUser, isLoading} = useJwtToken();
     // Returns the the userPosts store from redux and assigns it to the userPosts variable.

@@ -4,6 +4,7 @@ import {FormDebugger} from "../FormDebugger";
 import "./transmission.css";
 
 
+
 export const TransmissionContentForm = (props) => {
     const {
         status,
