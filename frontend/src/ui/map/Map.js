@@ -1,5 +1,6 @@
 import React from 'react';
-import ReactMapGL from 'react-map-gl';
+import ReactMapGL from "react-map-gl";
+import mapboxgl from "mapbox-gl";
 import 'mapbox-gl/dist/mapbox-gl.css';
 import {Col, Container, Image, Row} from 'react-bootstrap';
 import {Pin} from './Pin';
@@ -8,7 +9,8 @@ import {fetchSightingLatLng} from '../../store/dirtySightingSlice';
 import {PostCard} from '../shared/components/PostCard';
 import {MapContent} from './MapContent';
 import './MapStyles.css'
-
+// eslint-disable-next-line import/no-webpack-loader-syntax
+mapboxgl.workerClass = require("worker-loader!mapbox-gl/dist/mapbox-gl-csp-worker").default;
 
 export const Map = ({sighting}) => {
 	const dispatch = useDispatch();
@@ -68,6 +70,7 @@ export const Map = ({sighting}) => {
 								height = '84vh'
 								onViewportChange = {(viewport) => setViewport(viewport)}
 								mapStyle = 'mapbox://styles/mapbox/dark-v9'
+								mapboxApiAccessToken="pk.eyJ1IjoicmluZXo3MSIsImEiOiJja29zdjIxZmowNG1nMm5vN283MzE0eDNlIn0.Uu97AFVzvvBDMrQCdC_rkA"
 							>
 								{dirtySightings.map((point, index) => <Pin dirtySighting = {point} index = {index} key = {index} />)}
 							</ReactMapGL>

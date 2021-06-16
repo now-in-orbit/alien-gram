@@ -42,27 +42,27 @@ const profile = useSelector(state => (
 					<Container>
 						<Row className='mb-3 justify-content-center'>
 							<Col>
-								<h2 className="profile-text text-center">Avatar: <Image src={profile.profileAvatarUrl}/> </h2>
+								<p className="profile-text text-center">Avatar: <Image src={profile.profileAvatarUrl}/> </p>
 							</Col>
 						</Row>
 						<Row className='mb-3 justify-content-center'>
 							<Col>
-								<h2 className="profile-text text-center">Username: {profile.profileUsername} </h2>
+								<p className="profile-text text-center">Username: {profile.profileUsername} </p>
 							</Col>
 						</Row >
 						<Row className='mb-3 justify-content-center'>
 							<Col>
-								<h2 className="profile-text text-center">First Name: {profile.profileFirstName} </h2>
+								<p className="profile-text text-center">First Name: {profile.profileFirstName} </p>
 							</Col>
 						</Row>
 						<Row className='mb-3 justify-content-center' >
 							<Col>
-								<h2 className="profile-text text-center">Last Name: {profile.profileLastName} </h2>
+								<p className="profile-text text-center">Last Name: {profile.profileLastName} </p>
 							</Col>
 						</Row>
 						<Row className='justify-content-center'>
 							<Col>
-								<h2 className="profile-text text-center">Email: {profile.profileEmail} </h2>
+								<p className="profile-text text-center">Email: {profile.profileEmail} </p>
 							</Col>
 						</Row>
 					</Container >
