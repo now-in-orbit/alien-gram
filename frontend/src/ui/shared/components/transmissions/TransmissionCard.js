@@ -50,7 +50,7 @@ export function TransmissionCard({transmission}) {
                             </Row>
                             <Card.Text>
                                 <div>
-                            <h3>{post.postContent}</h3>
+                            <p>{post.postContent}</p>
                                 </div>
                             </Card.Text>
                         </>
