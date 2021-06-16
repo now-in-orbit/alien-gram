@@ -49,6 +49,8 @@ export const MyTransmissions = () => {
 
 
 
+
+
     return (
         <>
             <Container>
@@ -76,4 +78,3 @@ export const MyTransmissions = () => {
         </>
     )
 };
-

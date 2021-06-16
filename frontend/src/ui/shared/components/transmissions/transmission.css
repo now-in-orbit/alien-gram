@@ -68,7 +68,7 @@
     left: 0;
     background: linear-gradient(to top,transparent,#196935);
     animation: animate4 2.5s linear infinite;
-    animation-delay: 0.75s;
+    animation-delay: 1s;
 }
 @keyframes animate1 {
     0% {
@@ -102,3 +102,5 @@
         bottom: 100%;
     }
 }
+
+
