@@ -23,7 +23,7 @@
 .createButton {
 	margin-top       : 4em;
 	font-family      : 'Orbitron' !important;
-	border           : white !important;
+	border           : none !important;
 	border-radius    : 1px !important;
 	color            : #282582 !important;
 	background-color : #282582 !important;
