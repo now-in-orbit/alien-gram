@@ -4,6 +4,7 @@ import {Modal} from "react-bootstrap";
 import {TransmissionsForm} from "./TransmissionsForm";
 import "../Home.css"
 import'../main-nav/sign-in/SignInStyle.css'
+import AlienVid from "../../../../images/alien-hello/Ufo-2.mp4";
 
 
 export const TransmissionModal = ({post}) => {
@@ -26,6 +27,11 @@ export const TransmissionModal = ({post}) => {
                 <Modal.Body className='backgroundColor'>
                     <TransmissionsForm post={post} />
                 </Modal.Body>
+                <div className='backgroundColor'>
+                    <video className='backgroundIMGSize' autoPlay muted >
+                        <source src={AlienVid} type='video/mp4'/>
+                    </video>
+                </div>
                 <Modal.Footer className='backgroundColor'>
                     <Button variant="secondary" onClick={handleClose}>
                         Close

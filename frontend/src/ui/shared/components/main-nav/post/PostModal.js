@@ -4,6 +4,7 @@ import {Modal} from "react-bootstrap";
 import {PostForm} from "./PostForm";
 import "../../Home.css"
 import '../sign-in/SignInStyle.css'
+import AlienVid from "../../../../../images/alien-hello/Ufo-1.mp4";
 
 
 export const PostModal = () => {
@@ -26,6 +27,11 @@ export const PostModal = () => {
                 <Modal.Body className='backgroundColor'>
                     <PostForm />
                 </Modal.Body>
+                <div className='backgroundColor'>
+                    <video className='backgroundIMGSize' autoPlay muted >
+                        <source src={AlienVid} type='video/mp4'/>
+                    </video>
+                </div>
                 <Modal.Footer className='backgroundColor'>
                     <Button variant="secondary" onClick={handleClose}>
                         Close
