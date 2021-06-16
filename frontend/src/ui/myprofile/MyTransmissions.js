@@ -55,7 +55,7 @@ export const MyTransmissions = () => {
                 <Row className='text-center mt-5'>
                     <Col>
                         <div className="mt-5">
-                            <h1 className="text-white">My Transmissions</h1>
+                            <h1 className="text-white transmissionTitle">My Transmissions</h1>
                         </div>
                     </Col>
                 </Row>
