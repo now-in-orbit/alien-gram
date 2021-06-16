@@ -7,6 +7,7 @@ import './Home.css';
 import {httpConfig} from '../utils/httpConfig';
 import {fetchAllPosts, getAllPosts} from '../../../store/postSlice';
 import {useDispatch} from 'react-redux';
+import '../components/PostCard.css'
 
 
 export function PostCard({post, transmission}) {
@@ -97,7 +98,7 @@ export function PostCard({post, transmission}) {
 					</Card.Text>
 					<Row className='align-items-center'>
 						<Col>
-							<button onClick = {clickLike}>{post.likeCount}<span role = 'img' aria-label = 'thumbs up emoji'>👍️    </span>
+							<button className='like' onClick = {clickLike}>{post.likeCount}<span role = 'img' aria-label = 'thumbs up emoji'>👽</span>
 							</button>
 							<TransmissionModal post = {post} />
 						</Col>

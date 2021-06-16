@@ -69,7 +69,7 @@ export function TransmissionCard({transmission}) {
 
     return (
         <>
-            <Card className="card text-center mt-2">
+            <Card className="card text-center my-4 mx-auto">
                 <div className="mx-auto">
                     <div className="card-body">
                         <Card.Text>
@@ -77,11 +77,16 @@ export function TransmissionCard({transmission}) {
                                 <FindPostContent />
                             </div>
                         </Card.Text>
-                        <FindTransmissionUsername />
-                        <Card.Text>
-                            {transmission.transmissionContent}
-                        </Card.Text>
                     </div>
+                </div>
+            </Card>
+
+            <Card className='m-3'>
+                <div className="border border-primary border-5" >
+                    <FindTransmissionUsername />
+                    <Card.Text>
+                        {transmission.transmissionContent}
+                    </Card.Text>
                 </div>
             </Card>
         </>
