@@ -3,6 +3,13 @@ import React, { useEffect } from 'react';
 import {fetchProfileByProfileId} from '../../store/profileSlice';
 import {useJwtToken} from '../shared/components/useJwtToken';
 import {fetchLikeByLikeProfileId} from "../../store/LikeSlice";
+import {LikeCard} from "../shared/components/LikeCard"
+import {fetchAllPosts, fetchPostByPostProfileId} from "../../store/postSlice";
+import {
+    fetchAllTransmissions,
+    fetchTransmissionByTransmissionProfileId,
+    getAllTransmissions
+} from "../../store/transmissionSlice";
 
 
 
@@ -16,7 +23,8 @@ export const MyLikes = () => {
         if (authenticatedUser?.profileId) {
             dispatch(fetchProfileByProfileId(authenticatedUser.profileId));
             dispatch(fetchLikeByLikeProfileId(authenticatedUser.profileId));
-            // dispatch(fetchTransmissionByTransmissionProfileId(authenticatedUser.profileId));
+            dispatch(fetchAllPosts());
+            dispatch(fetchAllTransmissions());
         }
     };
 
@@ -26,6 +34,12 @@ export const MyLikes = () => {
      * E.g when a network request to an api has completed and there is new data to display on the dom.
      **/
     useEffect(sideEffects,  [authenticatedUser, dispatch]);
+
+    const posts = useSelector(state => (
+        state.posts
+            ? state.posts
+            : []
+    ));
 
     const profile = useSelector(state => (
         state.profiles
@@ -39,6 +53,8 @@ export const MyLikes = () => {
             : []
     ));
 
+    const transmissions = useSelector((state) => state.transmissions ? state.transmissions : null);
+
     console.log("Likes", likes)
 
     return (
@@ -47,7 +63,7 @@ export const MyLikes = () => {
                 <div className="card-group card-columns">
                 </div>
                 {
-                    // likes.map(like => <LikeCard like={like}/>)
+                    likes.map(like => <LikeCard key={like.likePostId} like={like} posts={posts} transmissions={transmissions} profiles={profile}/>)
                 }
 
             </main>
