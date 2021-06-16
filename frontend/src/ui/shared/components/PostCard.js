@@ -1,12 +1,13 @@
 import React from 'react';
 import Card from 'react-bootstrap/Card';
 import {useSelector} from 'react-redux';
-import {Col, Container, Row, Button, Image} from 'react-bootstrap';
+import {Col, Container, Row, Button, Image, ButtonToolbar} from 'react-bootstrap';
 import {TransmissionModal} from './transmissions/TransmissionModal';
 import './Home.css';
 import {httpConfig} from '../utils/httpConfig';
 import {fetchAllPosts, getAllPosts} from '../../../store/postSlice';
 import {useDispatch} from 'react-redux';
+import '../components/PostCard.css';
 
 
 export function PostCard({post, transmission}) {
@@ -18,7 +19,7 @@ export function PostCard({post, transmission}) {
 		const profile = profiles.find(profile => post.postProfileId === profile.profileId);
 		return (
 			<>
-				{profile && <h3 className = 'float-left'>{profile.profileUsername}</h3>}
+				{profile && <h3 className = 'mx-2 float-left user'>{profile.profileUsername}</h3>}
 			</>
 		);
 	};
@@ -43,8 +44,13 @@ export function PostCard({post, transmission}) {
 					return (
 
 						<>
-							<FindTransmissionUsername key = {transmission.transmissionId} transmission = {transmission} />
-							<h3>{transmission.transmissionContent}</h3>
+							<Card className='mt-1 text-white bg-secondary' style={{ width: '40rem' }}>
+								<Card.Text>
+									<FindTransmissionUsername key = {transmission.transmissionId} transmission = {transmission} />
+									<p className='text-center content'>{transmission.transmissionContent}</p>
+								</Card.Text>
+							</Card>
+
 						</>
 
 					);
@@ -58,7 +64,7 @@ export function PostCard({post, transmission}) {
 			const profile = profiles.find(profile => transmission.transmissionProfileId === profile.profileId);
 			return (
 				<>
-					{profile && <h3>{profile.profileUsername}</h3>}
+					{profile && <h3 className='mx-3 text-left user'>{profile.profileUsername}</h3>}
 				</>
 			);
 		}
@@ -83,7 +89,7 @@ export function PostCard({post, transmission}) {
 
 	return (
 		<>
-			<Card className = 'card text-center my-4 mx-auto'>
+			<Card className = 'card text-center text-white bg-dark mt-5 mb-1 mx-auto'>
 				<div className = 'card-body'>
 					<Row>
 						<Col>
@@ -91,24 +97,22 @@ export function PostCard({post, transmission}) {
 						</Col>
 					</Row>
 					<Card.Text>
-						<div>
+						<div className='content'>
 							{post.postContent}
 						</div>
 					</Card.Text>
-					<Row className='align-items-center'>
+					<Row className = 'align-items-center'>
 						<Col>
-							<button onClick = {clickLike}>{post.likeCount}<span onClick = {clickLike} role = 'img' aria-label = 'thumbs up emoji'>👍️    </span>
-							</button>
-							<TransmissionModal post = {post} />
+							<ButtonToolbar className='justify-content-between'>
+								<button className = 'like' onClick = {clickLike}>{post.likeCount}<span role = 'img' aria-label = 'thumbs up emoji'> 👽</span>
+								</button>
+								<TransmissionModal post = {post} />
+							</ButtonToolbar>
 						</Col>
-					</Row>
-					<Row className='justify-content-center'>
-					<Card.Text>
-						<FindTransmissionsContent />
-					</Card.Text>
 					</Row>
 				</div>
 			</Card>
+			<FindTransmissionsContent />
 		</>
 	);
 }

@@ -40,7 +40,7 @@ export function LikeCard(props) {
                             <FindAvatarUrl post={post}/>
                             <FindUsername post={post}/>
                             <h3>{post.postContent}</h3>
-                            {post.likeCount}<span role='img' aria-label='thumbs up emoji'>👍️</span>
+                            {post.likeCount}<span role = 'img' aria-label = 'thumbs up emoji'>👽</span>
                             {/*<h3>{transmission.transmissionContent}</h3>*/}
                         </>
 
@@ -87,6 +87,7 @@ export function LikeCard(props) {
             <Card className="card text-center">
                 <div className="card-body">
                     <div>
+
                     </div>
                     <Card.Text>
                         <div>

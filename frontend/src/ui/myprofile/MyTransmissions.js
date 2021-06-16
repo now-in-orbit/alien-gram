@@ -49,13 +49,21 @@ export const MyTransmissions = () => {
 
 
 
+
+
     return (
         <>
             <Container>
                 <Row className='text-center mt-5'>
                     <Col>
                         <div className="mt-5">
-                            <h1 className="text-white">My Transmissions</h1>
+                            <div className="text-white light">
+                                <div></div>
+                                <div></div>
+                                <div></div>
+                                <div></div>
+                                My Transmissions
+                            </div>
                         </div>
                     </Col>
                 </Row>

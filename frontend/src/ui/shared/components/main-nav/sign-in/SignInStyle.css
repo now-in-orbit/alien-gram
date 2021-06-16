@@ -1,8 +1,30 @@
 .backgroundIMGSize {
-    width: 29rem;
-}
+	width : 29rem;
+	}
 
 .backgroundColor {
-    background-color: black;
-    color: white;
-}
+	background-color : black;
+	color            : white;
+	}
+
+.star-button {
+	font-family      : 'Orbitron' !important;
+	border           : white !important;
+	border-radius    : 1px !important;
+	color            : #282582 !important;
+	background-color : #282582 !important;
+	color            : white !important;
+	font-weight      : bold !important;
+	}
+
+.star-button:hover {
+	font-family      : 'Orbitron' !important;
+	border           : white !important;
+	border-radius    : 1px !important;
+	color            : #282582 !important;
+	background-color : #FFF !important;
+	box-shadow       : 0 0 5px 3px #FFF,
+	0 0 9px 5px #F0F,
+	0 0 12px 8px #0FF;
+
+	}

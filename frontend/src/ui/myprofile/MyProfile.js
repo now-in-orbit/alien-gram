@@ -5,6 +5,7 @@ import {fetchProfileByProfileId, fetchProfileUpdateByProfile} from "../../store/
 import {useJwtToken} from "../shared/components/useJwtToken";
 import {UpdateProfileModal} from "../UpdateProfile/UpdateProfileModal";
 import {ProfileCard} from "../shared/components/ProfileCard";
+import "../shared/components/transmissions/transmission.css";
 
 export const MyProfile = () => {
 
@@ -39,22 +40,22 @@ const profile = useSelector(state => (
 			return (
 				<>
 					<Container>
-						<Row>
-							{profile.profileAvatarUrl}
+						<Row className='mb-3'>
+							<h2 className="text-white"> Profile Avatar: {profile.profileAvatarUrl} </h2>
 						</Row>
-						<Row>
-							<h2 className="text-white"> {profile.profileEmail} </h2>
+						<Row className='mb-3'>
+							<h2 className="text-white"> Profile Email: {profile.profileEmail} </h2>
 						</Row>
-						<Row>
-							<h2 className="text-white"> {profile.profileUsername} </h2>
+						<Row className='mb-3'>
+							<h2 className="text-white"> Profile Username: {profile.profileUsername} </h2>
+						</Row >
+						<Row className='mb-3'>
+							<h2 className="text-white"> Profile First Name: {profile.profileFirstName} </h2>
 						</Row>
-						<Row>
-							<h2 className="text-white"> {profile.profileFirstName} </h2>
+						<Row >
+							<h2 className="text-white"> Profile Last Name: {profile.profileLastName} </h2>
 						</Row>
-						<Row>
-							<h2 className="text-white"> {profile.profileLastName} </h2>
-						</Row>
-					</Container>
+					</Container >
 				</>
 			)
 		} else {
@@ -65,15 +66,29 @@ const profile = useSelector(state => (
 
 	return(
 		<>
+
 			<Container>
-				<Row>
+				<Row className='text-center mt-5'>
 					<Col>
-						<UpdateProfileModal profile={profile}/>
+						<div className="mt-5">
+							<div className="text-white light">
+								<div></div>
+								<div></div>
+								<div></div>
+								<div></div>
+								My Profile
+							</div>
+						</div>
 					</Col>
 				</Row>
 				<div>
 					<Profile profile={profile}/>
 				</div>
+				<Row>
+					<Col>
+						<UpdateProfileModal profile={profile}/>
+					</Col>
+				</Row>
 			</Container>
 		</>
 	)

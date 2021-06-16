@@ -4,7 +4,7 @@ import {useDispatch, useSelector} from "react-redux";
 import "./transmission.css";
 import {httpConfig} from "../../utils/httpConfig";
 import {getAllPosts} from "../../../../store/postSlice";
-import {Col} from "react-bootstrap";
+import {Col, Image, Row} from "react-bootstrap";
 import {TransmissionModal} from "./TransmissionModal";
 
 
@@ -18,7 +18,7 @@ export function TransmissionCard({transmission}) {
         const profile = profiles.find(profile => post.postProfileId === profile.profileId)
         return (
             <>
-                {profile && <h3>{profile.profileUsername}</h3>}
+                {profile && <h3 className = 'mx-2 float-left user'>{profile.profileUsername}</h3>}
             </>
         )
     }
@@ -26,7 +26,7 @@ export function TransmissionCard({transmission}) {
         const profile = profiles.find(profile => post.postProfileId === profile.profileId)
         return (
             <>
-                {profile && <img src={profile.profileAvatarUrl} alt='Avatar'/>}
+                {profile && <Image className = 'float-left' src={profile.profileAvatarUrl} alt='Avatar'/>}
             </>
         )
     }
@@ -42,9 +42,17 @@ export function TransmissionCard({transmission}) {
                     return (
 
                         <>
+                            <Row>
+                                <Col>
                             <FindAvatarUrl post={post}/>
                             <FindUsername post={post}/>
+                                </Col>
+                            </Row>
+                            <Card.Text>
+                                <div>
                             <h3>{post.postContent}</h3>
+                                </div>
+                            </Card.Text>
                         </>
 
                     )
@@ -58,7 +66,7 @@ export function TransmissionCard({transmission}) {
             const profile = profiles.find(profile => transmission.transmissionProfileId === profile.profileId)
             return (
                 <>
-                    {profile && <h3>{profile.profileUsername}</h3>}
+                    {profile && <h3 className='mx-3 text-left user'>{profile.profileUsername}</h3>}
                 </>
             )
         } else {
@@ -69,20 +77,17 @@ export function TransmissionCard({transmission}) {
 
     return (
         <>
-            <Card className="card text-center mt-2">
-                <div className="mx-auto">
+            <Card className = 'card text-center text-white bg-dark mt-5 mb-1 mx-auto'>
                     <div className="card-body">
-                        <Card.Text>
-                            <div>
                                 <FindPostContent />
-                            </div>
-                        </Card.Text>
-                        <FindTransmissionUsername />
-                        <Card.Text>
-                            {transmission.transmissionContent}
-                        </Card.Text>
                     </div>
-                </div>
+            </Card>
+
+            <Card className='mt-1 text-white bg-secondary' style={{ width: '40rem'}}>
+                    <Card.Text>
+                    <FindTransmissionUsername />
+                       <p className='text-center content'> {transmission.transmissionContent} </p>
+                    </Card.Text>
             </Card>
         </>
     )

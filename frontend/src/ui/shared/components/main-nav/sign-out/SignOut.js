@@ -4,6 +4,7 @@ import { httpConfig } from '../../../utils/httpConfig'
 import { getAuth } from '../../../../../store/auth'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import {Button} from "react-bootstrap"
+import '../sign-in/SignInStyle.css'
 
 export const SignOut = () => {
 	const dispatch = useDispatch()
@@ -21,11 +22,11 @@ export const SignOut = () => {
 
 	return(
 		<>
-			<div className="sign-out-dropdown">
-				<Button variant="outline-primary" onClick={signOut} size='sm' className='mx-2'>
+			{/*<div className="sign-out-dropdown">*/}
+				<Button variant="outline-primary" onClick={signOut} size='sm' className='mx-2 star-button'>
 					Sign Out&nbsp;&nbsp;<FontAwesomeIcon icon="sign-out-alt" />
 				</Button>
-			</div>
+			{/*</div>*/}
 		</>
 	)
 }
