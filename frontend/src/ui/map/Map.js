@@ -58,7 +58,7 @@ export const Map = ({sighting}) => {
 					<Col md = {4}>
 						<h3 className='title'>City: {sightingCity}</h3>
 						<hr className='separator'/>
-						{sightings.map(sighting => <MapContent key = {sighting.sightingId} sighting = {sighting} />)}
+						{sightings.map(sighting => <MapContent key = {sighting.sightingId} sighting = {sighting} sightingCity = {sightingCity} />)}
 					</Col>
 					<Col md = {8}>
 						<div className = 'position-fixed one ml-auto'>

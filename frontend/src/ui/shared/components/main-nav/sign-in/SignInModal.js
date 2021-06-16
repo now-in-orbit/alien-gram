@@ -13,7 +13,7 @@ export const SignInModal = (props) => {
 
 	return (
 		<>
-			<Button variant="outline-primary" onClick={handleShow} size='sm'className='signIn mx-2'>
+			<Button variant="outline-primary" onClick={handleShow} size='sm'className='star-button mx-2'>
 				Sign In
 			</Button>
 

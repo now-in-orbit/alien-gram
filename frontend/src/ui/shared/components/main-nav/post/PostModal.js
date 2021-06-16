@@ -1,5 +1,5 @@
 import React, {useState} from "react";
-import {Button} from "react-bootstrap";
+import {Button, Container} from 'react-bootstrap';
 import {Modal} from "react-bootstrap";
 import {PostForm} from "./PostForm";
 import "../../Home.css"
@@ -14,10 +14,11 @@ export const PostModal = () => {
 
     return (
         <>
+            <Container>
             <Button onClick={handleShow} className='createButton float-right btn-lg btn'>
                 Create Post
             </Button>
-
+            </Container>
             <Modal show={show} onHide={handleClose}>
                 <Modal.Header closeButton className='backgroundColor'>
                     <Modal.Title>Create Post</Modal.Title>

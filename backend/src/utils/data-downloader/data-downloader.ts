@@ -23,7 +23,6 @@ function ufoSightingDataDownloader(): Promise<any>{
 	async function downloadSightings() {
 		try {
 			const results: any = [];
-
 			fs.createReadStream('./ufo_geocodio.csv')
 				.pipe(csv())
 				.on('data', (data: any) => results.push(data))
