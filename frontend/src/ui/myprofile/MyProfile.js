@@ -40,20 +40,30 @@ const profile = useSelector(state => (
 			return (
 				<>
 					<Container>
-						<Row className='mb-3'>
-							<h2 className="text-white"> Profile Avatar: {profile.profileAvatarUrl} </h2>
+						<Row className='mb-3 justify-content-center'>
+							<Col>
+								<h2 className="profile-text text-center">Avatar: <Image src={profile.profileAvatarUrl}/> </h2>
+							</Col>
 						</Row>
-						<Row className='mb-3'>
-							<h2 className="text-white"> Profile Email: {profile.profileEmail} </h2>
-						</Row>
-						<Row className='mb-3'>
-							<h2 className="text-white"> Profile Username: {profile.profileUsername} </h2>
+						<Row className='mb-3 justify-content-center'>
+							<Col>
+								<h2 className="profile-text text-center">Username: {profile.profileUsername} </h2>
+							</Col>
 						</Row >
-						<Row className='mb-3'>
-							<h2 className="text-white"> Profile First Name: {profile.profileFirstName} </h2>
+						<Row className='mb-3 justify-content-center'>
+							<Col>
+								<h2 className="profile-text text-center">First Name: {profile.profileFirstName} </h2>
+							</Col>
 						</Row>
-						<Row >
-							<h2 className="text-white"> Profile Last Name: {profile.profileLastName} </h2>
+						<Row className='mb-3 justify-content-center' >
+							<Col>
+								<h2 className="profile-text text-center">Last Name: {profile.profileLastName} </h2>
+							</Col>
+						</Row>
+						<Row className='justify-content-center'>
+							<Col>
+								<h2 className="profile-text text-center">Email: {profile.profileEmail} </h2>
+							</Col>
 						</Row>
 					</Container >
 				</>
@@ -71,7 +81,7 @@ const profile = useSelector(state => (
 				<Row className='text-center mt-5'>
 					<Col>
 						<div className="mt-5">
-							<div className="text-white light">
+							<div className="text-white light mb-5">
 								<div></div>
 								<div></div>
 								<div></div>

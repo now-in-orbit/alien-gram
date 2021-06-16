@@ -1,6 +1,8 @@
 import React from "react";
 import Card from "react-bootstrap/Card";
 import {useSelector} from "react-redux";
+import {ButtonToolbar, Col, Row} from 'react-bootstrap';
+import {TransmissionModal} from './transmissions/TransmissionModal';
 
 
 export function LikeCard(props) {
@@ -57,8 +59,14 @@ export function LikeCard(props) {
                 postTransmissions.map(transmission => {
                         return (
                             <>
-                                <FindTransmissionUsername key={transmission.transmissionId} transmission={transmission}/>
-                                <h3>{transmission.transmissionContent}</h3>
+                                <Card className='mt-1 text-white bg-secondary'>
+                                    <Card.Text>
+                                        <div className='content'>
+                                            <FindTransmissionUsername key={transmission.transmissionId} transmission={transmission}/>
+                                            <p>{transmission.transmissionContent}</p>
+                                        </div>
+                                    </Card.Text>
+                                </Card>
                             </>
                         );
                     }
@@ -68,13 +76,26 @@ export function LikeCard(props) {
         }
     }
 
-    function FindTransmissionUsername({transmissions}) {
-        // const transmission = transmissions.find(transmission => transmission.transmissionPostId === post.postId)
+    // function FindTransmissionUsername({transmissions}) {
+    //     // const transmission = transmissions.find(transmission => transmission.transmissionPostId === post.postId)
+    //     if (transmissions) {
+    //         const profile = profiles.find(profile => transmissions.transmissionProfileId === profile.profileId)
+    //         return (
+    //             <>
+    //                 {profile && <h3>{profile.profileUsername}</h3>}
+    //             </>
+    //         )
+    //     } else {
+    //         return <></>
+    //     }
+    // }
+
+    function FindTransmissionUsername() {
         if (transmissions) {
             const profile = profiles.find(profile => transmissions.transmissionProfileId === profile.profileId)
             return (
                 <>
-                    {profile && <h3>{profile.profileUsername}</h3>}
+                    {profile && <h3 className='mx-3 text-left user'>{profile.profileUsername}</h3>}
                 </>
             )
         } else {
@@ -84,19 +105,20 @@ export function LikeCard(props) {
 
     return (
         <>
-            <Card className="card text-center">
-                <div className="card-body">
-                    <div>
-
-                    </div>
+            <Card className = 'card text-center text-white bg-dark mt-5 mb-1 mx-auto'>
+                <div className = 'card-body'>
                     <Card.Text>
-                        <div>
+                        <div className='content'>
                             <FindPostContent/>
-                            <FindTransmissionsContent transmissions={transmissions}/>
                         </div>
                     </Card.Text>
                 </div>
             </Card>
+            <Row>
+                <Col md={9}>
+                    <FindTransmissionsContent transmissions={transmissions} />
+                </Col>
+            </Row>
         </>
     )
 }
