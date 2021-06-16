@@ -44,7 +44,7 @@ export function PostCard({post, transmission}) {
 					return (
 
 						<>
-							<Card className='mt-1 text-white bg-secondary' style={{ width: '40rem' }}>
+							<Card className='mt-1 text-white bg-secondary'>
 								<Card.Text>
 									<FindTransmissionUsername key = {transmission.transmissionId} transmission = {transmission} />
 									<p className='text-center content'>{transmission.transmissionContent}</p>
@@ -112,7 +112,11 @@ export function PostCard({post, transmission}) {
 					</Row>
 				</div>
 			</Card>
-			<FindTransmissionsContent />
+			<Row>
+				<Col md={9}>
+					<FindTransmissionsContent />
+				</Col>
+			</Row>
 		</>
 	);
 }
