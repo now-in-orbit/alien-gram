@@ -57,7 +57,6 @@ export const MyTransmissions = () => {
                 <Row className='text-center mt-5'>
                     <Col>
                         <div className="mt-5">
-<<<<<<< HEAD
                             <div className="text-white light">
                                 <div></div>
                                 <div></div>
@@ -65,9 +64,6 @@ export const MyTransmissions = () => {
                                 <div></div>
                                 My Transmissions
                             </div>
-=======
-                            <h1 className="text-white transmissionTitle">My Transmissions</h1>
->>>>>>> a35a7f63fbf3fb22aa996dd14840e39e506b5b44
                         </div>
                     </Col>
                 </Row>
