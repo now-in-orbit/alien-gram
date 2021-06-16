@@ -63,7 +63,7 @@ export const Map = ({sighting}) => {
 						{sightings.map(sighting => <MapContent key = {sighting.sightingId} sighting = {sighting} sightingCity = {sightingCity} />)}
 					</Col>
 					<Col md = {8}>
-						<div className = 'position-fixed one ml-auto'>
+						<div className = 'ml-auto'>
 							<ReactMapGL
 								{...viewport}
 								width = '64vw'
