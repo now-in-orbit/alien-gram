@@ -66,9 +66,9 @@ export const signupProfileController = async (request: Request, response: Respon
                 data: null
             };
             mg.messages().sendMime(compiledEmail, (sendError: any, body: any) => {
-                if (sendError) {
-                    return response.json({status:418, data:null, message:"Error sending email"})
-                }
+                // if (sendError) {
+                //     return response.json({status:418, data:null, message:"Error sending email"})
+                // }
                 return response.json(status);
             });
         })
