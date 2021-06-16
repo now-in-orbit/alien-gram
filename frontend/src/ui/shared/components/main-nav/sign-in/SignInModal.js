@@ -29,6 +29,11 @@ export const SignInModal = (props) => {
 						<source src={AlienVid} type='video/mp4'/>
 					</video>
 				</div>
+				<Modal.Footer className='backgroundColor'>
+					<Button variant="secondary" onClick={handleClose}>
+						Close
+					</Button>
+				</Modal.Footer>
 			</Modal>
 		</>
 	);

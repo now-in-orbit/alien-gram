@@ -70,7 +70,7 @@ export function TransmissionCard({transmission}) {
     return (
         <>
             <Card className="card text-center mt-2">
-                <div class="mx-auto">
+                <div className="mx-auto">
                     <div className="card-body">
                         <Card.Text>
                             <div>

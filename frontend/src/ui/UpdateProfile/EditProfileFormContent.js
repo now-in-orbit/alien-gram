@@ -147,7 +147,7 @@ export const EditProfileFormContent = (props) => {
                     >Reset
                     </button>
                 </div>
-                <FormDebugger {...props} />
+                {/*<FormDebugger {...props} />*/}
             </form>
 
             {
