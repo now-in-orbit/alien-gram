@@ -45,7 +45,15 @@ export const MyPosts = ({match}) => {
 			<Container>
 				<Row className='text-center mt-5'>
 					<Col>
-				<h1 className='title'>My Posts</h1>
+						<div className="mt-5">
+							<div className="text-white light">
+								<div></div>
+								<div></div>
+								<div></div>
+								<div></div>
+								My Posts
+							</div>
+						</div>
 					</Col>
 				</Row>
 				<div>

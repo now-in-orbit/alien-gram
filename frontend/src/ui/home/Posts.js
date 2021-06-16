@@ -40,9 +40,17 @@ export const Posts = () => {
 						<PostModal />
 					</Col>
 				</Row>
-				<Row>
+				<Row className='text-center mt-5'>
 					<Col>
-						<h1 className = 'postTitle text-center mt-5'>Posts</h1>
+						<div className="mt-5">
+							<div className="text-white light">
+								<div></div>
+								<div></div>
+								<div></div>
+								<div></div>
+								Posts
+							</div>
+						</div>
 					</Col>
 				</Row>
 				<div className = 'p-4'>

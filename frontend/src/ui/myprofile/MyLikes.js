@@ -10,6 +10,7 @@ import {
     fetchTransmissionByTransmissionProfileId,
     getAllTransmissions
 } from "../../store/transmissionSlice";
+import {Col, Container, Row} from "react-bootstrap";
 
 
 
@@ -59,14 +60,26 @@ export const MyLikes = () => {
 
     return (
         <>
-            <main className="container">
-                <div className="card-group card-columns">
-                </div>
+            <Container>
+                <Row className='text-center mt-5'>
+                    <Col>
+                        <div className="mt-5">
+                            <div className="text-white light">
+                                <div></div>
+                                <div></div>
+                                <div></div>
+                                <div></div>
+                                My Likes
+                            </div>
+                        </div>
+                    </Col>
+                </Row>
+                <div>
                 {
                     likes.map(like => <LikeCard key={like.likePostId} like={like} posts={posts} transmissions={transmissions} profiles={profile}/>)
                 }
-
-            </main>
+                </div>
+            </Container>
         </>
     )
 };
