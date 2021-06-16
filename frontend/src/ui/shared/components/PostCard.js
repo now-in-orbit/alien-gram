@@ -97,7 +97,7 @@ export function PostCard({post, transmission}) {
 					</Card.Text>
 					<Row className='align-items-center'>
 						<Col>
-							<button onClick = {clickLike}>{post.likeCount}<span role = 'img' aria-label = 'thumbs up emoji'>👍️    </span>
+							<button onClick = {clickLike}>{post.likeCount}<span onClick = {clickLike} role = 'img' aria-label = 'thumbs up emoji'>👍️    </span>
 							</button>
 							<TransmissionModal post = {post} />
 						</Col>
