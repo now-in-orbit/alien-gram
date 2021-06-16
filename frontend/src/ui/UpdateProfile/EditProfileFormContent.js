@@ -129,15 +129,15 @@ export const EditProfileFormContent = (props) => {
                     }
                 </div>
 
-                <ImageDropZone
-                    formikProps={{
-                        values,
-                        handleChange,
-                        handleBlur,
-                        setFieldValue,
-                        fieldValue: "profileAvatarUrl"
-                    }}
-                />
+                {/*<ImageDropZone*/}
+                {/*    formikProps={{*/}
+                {/*        values,*/}
+                {/*        handleChange,*/}
+                {/*        handleBlur,*/}
+                {/*        setFieldValue,*/}
+                {/*        fieldValue: "profileAvatarUrl"*/}
+                {/*    }}*/}
+                {/*/>*/}
                 <div className="form-group">
                     <button className="btn btn-primary mb-2" type="submit">Submit</button>
                     <button

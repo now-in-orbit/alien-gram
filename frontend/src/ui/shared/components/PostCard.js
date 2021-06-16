@@ -104,7 +104,7 @@ export function PostCard({post, transmission}) {
 					<Row className = 'align-items-center'>
 						<Col>
 							<ButtonToolbar className='justify-content-between'>
-								<button className = 'like' onClick = {clickLike}>{post.likeCount}<span role = 'img' aria-label = 'thumbs up emoji'> 👽</span>
+								<button className = 'like' onClick = {clickLike}>{post.likeCount}<span role = 'img' aria-label = 'alien emoji'> 👽</span>
 								</button>
 								<TransmissionModal post = {post} />
 							</ButtonToolbar>
