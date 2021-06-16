@@ -9,6 +9,7 @@ import {transmissionRoute} from './apis/transmission/transmissionRoute'
 
 const session = require('express-session')
 const MemoryStore = require('memorystore')(session);
+const helmet = require("helmet");
 import passport from "passport";
 import {passportStrategy} from "./apis/sign-in/sign-in.controller";
 import {signupRoute} from "./apis/sign-up/signupRoute";
@@ -53,6 +54,7 @@ export class App {
 
 		this.app.use(morgan('dev'))
 		this.app.use(express.json())
+		this.app.use(helmet())
 		this.app.use(session(sessionConfig));
 		this.app.use(passport.initialize());
 		this.app.use(passport.session());
