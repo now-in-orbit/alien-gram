@@ -36,7 +36,7 @@ export const Navigation = () => {
         <>
 
 
-            <Navbar className='Navbar sticky-top'>
+            <Navbar className='Navbar sticky-top' expand="lg" variant='dark'>
                 <Navbar.Brand className="navTitle" href = '/'>AlienGram</Navbar.Brand>
 
                 <Navbar.Toggle aria-controls = 'basic-navbar-nav' />
@@ -49,8 +49,8 @@ export const Navigation = () => {
                                 <NavDropdown title = {auth?.profileUsername ?? ''} id = 'basic-nav-dropdown'>
                                     <NavDropdown.Item href = '/MyProfile'>My Profile</NavDropdown.Item>
                                     <NavDropdown.Item href = '/MyPosts'>My Posts</NavDropdown.Item>
-                                    <NavDropdown.Item href = '/MyTransmissions'>MyTransmissions</NavDropdown.Item>
-                                    <NavDropdown.Item href = '/MyLikes'>MyLikes</NavDropdown.Item>
+                                    <NavDropdown.Item href = '/MyTransmissions'>My Transmissions</NavDropdown.Item>
+                                    <NavDropdown.Item href = '/MyLikes'>My Likes</NavDropdown.Item>
                                 </NavDropdown>
                                 <SignOut />
                             </>
