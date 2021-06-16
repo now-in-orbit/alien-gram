@@ -4,7 +4,7 @@ import {fetchProfileByProfileId} from '../../store/profileSlice';
 import {useJwtToken} from '../shared/components/useJwtToken';
 import {fetchLikeByLikeProfileId} from "../../store/LikeSlice";
 import {LikeCard} from "../shared/components/LikeCard"
-import {fetchAllPosts, fetchPostByPostProfileId} from "../../store/postSlice";
+import {fetchAllPostAndProfiles, fetchAllPosts, fetchPostByPostProfileId} from "../../store/postSlice";
 import {
     fetchAllTransmissions,
     fetchTransmissionByTransmissionProfileId,
@@ -26,6 +26,8 @@ export const MyLikes = () => {
             dispatch(fetchLikeByLikeProfileId(authenticatedUser.profileId));
             dispatch(fetchAllPosts());
             dispatch(fetchAllTransmissions());
+            dispatch(fetchAllPostAndProfiles())
+
         }
     };
 

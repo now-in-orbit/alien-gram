@@ -31,7 +31,7 @@ export function LikeCard(props) {
     }
 
 
-    const FindPostContent = ({transmissions}) => {
+    const FindPostContent = ({like, posts}) => {
 
         const newPosts = posts.filter(post => like.likePostId === post.postId)
         return (
@@ -43,7 +43,11 @@ export function LikeCard(props) {
                             <FindUsername post={post}/>
                             <h3>{post.postContent}</h3>
                             {post.likeCount}<span role = 'img' aria-label = 'thumbs up emoji'>👽</span>
-                            {/*<h3>{transmission.transmissionContent}</h3>*/}
+                            <Row>
+                                <Col md={9}>
+                            <FindTransmissionsContent post={post} transmissions={transmissions} />
+                                </Col>
+                            </Row>
                         </>
 
                     )
@@ -53,8 +57,10 @@ export function LikeCard(props) {
 
     const FindTransmissionsContent = ({transmissions, post}) => {
 
-        if (transmissions) {
-            const postTransmissions = transmissions.filter(post => transmissions.transmissionPostId === post.postId);
+        if (transmissions !== undefined) {
+            const postTransmissions = transmissions.filter(transmission => transmission.transmissionPostId === post.postId);
+            // console.log("postId", post.postId)
+
             return (
                 postTransmissions.map(transmission => {
                         return (
@@ -90,9 +96,10 @@ export function LikeCard(props) {
     //     }
     // }
 
-    function FindTransmissionUsername() {
-        if (transmissions) {
-            const profile = profiles.find(profile => transmissions.transmissionProfileId === profile.profileId)
+    function FindTransmissionUsername({transmission}) {
+        if (transmission) {
+            const profile = profiles.find(profile => transmission.transmissionProfileId === profile.profileId)
+            console.log("profileId", profiles)
             return (
                 <>
                     {profile && <h3 className='mx-3 text-left user'>{profile.profileUsername}</h3>}
@@ -109,16 +116,16 @@ export function LikeCard(props) {
                 <div className = 'card-body'>
                     <Card.Text>
                         <div className='content'>
-                            <FindPostContent/>
+                            <FindPostContent like={like} posts={posts}/>
                         </div>
                     </Card.Text>
                 </div>
             </Card>
-            <Row>
-                <Col md={9}>
-                    <FindTransmissionsContent transmissions={transmissions} />
-                </Col>
-            </Row>
+            {/*<Row>*/}
+            {/*    <Col md={9}>*/}
+            {/*        /!*<FindTransmissionsContent transmissions={transmissions} />*!/*/}
+            {/*    </Col>*/}
+            {/*</Row>*/}
         </>
     )
 }
