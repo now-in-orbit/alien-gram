@@ -9,6 +9,7 @@ export function LikeCard({like}) {
             <Card className="card text-center">
                 <div className="card-body">
                     <div>
+
                     </div>
                     <Card.Text>
                         <div>
@@ -20,3 +21,5 @@ export function LikeCard({like}) {
         </>
     )
 }
+
+

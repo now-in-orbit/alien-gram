@@ -18,9 +18,9 @@ export const UpdateProfileModal = ({profile}) => {
             </Button>
 
             <Modal show={show} onHide={handleClose}>
-                <Modal.Header closeButton>
-                    <Modal.Title>Update Profile</Modal.Title>
-                </Modal.Header>
+                    <Modal.Header closeButton>
+                        <Modal.Title>Update Profile</Modal.Title>
+                    </Modal.Header>
                 <Modal.Body>
                     <EditProfileForm profile={profile} />
                 </Modal.Body>
