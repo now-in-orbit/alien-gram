@@ -10,9 +10,11 @@ export const Welcome = () => {
             <Container className="jumbo-bg" fluid>
                 <Row>
                     <Col md={12}>
+
                         <h1>Welcome to AlienGram!</h1>
                         <br/>
                         <h2>Where you can connect and chat about extraterrestrial life</h2>
+
                     </Col>
                     <Ufo />
                 </Row>

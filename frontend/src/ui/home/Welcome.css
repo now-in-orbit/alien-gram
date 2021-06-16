@@ -20,14 +20,20 @@
     position: relative;
 }
 
-.jumbo-bg h1, h2 {
+.jumbo-bg h1 {
     color: #ffffff90;
     font-family: "Didact Gothic";
-    font-size: 5em;
+    font-size: 3em;
     font-weight: bold;
     -webkit-text-stroke: .5px white;
 }
 
-
+.jumbo-bg h2 {
+    color: #ffffff90;
+    font-family: "Didact Gothic";
+    font-size: 1.5em;
+    font-weight: bold;
+    -webkit-text-stroke: .5px white;
+}
 
 
