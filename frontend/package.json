@@ -33,7 +33,7 @@
     "start": "react-scripts start",
     "lint": "npx standardx --lint",
     "fix": "npx standardx --fix",
-    "build": "react-scripts build",
+    "build": "react-scripts --max_old_space_size=4096 build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
